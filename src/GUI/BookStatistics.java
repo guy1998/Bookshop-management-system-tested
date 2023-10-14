@@ -181,7 +181,7 @@ class dailyStatistics extends HBox{
 				categories.add(in.next());
 			}
 		}catch(Exception e) {
-			
+			System.out.println("The categories were not found!");
 		}
 		System.out.println(categories);
 		int [] categoryNumber = new int[categories.size()];

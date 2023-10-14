@@ -206,7 +206,7 @@ public class LoginPage {
 				try {
 				(new SignUpPage()).show(primaryStage);
 				}catch(Exception a) {
-					
+					System.out.println("Something went wrong " + a.getMessage());
 				}
 			}
 		});

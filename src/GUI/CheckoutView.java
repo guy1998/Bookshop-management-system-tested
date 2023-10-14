@@ -112,7 +112,7 @@ public class CheckoutView {
 				try {
 					input = new FileInputStream("Images/minus.png");
 				}catch(java.io.FileNotFoundException e) {
-					
+					System.out.println("Image was not found!");
 				}
 				ImageView min = new ImageView(new Image(input));
 				min.setFitHeight(20);
@@ -132,7 +132,7 @@ public class CheckoutView {
 				try {
 					input = new FileInputStream("Images/close.png");
 				}catch(java.io.FileNotFoundException e) {
-					
+					System.out.println("Image was not found!");
 				}
 				ImageView cross = new ImageView(new Image(input));
 				cross.setFitHeight(20);
@@ -152,7 +152,7 @@ public class CheckoutView {
 				try {
 					input = new FileInputStream("Images/plus.png");
 				}catch(java.io.FileNotFoundException e) {
-					
+					System.out.println("The image was not found!");
 				}
 				ImageView plus = new ImageView(new Image(input));
 				plus.setFitHeight(20);
