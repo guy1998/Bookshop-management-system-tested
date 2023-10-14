@@ -1,0 +1,12 @@
+			Federal Ministry of Finance			
+
+
+	----------------------------------------------------	
+"Harry Potter" by J K Rowling,  Genre: Fantasy		Price: +13.0$ X 1
+
+"Hobbit" by R S Tolkein,  Genre: Fantasy		Price: +10.0$ X 1
+
+Taxes: 									x10%
+Total: 									23.00$
+
+Bill issue time: Tue Feb 07 21:47:35 CET 2023

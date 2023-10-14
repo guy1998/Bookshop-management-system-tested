@@ -1,0 +1,9 @@
+Fantasy
+Realist
+Romantic
+Historic
+Crime
+Science
+
+Sci-Fi
+Crafting

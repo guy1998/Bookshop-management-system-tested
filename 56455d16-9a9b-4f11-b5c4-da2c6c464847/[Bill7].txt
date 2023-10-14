@@ -1,0 +1,12 @@
+			Federal Ministry of Finance			
+
+
+	----------------------------------------------------	
+"Harry Potter" by J K Rowling,  Genre: Fantasy		Price: +13.0$ X 1
+
+"Notes from the underground" by Fjodor Dostoyevski,  Genre: Romantic		Price: +12.0$ X 1
+
+Taxes: 									x10%
+Total: 									25.00$
+
+Bill issue time: Fri Feb 17 23:32:43 CET 2023

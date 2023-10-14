@@ -1,0 +1,12 @@
+			Federal Ministry of Finance			
+
+
+	----------------------------------------------------	
+"Funerals are dangerous" by Agatha Christie,  Genre: Crime		Price: +10.0$ X 2
+
+"Harry Potter" by J K Rowling,  Genre: Fantasy		Price: +13.0$ X 2
+
+Taxes: 									x10%
+Total: 									46.00$
+
+Bill issue time: Sat Feb 18 00:10:20 CET 2023

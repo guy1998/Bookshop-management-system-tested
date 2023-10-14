@@ -1,0 +1,14 @@
+			Federal Ministry of Finance			
+
+
+	----------------------------------------------------	
+"Datawarehousing" by Rade Djokovic,  Genre: Science		Price: +15.0$ X 1
+
+"Rich father, poor father" by Random Asian, Random Asian2,  Genre: Realist		Price: +15.0$ X 1
+
+"Harry Potter" by J K Rowling,  Genre: Fantasy		Price: +13.0$ X 1
+
+Taxes: 									x10%
+Total: 									43.00$
+
+Bill issue time: Sat Feb 18 13:07:56 CET 2023
