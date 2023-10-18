@@ -222,6 +222,7 @@ public class BookStock implements Serializable{
 		try {
 			out = new FileOutputStream(file, true);
 			out.write(("\n"+newCategory).getBytes(), 0, ("\n"+newCategory).length());
+			out.close();
 		}catch(Exception e) {
 			System.out.println("Please dont happen");
 		}
