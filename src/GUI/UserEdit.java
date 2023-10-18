@@ -408,13 +408,13 @@ public class UserEdit {
 	        	UserStack users = new UserStack();
 	        	try {
 	        		File mesagges = new File(editable.getUserId() + ".msg");
-	        		mesagges.delete();
+	        		System.out.println(mesagges.delete());
 	        		File bills = new File(editable.getUserId() + ".dat");
 	        		if(bills.exists())
-	        			bills.delete();
+	        			System.out.println(bills.delete());
 	        		File txtBills = new File(editable.getUserId());
 	        		if(txtBills.exists())
-	        			txtBills.delete();
+	        			System.out.println(txtBills.delete());
 	        		users.deleteUser(editable.getUsername());
 	        	}catch(Exception e1) {
 	        		System.out.println("Should never happen");

@@ -3,19 +3,8 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.FileInputStream;
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 import GUI.*;
-import Products.Author;
-import Products.Bill;
-import Products.Book;
-import Products.BookStock;
-import Users.*;
-import Utilis.CompDate;
-
 
 public class Main extends Application{
 	

@@ -216,7 +216,7 @@ class dailyStatistics extends HBox{
 		writingStats.setStyle("-fx-background-color: white;");
 		writingStats.setSpacing(10);
 		writingStats.setAlignment(Pos.CENTER);
-		Label mostSoldLabel = null;
+		Label mostSoldLabel;
 		if(mostSold != null)
 			mostSoldLabel =  new Label("Most sold: " + mostSold.getTitle());
 		else

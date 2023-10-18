@@ -89,7 +89,7 @@ public class MessageView {
 		root.setBottom(replyPane);
 		
 		HBox header = new HBox();
-		FileInputStream input = null;
+		FileInputStream input;
 		ImageView [] icons = new ImageView[3];
 		try {
 			for(int i=0; i<3; i++) {
@@ -144,7 +144,7 @@ public class MessageView {
 		        	for(int i=0; i<messages.size(); i++)
 		        		if(messages.get(i).getText().equals(message.getText()) && messages.get(i).getHeader().equals(message.getHeader())) {
 		        			messages.remove(i);
-		        			System.out.println("Supozohet qe u be");
+							break;
 		        		}
 		        	for(Message m:messages)
 		        		System.out.println(m.getHeader());

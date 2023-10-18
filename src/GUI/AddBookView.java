@@ -355,46 +355,46 @@ public class AddBookView {
 				for(int i=0; i<authors.size(); i++)
 					temp[i] = authors.get(i);
 				
-					Book tempBook = new Book(isbnField.getText(), titleField.getText(), categoryCb.getValue(), Double.parseDouble(purchaseField.getText()), 
+				Book tempBook = new Book(isbnField.getText(), titleField.getText(), categoryCb.getValue(), Double.parseDouble(purchaseField.getText()),
 							Double.parseDouble(originalField.getText()), Double.parseDouble(sellingField.getText()), ld.getDayOfMonth(), ld.getMonthValue(), ld.getYear(), temp);
-					stock.addBook(tempBook);
-					stock.writeProducts();
-					TransactionControl transactions = new TransactionControl();
-					transactions.getTransactions().add(new Transaction((Book)tempBook.clone(), false));
-					transactions.writeTransactions();
-					Alert alert = new Alert(AlertType.INFORMATION);
-			        alert.setTitle("Success");
-			        alert.setHeaderText("New book was created successfully");
-			        alert.showAndWait();
-			        titleField.clear();
-			        isbnField.clear();
-			        categoryCb.setValue("");
-			        purchaseField.clear();
-			        originalField.clear();
-			        sellingField.clear();
-			        pubDate.setValue(LocalDate.now());
-			        nameField.clear();
-			        middleField.clear();
-			        surnameField.clear();
-			        authors.clear();
-					}catch(NumberFormatException e1) {
-						Alert alert = new Alert(AlertType.ERROR);
-				        alert.setTitle("Error");
-				        alert.setHeaderText("Non numerical values entered");
-				        alert.setContentText("Please enter only decimal numbers in price fields!!");
-				        alert.showAndWait();
-					}catch(InvalidBookInfo e2) {
-						Alert alert = new Alert(AlertType.ERROR);
-				        alert.setTitle("Error");
-				        alert.setHeaderText("Invalid book information");
-				        alert.setContentText(e2.getMessage());
-				        alert.showAndWait();
-					}catch(BookExistsException e3) {
-						Alert alert = new Alert(AlertType.ERROR);
-				        alert.setTitle("Error");
-				        alert.setContentText(e3.getMessage());
-				        alert.showAndWait();
-					}
+				stock.addBook(tempBook);
+				stock.writeProducts();
+				TransactionControl transactions = new TransactionControl();
+				transactions.getTransactions().add(new Transaction((Book)tempBook.clone(), false));
+				transactions.writeTransactions();
+				Alert alert = new Alert(AlertType.INFORMATION);
+			    alert.setTitle("Success");
+			    alert.setHeaderText("New book was created successfully");
+			    alert.showAndWait();
+			    titleField.clear();
+			    isbnField.clear();
+			    categoryCb.setValue("");
+			    purchaseField.clear();
+			    originalField.clear();
+			    sellingField.clear();
+			    pubDate.setValue(LocalDate.now());
+			    nameField.clear();
+			    middleField.clear();
+			    surnameField.clear();
+			    authors.clear();
+				}catch(NumberFormatException e1) {
+					Alert alert = new Alert(AlertType.ERROR);
+				    alert.setTitle("Error");
+				    alert.setHeaderText("Non numerical values entered");
+				    alert.setContentText("Please enter only decimal numbers in price fields!!");
+				    alert.showAndWait();
+				}catch(InvalidBookInfo e2) {
+					Alert alert = new Alert(AlertType.ERROR);
+				    alert.setTitle("Error");
+				    alert.setHeaderText("Invalid book information");
+				    alert.setContentText(e2.getMessage());
+				    alert.showAndWait();
+				}catch(BookExistsException e3) {
+					Alert alert = new Alert(AlertType.ERROR);
+				    alert.setTitle("Error");
+				    alert.setContentText(e3.getMessage());
+				    alert.showAndWait();
+				}
 				
 			}
 		});

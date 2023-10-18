@@ -31,7 +31,7 @@ public Librarian(String name, String surname, String username, String password, 
 			bills = readBills();
 		billFolder = new File(this.getUserId());
 		if(!billFolder.exists())
-			billFolder.mkdir();
+			System.out.println(billFolder.mkdir());
 		
 	}	
 

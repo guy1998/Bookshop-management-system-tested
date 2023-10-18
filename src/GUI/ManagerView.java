@@ -349,8 +349,8 @@ public class ManagerView {
 					none.append("\n");
 				}
 				else {
-					low.append(stock.runningLow().get(i).toString() + "\n");
-					none.append("\n");
+					low.append(stock.runningLow().get(i).toString());
+					low.append("\n");
 				}
 			}
 			low.append("\n");

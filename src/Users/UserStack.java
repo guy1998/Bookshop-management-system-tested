@@ -109,8 +109,8 @@ public class UserStack implements Serializable{
 		if(users.contains(user))
 			throw new UserAlreadyExistsException();
 		
-			users.add(user);
-			writeUsers();
+		users.add(user);
+		writeUsers();
 	}
 	
 	public void deleteUser(String username) throws NonExistantUserException{

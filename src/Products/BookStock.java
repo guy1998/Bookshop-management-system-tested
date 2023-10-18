@@ -220,7 +220,7 @@ public class BookStock implements Serializable{
 	
 	public void addCategory(String newCategory) {
 		File file = new File("Categories.txt");
-		FileOutputStream out = null;
+		FileOutputStream out;
 		try {
 			out = new FileOutputStream(file, true);
 			out.write(("\n"+newCategory).getBytes(), 0, ("\n"+newCategory).length());
