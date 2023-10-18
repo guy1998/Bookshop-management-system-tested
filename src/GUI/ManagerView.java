@@ -340,24 +340,28 @@ public class ManagerView {
 		
 		if(!stock.runningLow().isEmpty() && loging)
 		 {
-			String low = "These books are running low!!!\n";
-			String none = "These books are missing in stock!!!\n";
+			StringBuilder low = new StringBuilder("These books are running low!!!\n");
+			StringBuilder none = new StringBuilder("These books are missing in stock!!!\n");
 			
 			for(int i=0; i<stock.runningLow().size(); i++) {
-				if(stock.runningLow().get(i).getNumber() == 0)
-					none += stock.runningLow().get(i).toString() + "\n";
-				else
-					low += stock.runningLow().get(i).toString() + "\n";
+				if(stock.runningLow().get(i).getNumber() == 0) {
+					none.append(stock.runningLow().get(i).toString());
+					none.append("\n");
+				}
+				else {
+					low.append(stock.runningLow().get(i).toString() + "\n");
+					none.append("\n");
+				}
 			}
-			low += "\n";
+			low.append("\n");
 			
 			Alert alert = new Alert(AlertType.WARNING);
 	        alert.setTitle("Stock info");
 	        alert.setHeaderText("Important stock information");
 	        if(none.equals("These books are missing in stock!!!\n"))
-	        	alert.setContentText(low);
+	        	alert.setContentText(low.toString());
 	        else
-	        	alert.setContentText(low + none);
+	        	alert.setContentText(low.toString() + none);
 	        alert.showAndWait();
 	        }else if(stock.empty() && loging) {
 	        	Alert alert = new Alert(AlertType.INFORMATION);

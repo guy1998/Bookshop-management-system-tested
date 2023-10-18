@@ -105,11 +105,13 @@ public class Book implements Cloneable, Serializable{
 	@Override
 	public String toString()
 	{
-		String authorsName = "";
+		StringBuilder authorsName = new StringBuilder();
 
 		//since there may be more than 1 author for a specific book
-		for(Author x : this.authors)
-			authorsName += x.toString() + ", ";
+		for(Author x : this.authors) {
+			authorsName.append(x.toString());
+			authorsName.append(", ");
+		}
 
 		return "\"" + this.title + "\" by " + authorsName + " Genre: " + category;
 	}
@@ -172,16 +174,16 @@ public class Book implements Cloneable, Serializable{
 	}
 
 	public void setAuthorProperty() {
-		String authorsName = "";
+		StringBuilder authorsName = new StringBuilder();
 
 		//since there may be more than 1 author for a specific book
 		int i = 0;
-		for(Author x : this.authors)
-			if(i++ == this.authors.length - 1)
-				authorsName += x.toString();
-			else
-				authorsName += x.toString() + ", ";
-		this.authorProperty = new SimpleStringProperty(authorsName);
+		for(Author x : this.authors) {
+			authorsName.append(x.toString());
+			if (i++ != this.authors.length - 1)
+				authorsName.append(", ");
+		}
+		this.authorProperty = new SimpleStringProperty(authorsName.toString());
 	}
 
 	public void setCategoryProperty() {

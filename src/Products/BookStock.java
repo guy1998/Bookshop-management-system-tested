@@ -131,11 +131,13 @@ public class BookStock implements Serializable{
 	}
 	
 	public String getProductList() {
-		String products = "";
-		for(int i=0; i<productList.size(); i++)
-			products += productList.get(i).toString() + "\n";
+		StringBuilder products = new StringBuilder();
+		for(int i=0; i<productList.size(); i++) {
+			products.append(productList.get(i).toString());
+			products.append("\n");
+		}
 		
-		return products;
+		return products.toString();
 	}
 	
 	public ArrayList<Book> getProductList1(){
