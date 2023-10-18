@@ -358,7 +358,7 @@ public class ManagerView {
 			Alert alert = new Alert(AlertType.WARNING);
 	        alert.setTitle("Stock info");
 	        alert.setHeaderText("Important stock information");
-	        if(none.equals("These books are missing in stock!!!\n"))
+	        if(none.toString().equals("These books are missing in stock!!!\n"))
 	        	alert.setContentText(low.toString());
 	        else
 	        	alert.setContentText(low.toString() + none);

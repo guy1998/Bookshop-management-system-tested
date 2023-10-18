@@ -131,7 +131,7 @@ public class AddBookView {
 		}catch(java.io.FileNotFoundException e) {
 			System.out.println(e.getMessage());
 		}
-		while(cIn.hasNext()) {
+		while(cIn != null && cIn.hasNext()) {
 			categories.add(cIn.next());
 		}
 		cIn.close();

@@ -210,7 +210,7 @@ public class BookStock implements Serializable{
 			System.out.println("Categories is not a file");
 		}
 		
-		while(input.hasNext()) {
+		while(input != null && input.hasNext()) {
 			if(input.next().equals(category))
 				return true;
 		}
