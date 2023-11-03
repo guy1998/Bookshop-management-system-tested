@@ -41,7 +41,7 @@ public abstract class User implements Serializable{
 	
 	protected User(String name, String surname, String username, String password, String email, String phone, int day, int month, int year, Status status) throws Exception{
 		
-		if(username.equals("") || name.equals("") || surname.equals("") || password.equals(""))
+		if(username.isEmpty() || name.isEmpty() || surname.isEmpty() || password.isEmpty())
 			throw new InvalidUsernameException("All the fields should be filled: ");
 		
 		this.name = name;
@@ -49,13 +49,13 @@ public abstract class User implements Serializable{
 		
 		if(username.contains(this.name) || username.contains(this.surname))
 			throw new InvalidUsernameException("Username cannot contain your name or surname");
-		else if(!username.matches("^(?=[a-zA-Z[/\\._]]*\\d)(?=[\\dA-Z[/\\._]]*[a-z])(?=[a-z\\d[/\\._]]*[A-Z])(?=[a-zA-Z\\d]*[/\\._])[a-zA-Z\\d[/\\._]]{4,}$"))
+		else if(!username.matches("^(?=[a-zA-Z/._]*\\d)(?=[\\dA-Z/._]*[a-z])(?=[a-z\\d/._]*[A-Z])(?=[a-zA-Z\\d]*[/._])[a-zA-Z\\d/._]{4,}$"))
 			throw new InvalidUsernameException("Username must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!");
 		else if(password.length() < 8)
 			throw new InvalidPasswordException("Password too short!");
 		else if(password.contains(username))
 			throw new InvalidPasswordException("Password cannot be the same or contain the username");
-		else if(!password.matches("^(?=[a-zA-Z[/\\._]]*\\d)(?=[\\dA-Z[/\\._]]*[a-z])(?=[a-z\\d[/\\._]]*[A-Z])(?=[a-zA-Z\\d]*[/\\._])[a-zA-Z\\d[/\\._]]{8,}$"))
+		else if(!password.matches("^(?=[a-zA-Z/._]*\\d)(?=[\\dA-Z/._]*[a-z])(?=[a-z\\d/._]*[A-Z])(?=[a-zA-Z\\d]*[/._])[a-zA-Z\\d/._]{8,}$"))
 			throw new InvalidPasswordException("Password must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!");
 		else if(!phone.matches("\\+3556[789]\\d{7}"))
 			throw new InvalidPhoneNumberException();
