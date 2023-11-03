@@ -29,8 +29,7 @@ public class Book implements Cloneable, Serializable{
 	private transient SimpleDoubleProperty purchase;
 	private transient SimpleDoubleProperty original;
 	private transient SimpleIntegerProperty numberProperty;
-	//TODO
-	//private Image bookCover;
+
 
 	public Book(String ISBN, String title, String category, double purchasePrice, double originalPrice, double sellingPrice, int day, int month, int year, Author ... authors) throws InvalidBookInfo{
 		
@@ -115,7 +114,8 @@ public class Book implements Cloneable, Serializable{
 
 		return "\"" + this.title + "\" by " + authorsName + " Genre: " + category;
 	}
-	
+
+	//To be tested
 	@Override
 	public boolean equals(Object o) {
 		
@@ -128,6 +128,7 @@ public class Book implements Cloneable, Serializable{
 		return false;
 	}
 
+	//To be tested
 	@Override
 	public Object clone() {
 		try {

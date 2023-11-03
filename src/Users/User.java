@@ -39,6 +39,7 @@ public abstract class User implements Serializable{
 	private transient SimpleStringProperty emailProperty;
 	private transient SimpleStringProperty phoneProperty;
 	
+	//To be tested
 	protected User(String name, String surname, String username, String password, String email, String phone, int day, int month, int year, Status status) throws Exception{
 		
 		if(username.isEmpty() || name.isEmpty() || surname.isEmpty() || password.isEmpty())
@@ -135,7 +136,8 @@ public abstract class User implements Serializable{
 	public String getUserId() {
 		return userId;
 	}
-	
+
+	//To be tested
 	@Override
 	public boolean equals (Object o) {
 		

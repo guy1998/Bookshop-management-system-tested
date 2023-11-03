@@ -70,6 +70,7 @@ public class BookStock implements Serializable{
 		}
 	}
 	
+	//To be tested
 	public Book findBook(String title) {
 		
 		for(Book book:productList)
@@ -79,6 +80,7 @@ public class BookStock implements Serializable{
 		return null;
 	}
 	
+	//To be tested
 	public Book findBook(Book b) {
 		
 		for(Book book:productList)
@@ -87,7 +89,8 @@ public class BookStock implements Serializable{
 		
 		return null;
 	}
-	
+
+	//To be tested
 	public boolean empty() {
 		
 		for(Book b:productList)
@@ -116,6 +119,7 @@ public class BookStock implements Serializable{
 			
 	}
 	
+	//To be tested
 	public ArrayList<Book> runningLow(){
 		
 		ArrayList<Book> temp = new ArrayList<>();
@@ -199,7 +203,7 @@ public class BookStock implements Serializable{
 		this.findBook(book).addNumber(Number);
 		writeProducts();
 	}
-	
+	//To be tested
 	public boolean categoryExists(String category) {
 		
 		File file = new File("Categories.txt");

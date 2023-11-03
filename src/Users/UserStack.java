@@ -43,7 +43,7 @@ public class UserStack implements Serializable{
 	
 	public void writeUsers() {
 		
-		try {
+		try{
 			FileOutputStream out = new FileOutputStream(userList);
 			ObjectOutputStream outOb = new ObjectOutputStream(out);
 			outOb.writeObject(users);
@@ -78,6 +78,7 @@ public class UserStack implements Serializable{
 		return users;
 	}
 	
+	//To be tested
 	public User findUser(User user) {
 		for(int i=0; i<users.size(); i++)
 			if(user.equals(users.get(i)))
@@ -86,6 +87,7 @@ public class UserStack implements Serializable{
 		return null;
 	}
 	
+	//To be tested
 	public User findUser(String username) throws NonExistantUserException{
 		
 		for(int i=0; i<users.size(); i++)
@@ -95,6 +97,7 @@ public class UserStack implements Serializable{
 		throw new NonExistantUserException();
 	}
 	
+	//To be tested
 	public boolean exists(String username) {
 		
 		for(int i=0; i<users.size(); i++)
@@ -112,7 +115,7 @@ public class UserStack implements Serializable{
 		users.add(user);
 		writeUsers();
 	}
-	
+
 	public void deleteUser(String username) throws NonExistantUserException{
 		User temp = this.findUser(username);
 		users.remove(this.findUser(username));
@@ -129,6 +132,7 @@ public class UserStack implements Serializable{
 		}
 	}
 	
+	//To be tested
 	public ArrayList<User> filterByStatus(Status status) {
 		
 		ArrayList<User> temp = new ArrayList<>();

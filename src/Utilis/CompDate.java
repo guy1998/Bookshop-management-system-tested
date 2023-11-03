@@ -51,7 +51,8 @@ public class CompDate implements Comparable<CompDate>, Serializable{
 	}
 
 
-	@Override 
+	//To be tested
+	@Override
 	public int compareTo(CompDate d) {
 		
 		if(this.year < d.getYear())

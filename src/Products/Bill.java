@@ -15,7 +15,8 @@ public class Bill implements Serializable{
 	private double totalAmount = 0;
 	private CompDate dateIssued;
 	private ArrayList<Book> booksSold;
-	
+
+	//Here the entire thing has to be tested
 	public Bill(ArrayList<Book> booksSold) {
 		
 		this.booksSold = booksSold;
