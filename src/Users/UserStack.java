@@ -148,7 +148,7 @@ public class UserStack implements Serializable{
 			throw new InvalidPasswordException("Password too short!");
 		else if(password.contains(user.getUsername()))
 			throw new InvalidPasswordException("Password cannot be the same or contain the username");
-		else if(!password.matches("^(?=[a-zA-Z[/\\._]]*\\d)(?=[\\dA-Z[/\\._]]*[a-z])(?=[a-z\\d[/\\._]]*[A-Z])(?=[a-zA-Z\\d]*[/\\._])[a-zA-Z\\d[/\\._]]{8,}$"))
+		else if(!password.matches("^(?=[a-zA-Z/._]*\\d)(?=[\\dA-Z/._]*[a-z])(?=[a-z\\d/._]*[A-Z])(?=[a-zA-Z\\d]*[/._])[a-zA-Z\\d/_]{8,}$"))
 			throw new InvalidPasswordException("Password must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!");
 		
 		this.findUser(user).setPassword(password);
@@ -159,7 +159,7 @@ public class UserStack implements Serializable{
 	public void modifyUsername(User user, String username) throws InvalidUsernameException{
 		if(username.contains(user.getName()) || username.contains(user.getSurname()))
 			throw new InvalidUsernameException("Username cannot contain your name or surname");
-		else if(!username.matches("^(?=[a-zA-Z[/\\._]]*\\d)(?=[\\dA-Z[/\\._]]*[a-z])(?=[a-z\\d[/\\._]]*[A-Z])(?=[a-zA-Z\\d]*[/\\._])[a-zA-Z\\d[/\\._]]{4,}$"))
+		else if(!username.matches("^(?=[a-zA-Z/._]*\\d)(?=[\\dA-Z/._]*[a-z])(?=[a-z\\d/._]*[A-Z])(?=[a-zA-Z\\d]*[/._])[a-zA-Z\\d/._]{4,}$"))
 			throw new InvalidUsernameException("Username must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!");
 		
 		this.findUser(user).setUserName(username);

@@ -1,5 +1,4 @@
 package Users;
-import java.util.Date;
 import java.util.UUID;
 
 import Exceptions.InvalidEmail;
