@@ -134,7 +134,10 @@ public class AddBookView {
 		while(cIn != null && cIn.hasNext()) {
 			categories.add(cIn.next());
 		}
-		cIn.close();
+		if(cIn != null) {
+			cIn.close();
+		}
+
 		categories.add("New category");
 		ComboBox<String> categoryCb = new ComboBox<>(FXCollections.observableArrayList(categories));
 		categoryCb.setPromptText("Category");
