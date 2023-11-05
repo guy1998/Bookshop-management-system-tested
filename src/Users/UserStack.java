@@ -78,7 +78,6 @@ public class UserStack implements Serializable{
 		return users;
 	}
 	
-	//To be tested
 	public User findUser(User user) {
 		for(int i=0; i<users.size(); i++)
 			if(user.equals(users.get(i)))
@@ -87,7 +86,6 @@ public class UserStack implements Serializable{
 		return null;
 	}
 	
-	//To be tested
 	public User findUser(String username) throws NonExistantUserException{
 		
 		for(int i=0; i<users.size(); i++)
@@ -97,21 +95,11 @@ public class UserStack implements Serializable{
 		throw new NonExistantUserException();
 	}
 	
-	//To be tested
-	public boolean exists(String username) {
-		
-		for(int i=0; i<users.size(); i++)
-			if(users.get(i).getUsername().equals(username))
-				return true;
-		
-		return false;
-	}
-	
 	public void addUser(User user) throws UserAlreadyExistsException{
-		
+
 		if(users.contains(user))
 			throw new UserAlreadyExistsException();
-		
+
 		users.add(user);
 		writeUsers();
 	}
@@ -132,7 +120,6 @@ public class UserStack implements Serializable{
 		}
 	}
 	
-	//To be tested
 	public ArrayList<User> filterByStatus(Status status) {
 		
 		ArrayList<User> temp = new ArrayList<>();
