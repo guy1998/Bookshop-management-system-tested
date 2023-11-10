@@ -50,7 +50,6 @@ public class CompDate implements Comparable<CompDate>, Serializable{
 		this.year = year;
 	}
 
-
 	//To be tested
 	@Override
 	public int compareTo(CompDate d) {

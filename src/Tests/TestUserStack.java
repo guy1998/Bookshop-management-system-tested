@@ -86,7 +86,8 @@ public class TestUserStack {
         assertEquals(expected, users.filterByStatus(Status.LIBRARIAN));
     }
 
-    @Test public  void testFilterByStatusAllSameNoResult(){
+    @Test
+    public  void testFilterByStatusAllSameNoResult(){
         ArrayList<User> expected = new ArrayList<>();
         try{
             users.addUser(new Administrator("John", "Doe", "Guy_1992", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002));
@@ -99,5 +100,7 @@ public class TestUserStack {
         }
         assertEquals(expected, users.filterByStatus(Status.LIBRARIAN));
     }
+
+
 
 }

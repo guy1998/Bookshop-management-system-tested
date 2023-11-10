@@ -25,10 +25,10 @@ public class UserStack implements Serializable{
 		
 		userList = new File("user.dat");
 		users = new ArrayList<User>();
-		if(!userList.exists())
-			writeUsers();
-		else
-			users = readUsers();
+//		if(!userList.exists())
+//			writeUsers();
+//		else
+//			users = readUsers();
 		
 	}
 	
@@ -101,13 +101,13 @@ public class UserStack implements Serializable{
 			throw new UserAlreadyExistsException();
 
 		users.add(user);
-		writeUsers();
+//		writeUsers();
 	}
 
 	public void deleteUser(String username) throws NonExistantUserException{
 		User temp = this.findUser(username);
 		users.remove(this.findUser(username));
-		writeUsers();
+//		writeUsers();
 	}
 	
 	public void setProperties() {
@@ -143,7 +143,7 @@ public class UserStack implements Serializable{
 			throw new InvalidPasswordException("Password must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!");
 		
 		this.findUser(user).setPassword(password);
-		writeUsers();
+//		writeUsers();
 		
 	}
 	
@@ -154,7 +154,7 @@ public class UserStack implements Serializable{
 			throw new InvalidUsernameException("Username must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!");
 		
 		this.findUser(user).setUserName(username);
-		writeUsers();
+//		writeUsers();
 	}
 	
 	public void modifyName(User user, String name) {
@@ -172,14 +172,14 @@ public class UserStack implements Serializable{
 		if(!phone.matches("\\+3556[789]\\d{7}"))
 			throw new InvalidPhoneNumberException();
 		this.findUser(user).setPhone(phone);
-		writeUsers();
+//		writeUsers();
 	}
 	
 	public void modifyEmail(User user, String email) throws InvalidEmail{
 		if(!email.matches("\\w+@gmail.com"))
 			throw new InvalidEmail();
 		this.findUser(user).setEmail(email);
-		writeUsers();
+//		writeUsers();
 	}
 	
 	public void modifyBirthday(User user, int day, int month, int year) {
