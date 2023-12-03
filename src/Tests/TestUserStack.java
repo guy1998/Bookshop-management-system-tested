@@ -1,10 +1,14 @@
 package Tests;
 
+import Exceptions.InvalidPasswordException;
 import Exceptions.NonExistantUserException;
+import Exceptions.UserAlreadyExistsException;
 import Users.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.ArrayList;
 
@@ -101,6 +105,47 @@ public class TestUserStack {
         assertEquals(expected, users.filterByStatus(Status.LIBRARIAN));
     }
 
+    @Test
+    public void testAddUserErrorHandling(){
+        Throwable exception = assertThrows(UserAlreadyExistsException.class, ()->{
+            users.addUser(new Administrator("John", "Doe", "Guy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002));
+        });
+        assertEquals("It seems that this user exists in the system.", exception.getMessage());
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            //Testing based on error messages as equivalence classes
+            "'Very/123', 'New password cannot be the same as old password'",
+            "'a', 'Password too short!'",
+            "'Guy_1989', 'Password cannot be the same or contain the username'",
+            "'John/123', 'Password should not contain the name or surname!'",
+            "'Hello1234', 'Password must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!'"
+    })
+    public void testModifyPassword(String password, String message){
+        try{
+            User temp = new Administrator("John", "Doe", "Guy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002);
+            Throwable exception = assertThrows(InvalidPasswordException.class, ()->users.modifyPassword(temp, password));
+            assertEquals(message, exception.getMessage());
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testModifyUsername(){
+
+    }
+
+    @Test
+    public void testModifyPhone(){
+
+    }
+
+    @Test
+    public void testModifyEmail(){
+
+    }
 
 
 }

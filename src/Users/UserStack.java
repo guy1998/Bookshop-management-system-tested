@@ -19,65 +19,32 @@ import Exceptions.UserAlreadyExistsException;
 public class UserStack implements Serializable{
 
 	private ArrayList<User> users;
-	private final File userList;
-	
+	private final UserDb proxy;
 	public UserStack() {
-		
-		userList = new File("user.dat");
+		proxy = new UserProxy();
 		users = new ArrayList<User>();
-//		if(!userList.exists())
-//			writeUsers();
-//		else
-//			users = readUsers();
-		
+        users = proxy.readUsers();
+	}
+
+	public UserStack(UserDb proxy){
+		this.proxy = proxy;
+		users = new ArrayList<User>();
+		users = proxy.readUsers();
 	}
 	
 	public UserStack(User user) {
-		
-		userList = new File("user.dat");
+
+		proxy = new UserProxy();
 		users = new ArrayList<>();
 		users.add(user);
-		writeUsers();
+		proxy.writeUsers(users);
 	
 	}
-	
-	public void writeUsers() {
-		
-		try{
-			FileOutputStream out = new FileOutputStream(userList);
-			ObjectOutputStream outOb = new ObjectOutputStream(out);
-			outOb.writeObject(users);
-			outOb.close();
-			out.close();
-		}catch (FileNotFoundException e) {
-			System.err.println("File not Found!!!");
-		} catch (IOException e) {
-			System.err.println(e.getMessage());
-		}
-		
-	}
-	
-	public ArrayList<User> readUsers() {
-		
-		try {
-			FileInputStream in = new FileInputStream(userList);
-			ObjectInputStream inOb = new ObjectInputStream(in);
-			users = (ArrayList<User>) inOb.readObject();
-			setProperties();
-			in.close();
-			inOb.close();
-		}catch (FileNotFoundException e) {
-			System.err.println("File not Found!!!");
-		} catch (ClassNotFoundException e) {
-			System.err.println("Class not Found!!!");
-		} catch (IOException e) {
-			System.err.println(e.getMessage());
-		}
-		
-		
+
+	public ArrayList<User> readUsers(){
 		return users;
 	}
-	
+
 	public User findUser(User user) {
 		for(int i=0; i<users.size(); i++)
 			if(user.equals(users.get(i)))
@@ -101,23 +68,13 @@ public class UserStack implements Serializable{
 			throw new UserAlreadyExistsException();
 
 		users.add(user);
-//		writeUsers();
+		proxy.writeUsers(users);
 	}
 
 	public void deleteUser(String username) throws NonExistantUserException{
 		User temp = this.findUser(username);
 		users.remove(this.findUser(username));
-//		writeUsers();
-	}
-	
-	public void setProperties() {
-		for(User u:users) {
-			u.setEmailProperty();
-			u.setNameProperty();
-			u.setPhoneProperty();
-			u.setSurnameProperty();
-			u.setUsernameProperty();
-		}
+		proxy.writeUsers(users);
 	}
 	
 	public ArrayList<User> filterByStatus(Status status) {
@@ -143,7 +100,7 @@ public class UserStack implements Serializable{
 			throw new InvalidPasswordException("Password must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!");
 		
 		this.findUser(user).setPassword(password);
-//		writeUsers();
+		proxy.writeUsers(users);
 		
 	}
 	
@@ -154,51 +111,51 @@ public class UserStack implements Serializable{
 			throw new InvalidUsernameException("Username must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!");
 		
 		this.findUser(user).setUserName(username);
-//		writeUsers();
+		proxy.writeUsers(users);
 	}
 	
 	public void modifyName(User user, String name) {
 		System.out.println(this.findUser(user));
 		this.findUser(user).setName(name);
-		writeUsers();
+		proxy.writeUsers(users);
 	}
 	
 	public void modifySurname(User user, String surname) {
 		this.findUser(user).setSurname(surname);
-		writeUsers();
+		proxy.writeUsers(users);
 	}
 	
 	public void modifyPhone(User user, String phone) throws InvalidPhoneNumberException{
 		if(!phone.matches("\\+3556[789]\\d{7}"))
 			throw new InvalidPhoneNumberException();
 		this.findUser(user).setPhone(phone);
-//		writeUsers();
+		proxy.writeUsers(users);
 	}
 	
 	public void modifyEmail(User user, String email) throws InvalidEmail{
 		if(!email.matches("\\w+@gmail.com"))
 			throw new InvalidEmail();
 		this.findUser(user).setEmail(email);
-//		writeUsers();
+		proxy.writeUsers(users);
 	}
 	
 	public void modifyBirthday(User user, int day, int month, int year) {
 		this.findUser(user).setBirthday(day, month, year);
-		writeUsers();
+		proxy.writeUsers(users);
 	}
 	
 	public void modifySSN(User user, String SSN) {
 		((Employee)this.findUser(user)).setSSN(SSN);
-		writeUsers();
+		proxy.writeUsers(users);
 	}
 	
 	public void modifySalary(User user, Double salary) {
 		((Employee)this.findUser(user)).setSalary(salary);
-		writeUsers();
+		proxy.writeUsers(users);
 	}
 	
 	public void modifyPermission(User user, Access permission) {
 		((Employee)this.findUser(user)).setPermission(permission);
-		writeUsers();
+		proxy.writeUsers(users);
 	}
 }

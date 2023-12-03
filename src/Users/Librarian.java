@@ -25,13 +25,13 @@ public Librarian(String name, String surname, String username, String password, 
 		super(name, surname, username, password, email, phone, day, month, year, Status.LIBRARIAN, SSN, salary, permission);
 		billDat = new File( this.getUserId() + ".dat");
 		bills = new ArrayList<>();
-		if(!billDat.exists())
-			writeBills();
-		else
-			bills = readBills();
+//		if(!billDat.exists())
+//			writeBills();
+//		else
+//			bills = readBills();
 		billFolder = new File(this.getUserId());
-		if(!billFolder.exists())
-			System.out.println(billFolder.mkdir());
+//		if(!billFolder.exists())
+//			System.out.println(billFolder.mkdir());
 		
 	}	
 
