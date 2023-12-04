@@ -13,7 +13,6 @@ public class Administrator extends User {
 
 	}
 
-	//To be tested
 	public User createUser(String name, String surname, String username, String password, String email, String phone, int day, int month, int year, String SSN, double salary, Access permission, String userType) throws Exception {
 
 		if (userType.equals("LIBRARIAN")) {
