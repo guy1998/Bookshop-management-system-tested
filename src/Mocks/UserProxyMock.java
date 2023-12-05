@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class UserProxyMock implements UserDb {
 
-    private ArrayList<User> dbUsers = new ArrayList<>();
+    private ArrayList<User> dbUsers;
 
     public UserProxyMock(ArrayList<User> users){
         dbUsers = users;
