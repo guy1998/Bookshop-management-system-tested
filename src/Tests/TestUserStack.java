@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.security.Permission;
 import java.util.ArrayList;
 
 public class TestUserStack {
@@ -132,7 +133,8 @@ public class TestUserStack {
             "'a', 'Password too short!'",
             "'Guy_1989', 'Password cannot be the same or contain the username'",
             "'John/123', 'Password should not contain the name or surname!'",
-            "'Hello1234', 'Password must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!'"
+            "'Hello1234', 'Password must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!'",
+            "'Doe/1234', 'Password should not contain the name or surname!'",
     })
     public void testModifyPassword(String password, String message){
         try{
@@ -144,11 +146,24 @@ public class TestUserStack {
         }
     }
 
+    @Test
+    public void testModifyPasswordCorrectFlow(){
+        try {
+            User temp = new Administrator("John", "Doe", "Guy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002);
+            users.modifyPassword(temp, "Hello/1234");
+            assertEquals("Hello/1234", users.findUser(temp.getUsername()).getPassword());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
     @ParameterizedTest
     @CsvSource({
         "'a', 'Username too short!'",
         "'John/1234', 'Username cannot contain your name or surname'",
-        "'Hello1234', 'Username must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!'"
+        "'Hello1234', 'Username must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!'",
+        "'Doe/1234', 'Username cannot contain your name or surname'",
     })
     public void testModifyUsername(String username, String message){
         try{
@@ -161,11 +176,33 @@ public class TestUserStack {
     }
 
     @Test
+    public void testModifyUsernameCorrectFlow(){
+        try {
+            User temp = new Administrator("John", "Doe", "Guy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002);
+            users.modifyUsername(temp, "Hello/1234");
+            assertEquals("Hello/1234", users.findUser("Hello/1234").getUsername());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
     public void testModifyPhone(){
         try {
             User temp = new Administrator("John", "Doe", "Guy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002);
             Throwable exception = assertThrows(InvalidPhoneNumberException.class, ()->users.modifyPhone(temp, "+355796105565"));
             assertEquals("Phone number should be of format +3556[7-8-9]xxxxxxx", exception.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void testModifyPhoneCorrectFlow(){
+        try {
+            User temp = new Administrator("John", "Doe", "Guy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002);
+            users.modifyPhone(temp, "+355686105565");
+            assertEquals("+355686105565", users.findUser(temp.getUsername()).getPhone());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -182,5 +219,34 @@ public class TestUserStack {
         }
     }
 
+    @Test
+    public void testModifyEmailCorrectFlow(){
+        try {
+            User temp = new Administrator("John", "Doe", "Guy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002);
+            users.modifyEmail(temp, "john@gmail.com");
+            assertEquals("john@gmail.com", users.findUser(temp.getUsername()).getEmail());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void testFullCoverage(){
+        try {
+            Employee temp = new Manager("Lewis", "Hamilton", "Ham_4404", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002, "123-4356-5673", 2000, Access.FULL);
+            users.modifySSN(temp, "345-2413-9024");
+            users.modifyPermission(temp, Access.PARTIAL);
+            users.modifySalary(temp, 2500.0);
+            users.modifyName(temp, "Levy");
+            users.modifySurname(temp, "Rossman");
+            assertEquals("345-2413-9024", ((Employee)users.findUser(temp.getUsername())).getSSN());
+            assertEquals(Access.PARTIAL, ((Employee)users.findUser(temp.getUsername())).getPermission());
+            assertEquals("Levy", users.findUser(temp.getUsername()).getName());
+            assertEquals(2500.0, ((Employee)users.findUser(temp.getUsername())).getSalary());
+            assertEquals("Rossman", users.findUser(temp.getUsername()).getSurname());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }

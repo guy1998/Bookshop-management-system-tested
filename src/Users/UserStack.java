@@ -136,11 +136,6 @@ public class UserStack implements Serializable{
 		proxy.writeUsers(users);
 	}
 	
-	public void modifyBirthday(User user, int day, int month, int year) {
-		this.findUser(user).setBirthday(day, month, year);
-		proxy.writeUsers(users);
-	}
-	
 	public void modifySSN(User user, String SSN) {
 		((Employee)this.findUser(user)).setSSN(SSN);
 		proxy.writeUsers(users);
