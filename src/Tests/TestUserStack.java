@@ -113,6 +113,18 @@ public class TestUserStack {
         assertEquals("It seems that this user exists in the system.", exception.getMessage());
     }
 
+    @Test
+    public void testAddUserCorrectScenario(){
+        ArrayList<User> result = new ArrayList<>(users.readUsers());
+        try {
+            result.add(new Administrator("John", "Doe", "Boy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002));
+            users.addUser(new Administrator("John", "Doe", "Boy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002));
+            assertEquals(result, users.readUsers());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     @ParameterizedTest
     @CsvSource({
             //Testing based on error messages as equivalence classes
