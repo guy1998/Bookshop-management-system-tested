@@ -135,6 +135,7 @@ public class TestUserStack {
             "'John/123', 'Password should not contain the name or surname!'",
             "'Hello1234', 'Password must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!'",
             "'Doe/1234', 'Password should not contain the name or surname!'",
+            "'John/1234/Doe', 'Password should not contain the name or surname!'",
     })
     public void testModifyPassword(String password, String message){
         try{
@@ -164,6 +165,7 @@ public class TestUserStack {
         "'John/1234', 'Username cannot contain your name or surname'",
         "'Hello1234', 'Username must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!'",
         "'Doe/1234', 'Username cannot contain your name or surname'",
+        "'John/1234/Doe', 'Username cannot contain your name or surname'",
     })
     public void testModifyUsername(String username, String message){
         try{

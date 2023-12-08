@@ -50,7 +50,6 @@ public class CompDate implements Comparable<CompDate>, Serializable{
 		this.year = year;
 	}
 
-	//To be tested
 	@Override
 	public int compareTo(CompDate d) {
 		
@@ -58,12 +57,12 @@ public class CompDate implements Comparable<CompDate>, Serializable{
 			return -1;
 		else if(this.year > d.getYear())
 			return 1;
-		else {
+		else{
 			if(this.month < d.getMonth())
 				return -1;
 			else if(this.month > d.getMonth())
 				return 1;
-			else {
+			else{
 				if(this.day < d.getDay())
 					return -1;
 				else if(this.day > d.getDay())
