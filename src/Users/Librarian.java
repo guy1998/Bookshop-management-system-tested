@@ -61,7 +61,6 @@ public ArrayList<Bill> readBills() {
 	return bills;
 }
 
-//To be tested
 	public int nrOfBills() {
 		int cnt = 0;
 		bills = readBills();
@@ -72,7 +71,6 @@ public ArrayList<Bill> readBills() {
 		return cnt;
 	}
 
-	//To be tested
 	public int nrOfBills(CompDate specificDate) {
 		
 		int cnt = 0;
@@ -84,8 +82,7 @@ public ArrayList<Bill> readBills() {
 		
 		return cnt;
 	}
-	
-	//To be tested
+
 	public int nrOfBills(CompDate start, CompDate end) {
 		
 		int cnt = 0;
@@ -98,7 +95,6 @@ public ArrayList<Bill> readBills() {
 		return cnt;
 	}
 
-	//To be tested
 	public int nrOfBooks(CompDate specificDate) {
 		int cnt = 0;
 		bills = readBills();
@@ -112,8 +108,7 @@ public ArrayList<Bill> readBills() {
 		
 		return cnt;
 	}
-	
-	//To be tested
+
 	public int nrOfBooks(CompDate start, CompDate end) {
 		
 		int cnt = 0;
@@ -127,7 +122,6 @@ public ArrayList<Bill> readBills() {
 		return cnt;
 	}
 
-	//To be tested
 	public double moneyMade(CompDate specificDate) {
 		double amount = 0;
 		
@@ -143,7 +137,6 @@ public ArrayList<Bill> readBills() {
 		return amount;
 	}
 
-	//To be tested
 	public double moneyMade(CompDate start, CompDate end) {
 		
 		double amount = 0;
