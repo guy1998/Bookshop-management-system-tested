@@ -1,6 +1,7 @@
 package Products;
 
-import java.io.File;
+import Utilis.CompDate;
+
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.Serializable;
@@ -8,12 +9,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import Utilis.CompDate;
-
 public class Bill implements Serializable{
 
 	private double totalAmount = 0;
-	private CompDate dateIssued;
+	protected CompDate dateIssued;
 	private ArrayList<Book> booksSold;
 
 	public Bill(ArrayList<Book> booksSold) {

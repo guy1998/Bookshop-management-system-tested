@@ -1,17 +1,11 @@
 package Users;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 
 import Products.Bill;
 import Products.Book;
-import Products.BookStock;
 import Utilis.CompDate;
+
+import java.io.*;
+import java.util.ArrayList;
 
 public class Librarian extends Employee{
 	
@@ -157,7 +151,7 @@ public ArrayList<Bill> readBills() {
 		bills = readBills();
 		for(Bill bill : bills) {
 			if(bill.getDateIssued().compareTo(start) >= 0 && bill.getDateIssued().compareTo(end) <= 0)
-				for(Book x:bill.getBooksSold())
+				for (Book x : bill.getBooksSold())
 					amount += x.getNumber() * x.getSellingPrice();
 		}
 		
