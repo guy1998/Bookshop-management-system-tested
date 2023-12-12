@@ -124,8 +124,7 @@ public class Book implements Cloneable, Serializable{
 		
 		if(o instanceof Book)
 		{
-			if(this.ISBN.equals(((Book)o).getISBN()))
-				return true;
+            return this.ISBN.equals(((Book) o).getISBN());
 		}
 		
 		return false;
