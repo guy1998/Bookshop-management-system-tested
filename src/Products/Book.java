@@ -50,7 +50,7 @@ public class Book implements Cloneable, Serializable{
 		this.authors = authors;
 	}
 
-	public boolean checkIsbnValidity(String ISBN){
+	public static boolean checkIsbnValidity(String ISBN){
 		return ISBN.matches("\\d{3}-\\d{4}-\\d{3}");
 	}
 	
