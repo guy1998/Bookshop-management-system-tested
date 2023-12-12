@@ -53,7 +53,14 @@ public class Book implements Cloneable, Serializable{
 	public static boolean checkIsbnValidity(String ISBN){
 		return ISBN.matches("\\d{3}-\\d{4}-\\d{3}");
 	}
-	
+
+	public Date getDate(){
+		return datePublished;
+	}
+
+	public Author[] getAuthors(){
+		return authors;
+	}
 	public String getISBN(){return ISBN;}
 
 	public String getTitle(){return title;}
