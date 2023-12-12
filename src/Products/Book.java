@@ -116,7 +116,7 @@ public class Book implements Cloneable, Serializable{
 			authorsName.append(", ");
 		}
 
-		return "\"" + this.title + "\" by " + authorsName + " Genre: " + category;
+		return "\"" + this.title + "\" by " + authorsName + "Genre: " + category;
 	}
 
 	@Override
