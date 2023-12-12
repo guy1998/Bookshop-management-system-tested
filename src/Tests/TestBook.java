@@ -1,13 +1,11 @@
 package Tests;
 
+import Exceptions.InvalidBookInfo;
 import Products.Author;
 import Products.Book;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,6 +40,18 @@ public class TestBook {
             Book book = new Book("132-2141-421", "Book with 2 authors", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author[]{new Author("Author", "1"), new Author("Author", "2")});
             assertEquals("\"Book with 2 authors\" by Author 1, Author 2, Genre: Fantasy", book.toString());
         });
+    }
+
+    @Test
+    public void testEquals() {
+        try {
+            Book book = new Book("132-2141-421", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling"));
+            assertFalse(book.equals(new Author("Joanne", "K", "Rowling")));
+            assertFalse(book.equals(new Book("111-1111-111", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling"))));
+            assertTrue(book.equals(new Book("132-2141-421", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling"))));
+        } catch (InvalidBookInfo e) {
+            System.out.println(e.getMessage());;
+        }
     }
 
 }
