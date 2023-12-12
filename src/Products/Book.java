@@ -115,7 +115,6 @@ public class Book implements Cloneable, Serializable{
 		return "\"" + this.title + "\" by " + authorsName + " Genre: " + category;
 	}
 
-	//To be tested
 	@Override
 	public boolean equals(Object o) {
 		
