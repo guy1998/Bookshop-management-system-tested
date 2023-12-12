@@ -33,7 +33,7 @@ public class Book implements Cloneable, Serializable{
 
 	public Book(String ISBN, String title, String category, double purchasePrice, double originalPrice, double sellingPrice, int day, int month, int year, Author ... authors) throws InvalidBookInfo{
 		
-		if(!ISBN.matches("\\d{3}-\\d{4}-\\d{3}"))
+		if(!checkIsbnValidity(ISBN))
 			throw new InvalidBookInfo("Book ISBN must be of the format xxx-xxxx-xxx");
 		
 		this.ISBN = ISBN;
@@ -50,6 +50,10 @@ public class Book implements Cloneable, Serializable{
 		this.authors = authors;
 	}
 
+	public boolean checkIsbnValidity(String ISBN){
+		return ISBN.matches("\\d{3}-\\d{4}-\\d{3}");
+	}
+	
 	public String getISBN(){return ISBN;}
 
 	public String getTitle(){return title;}
