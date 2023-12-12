@@ -1,11 +1,7 @@
 package Products;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,58 +12,17 @@ import Exceptions.InvalidBookInfo;
 public class BookStock implements Serializable{
 	
 	private ArrayList<Book> productList;
-	private final File products;
-	
-	public BookStock() {
-		products = new File("ProductList.dat");
-		productList = new ArrayList<>();
-		if(!products.exists())
-			writeProducts();
-		else 
-			readProducts();
-		
+	public BookDb proxy;
+	public BookStock(){
+		proxy = new BookProxy();
+		productList = proxy.readBooks();
+	}
+	public BookStock(BookDb proxy) {
+		this.proxy = proxy;
 	}
 	
 	public void writeProducts() {
-		try {
-			FileOutputStream out = new FileOutputStream(products);
-			ObjectOutputStream outOb = new ObjectOutputStream(out);
-			outOb.writeObject(productList);
-			outOb.close();
-			out.close();
-		}catch(Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
-	
-	public void readProducts() {
-		try {
-			FileInputStream in = new FileInputStream(products);
-			ObjectInputStream inOb = new ObjectInputStream(in);
-			productList = (ArrayList<Book>)inOb.readObject();
-			setProperties();
-			inOb.close();
-			in.close();
-		}catch (FileNotFoundException e) {
-			System.err.println("File not Found!!!");
-		} catch (ClassNotFoundException e) {
-			System.err.println("Class not Found!!!");
-		} catch (IOException e) {
-			System.err.println(e.getMessage());
-		}
-	}
-	
-	public void setProperties() {
-		for(Book x: productList) {
-			x.setAuthorProperty();
-			x.setCategoryProperty();
-			x.setIsbnProperty();
-			x.setTitleProperty();
-			x.setPriceProperty();
-			x.setNumberProperty();
-			x.setPurchase();
-			x.setOriginal();
-		}
+		proxy.writeBooks(productList);
 	}
 	
 	//To be tested
