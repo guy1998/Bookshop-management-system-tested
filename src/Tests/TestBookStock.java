@@ -59,11 +59,18 @@ public class TestBookStock {
     public void testRunningLowWithAllBooksRunningLow(){
         books.get(0).addNumber(-3);
         books.get(2).addNumber(-4);
-        runningLow.add(books.get(0));
+        runningLow.add(0, books.get(0));
         runningLow.add(books.get(2));
         BookStock stock = new BookStock(new BookProxyMock(books));
         assertEquals(runningLow, stock.runningLow());
     }
 
+    @Test
+    public void testRunningLowWithOnlyOneBook(){
+        books.remove(0);
+        books.remove(1);
+        BookStock stock = new BookStock(new BookProxyMock(books));
+        assertEquals(runningLow, stock.runningLow());
+    }
 
 }
