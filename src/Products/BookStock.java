@@ -19,6 +19,7 @@ public class BookStock implements Serializable{
 	}
 	public BookStock(BookDb proxy) {
 		this.proxy = proxy;
+		productList = proxy.readBooks();
 	}
 	
 	public void writeProducts() {
@@ -88,7 +89,7 @@ public class BookStock implements Serializable{
 		
 		return temp;
 	}
-	
+
 	public ArrayList<Book> getProductList1(){
 		return productList;
 	}
@@ -97,11 +98,9 @@ public class BookStock implements Serializable{
 		Book temp =  productList.remove(productList.indexOf(book));
 		writeProducts();
 		return temp;
-
 	}
 	
 	public void modifyTitle(Book book, String title) {
-		
 		this.findBook(book).setTitle(title);
 		writeProducts();
 	}
