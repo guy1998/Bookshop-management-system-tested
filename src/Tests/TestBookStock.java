@@ -72,7 +72,7 @@ public class TestBookStock {
         BookStock stock = new BookStock(new BookProxyMock(books));
         assertEquals(runningLow, stock.runningLow());
     }
-    
+
     @Test
     public void testFindBookByTitle(){
         assertAll("Test for finding book by title", ()->{
@@ -81,6 +81,9 @@ public class TestBookStock {
         }, ()->{
             BookStock stock = new BookStock(new BookProxyMock(books));
             assertEquals(new Book("132-2141-421", "Harry Potter", "Fantasy", 13.5, 14.5, 15.5, 1, 1, 1991, new Author("Joanne", "K", "Rowling")), stock.findBook("Harry Potter"));
+        }, ()->{
+            BookStock stock = new BookStock(new BookProxyMock(new ArrayList<Book>()));
+            assertNull(stock.findBook("Hellooo"));
         });
     }
     
@@ -94,6 +97,9 @@ public class TestBookStock {
             Book existantBook = new Book("132-2141-421", "Harry Potter", "Fantasy", 13.5, 14.5, 15.5, 1, 1, 1991, new Author("Joanne", "K", "Rowling"));
             BookStock stock = new BookStock(new BookProxyMock(books));
             assertEquals(new Book("132-2141-421", "Harry Potter", "Fantasy", 13.5, 14.5, 15.5, 1, 1, 1991, new Author("Joanne", "K", "Rowling")), stock.findBook(existantBook));
+        }, ()->{
+            BookStock stock = new BookStock(new BookProxyMock(new ArrayList<>()));
+            assertNull(stock.findBook(new Book("132-2141-421", "Harry Potter", "Fantasy", 13.5, 14.5, 15.5, 1, 1, 1991, new Author("Joanne", "K", "Rowling"))));
         });
     }
 
