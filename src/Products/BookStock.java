@@ -89,16 +89,6 @@ public class BookStock implements Serializable{
 		return temp;
 	}
 	
-	public String getProductList() {
-		StringBuilder products = new StringBuilder();
-		for(int i=0; i<productList.size(); i++) {
-			products.append(productList.get(i).toString());
-			products.append("\n");
-		}
-		
-		return products.toString();
-	}
-	
 	public ArrayList<Book> getProductList1(){
 		return productList;
 	}
@@ -112,11 +102,7 @@ public class BookStock implements Serializable{
 	
 	public void modifyTitle(Book book, String title) {
 		
-		for(Book x : productList)
-			if(x.equals(book)) {
-				x.setTitle(title);
-				x.setTitleProperty();
-			}
+		this.findBook(book).setTitle(title);
 		writeProducts();
 	}
 	
