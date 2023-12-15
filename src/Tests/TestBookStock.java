@@ -73,4 +73,28 @@ public class TestBookStock {
         assertEquals(runningLow, stock.runningLow());
     }
 
+    @Test
+    public void testFindBookByTitle(){
+        assertAll("Test for finding book by title", ()->{
+            BookStock stock = new BookStock(new BookProxyMock(books));
+            assertNull(stock.findBook("Does not exist"));
+        }, ()->{
+            BookStock stock = new BookStock(new BookProxyMock(books));
+            assertEquals(new Book("132-2141-421", "Harry Potter", "Fantasy", 13.5, 14.5, 15.5, 1, 1, 1991, new Author("Joanne", "K", "Rowling")), stock.findBook("Harry Potter"));
+        });
+    }
+    
+    @Test
+    public void testFindBookByReference(){
+        assertAll("Tests for finding book by reference", ()->{
+            Book nonExistantBook = new Book("111-2141-421", "Does not exist", "Fantasy", 13.5, 14.5, 15.5, 1, 1, 1991, new Author("Joanne", "K", "Rowling"));
+            BookStock stock = new BookStock(new BookProxyMock(books));
+            assertNull(stock.findBook(nonExistantBook));
+        }, ()->{
+            Book existantBook = new Book("132-2141-421", "Harry Potter", "Fantasy", 13.5, 14.5, 15.5, 1, 1, 1991, new Author("Joanne", "K", "Rowling"));
+            BookStock stock = new BookStock(new BookProxyMock(books));
+            assertEquals(new Book("132-2141-421", "Harry Potter", "Fantasy", 13.5, 14.5, 15.5, 1, 1, 1991, new Author("Joanne", "K", "Rowling")), stock.findBook(existantBook));
+        });
+    }
+
 }
