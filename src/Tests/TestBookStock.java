@@ -103,4 +103,18 @@ public class TestBookStock {
         });
     }
 
+    @Test
+    public void testExist(){
+        assertAll("Tests for exist method", ()->{
+            BookStock stock = new BookStock(new BookProxyMock(books));
+            assertTrue(stock.exists("132-2141-421"));
+        }, ()->{
+            BookStock stock = new BookStock(new BookProxyMock(books));
+            assertFalse(stock.exists("111-2141-421"));
+        }, ()->{
+            BookStock stock = new BookStock(new BookProxyMock(new ArrayList<>()));
+            assertFalse(stock.exists("111-2141-421"));
+        });
+    }
+
 }
