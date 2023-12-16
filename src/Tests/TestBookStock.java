@@ -117,4 +117,18 @@ public class TestBookStock {
         });
     }
 
+    @Test
+    public void testEmpty(){
+        assertAll("Tests for empty method", ()->{
+            assertTrue((new BookStock(new BookProxyMock(new ArrayList<>()))).empty());
+        }, ()->{
+            assertFalse((new BookStock(new BookProxyMock(books))).empty());
+        }, ()->{
+            books.get(0).addNumber(-(books.get(0).getNumber()));
+            books.get(1).addNumber(-(books.get(1).getNumber()));
+            books.get(2).addNumber(-(books.get(2).getNumber()));
+            assertTrue((new BookStock(new BookProxyMock(books))).empty());
+        });
+    }
+
 }
