@@ -1,9 +1,11 @@
 package Tests;
 
+import Exceptions.BookExistsException;
 import Exceptions.InvalidBookInfo;
 import Mocks.BookProxyMock;
 import Products.Author;
 import Products.Book;
+import Products.BookDb;
 import Products.BookStock;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -128,6 +130,22 @@ public class TestBookStock {
             books.get(1).addNumber(-(books.get(1).getNumber()));
             books.get(2).addNumber(-(books.get(2).getNumber()));
             assertTrue((new BookStock(new BookProxyMock(books))).empty());
+        });
+    }
+
+    @Test
+    public void testAddBook(){
+        assertAll("Tests for adding book", ()->{
+            Book addable = new Book("111-2141-421", "Does not exist", "Fantasy", 13.5, 14.5, 15.5, 1, 1, 1991, new Author("Joanne", "K", "Rowling"));
+            BookDb proxy = new BookProxyMock(books);
+            BookStock stock = new BookStock(proxy);
+            stock.addBook(addable);
+            assertEquals(addable, proxy.readBooks().get(proxy.readBooks().size() - 1));
+        }, ()->{
+            Book existantBook = new Book("132-2141-421", "Harry Potter", "Fantasy", 13.5, 14.5, 15.5, 1, 1, 1991, new Author("Joanne", "K", "Rowling"));
+            BookStock stock = new BookStock(new BookProxyMock(books));
+            Throwable exception = assertThrows(BookExistsException.class, ()->stock.addBook(existantBook));
+            assertEquals("There exists a book with this ISBN", exception.getMessage());
         });
     }
 
