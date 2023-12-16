@@ -9,6 +9,8 @@ import Products.BookDb;
 import Products.BookStock;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.ArrayList;
 
@@ -147,6 +149,35 @@ public class TestBookStock {
             Throwable exception = assertThrows(BookExistsException.class, ()->stock.addBook(existantBook));
             assertEquals("There exists a book with this ISBN", exception.getMessage());
         });
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "''", //Empty ISBN
+            "'132-214-421'", //3 chars entered where 4 are needed
+            "'132-21441-421'", //5 chars entered where 4 are needed
+            "'1312142-421'", //Dashes missing
+            "'13-2142-421'", //2 chars entered where 3 are needed (1st position)
+            "'132-2142-41'", //2 chars entered where 3 are needed (2nd position)
+            "'132-2142-4124'", //4 chars entered where 3 are needed
+            "'132-214a-421'", //non numeric elements are entered
+    })
+    public void testModifyIsbnError(String ISBN){
+        BookStock stock = new BookStock(new BookProxyMock(books));
+        Throwable exception = assertThrows(InvalidBookInfo.class, () -> stock.modifyISBN(books.get(0), ISBN));
+        assertEquals("Book ISBN must be of the format xxx-xxxx-xxx", exception.getMessage());
+    }
+
+    @Test
+    public void testModifyIsbnCorrect(){
+        BookDb proxy = new BookProxyMock(books);
+        BookStock stock = new BookStock(proxy);
+        try{
+            stock.modifyISBN(books.get(0), "934-5283-109");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        assertEquals(books.get(0), proxy.readBooks().get(0));
     }
 
 }
