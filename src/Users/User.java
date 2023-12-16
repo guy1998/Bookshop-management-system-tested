@@ -128,7 +128,6 @@ public abstract class User implements Serializable{
 		return userId;
 	}
 
-	//To be tested
 	@Override
 	public boolean equals (Object o) {
 		
