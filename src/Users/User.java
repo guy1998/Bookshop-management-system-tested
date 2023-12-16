@@ -63,10 +63,10 @@ public abstract class User implements Serializable{
 		this.userId = UUID.randomUUID().toString();
 		msg = new File(this.userId + ".msg");
 		messages = new ArrayList<>();
-//		if(!msg.exists())
-//			writeMessages();
-//		else
-//			readMessages();
+		if(!msg.exists())
+			writeMessages();
+		else
+			readMessages();
 		
 	}
 
