@@ -23,13 +23,12 @@ public abstract class User implements Serializable{
 	private CompDate birthday;
 	private Status status;
 	private final String userId;
-	private final File msg;
-	private ArrayList<Message> messages;
 	private transient SimpleStringProperty nameProperty;
 	private transient SimpleStringProperty surnameProperty;
 	private transient SimpleStringProperty usernameProperty;
 	private transient SimpleStringProperty emailProperty;
 	private transient SimpleStringProperty phoneProperty;
+	private final MessageWriter writer;
 
 	protected User(String name, String surname, String username, String password, String email, String phone, int day, int month, int year, Status status) throws Exception{
 		
@@ -61,12 +60,7 @@ public abstract class User implements Serializable{
 		this.phone = phone;
 		birthday = new CompDate(day, month, year);
 		this.userId = UUID.randomUUID().toString();
-		msg = new File(this.userId + ".msg");
-		messages = new ArrayList<>();
-		if(!msg.exists())
-			writeMessages();
-		else
-			readMessages();
+		writer = new MessageWriter(this.userId + ".msg");
 		
 	}
 
@@ -176,58 +170,18 @@ public abstract class User implements Serializable{
 	public void setPhoneProperty() {
 		this.phoneProperty = new SimpleStringProperty(this.phone);
 	}
-	
+
 	public void writeMessages() {
-		try {
-			FileOutputStream out = new FileOutputStream(msg);
-			ObjectOutputStream obOut = new ObjectOutputStream(out);
-			if(messages.isEmpty())
-				messages.add(new Message());
-			obOut.writeObject(messages);
-			obOut.close();
-			out.close();
-		}catch (FileNotFoundException e) {
-			System.err.println("File not Found!!!");
-		}catch (IOException e) {
-			System.err.println(e.getMessage());
-		}
+		writer.writeMessages();
 	}
-	
+
 	public void writeMessages(ArrayList<Message> moreMsg) {
-		try {
-			FileOutputStream out = new FileOutputStream(msg);
-			ObjectOutputStream obOut = new ObjectOutputStream(out);
-			this.messages = moreMsg;
-			obOut.writeObject(messages);
-			obOut.close();
-			out.close();
-		}catch (FileNotFoundException e) {
-			System.err.println("File not Found!!!");
-		}catch (IOException e) {
-			System.err.println(e.getMessage());
-		}
+		writer.writeMessages(moreMsg);
 	}
-	
+
 	public ArrayList<Message> readMessages(){
-		try {
-			FileInputStream in = new FileInputStream(msg);
-			ObjectInputStream inOb = new ObjectInputStream(in);
-			messages = (ArrayList<Message>) inOb.readObject();
-			in.close();
-			inOb.close();
-		}catch (FileNotFoundException e) {
-			System.err.println("File not Found!!!");
-		} catch (ClassNotFoundException e) {
-			System.err.println("Class not Found!!!");
-		} catch (IOException e) {
-			System.err.println(e.getMessage());
-		}
-		
-		for(Message m:messages)
-			System.out.println(m.getText());
-		
-		return messages;
+		return writer.readMessages();
 	}
-	
+
 	
 }

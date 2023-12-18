@@ -367,7 +367,7 @@ public class CreateUserView {
 			
 		    try {
 		    LocalDate ld = birthday.getValue();
-		    if(!ssnField.getText().matches("\\d{3}-\\d{4}-\\d{4}"))
+		    if(!ssnField.getText().matches("\\d{3}-\\d{4}-\\d{3}"))
 					throw new InvalidEmployeeInfo("The SSN should be of the form xxx-xxxx-xxxx where x-es can be any digit but cannot be other characters.");
 		    
 			User temp = admin.createUser(nameField.getText(), surnameField.getText(), usernameField.getText(), passwordField.getText(), emailField.getText(), phoneField.getText(),
