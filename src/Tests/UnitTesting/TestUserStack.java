@@ -1,4 +1,4 @@
-package Tests;
+package Tests.UnitTesting;
 
 import Exceptions.*;
 import Mocks.UserProxyMock;

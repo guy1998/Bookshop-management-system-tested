@@ -1,4 +1,4 @@
-package Tests;
+package Tests.UnitTesting;
 
 import Utilis.CompDate;
 import org.junit.jupiter.params.ParameterizedTest;
