@@ -11,53 +11,24 @@ public class Librarian extends Employee{
 	
 	
 	private final File billFolder;
-	private final File billDat;
 	private ArrayList<Bill> bills;
+	private BillWriter writer;
 	
 public Librarian(String name, String surname, String username, String password, String email, String phone, int day, int month, int year, String SSN, double salary, Access permission) throws Exception{
-		
 		super(name, surname, username, password, email, phone, day, month, year, Status.LIBRARIAN, SSN, salary, permission);
-		billDat = new File( this.getUserId() + ".dat");
+		writer = new BillWriter("Database/Bills/BinaryBill/" +this.getUserId() + ".dat");
 		bills = new ArrayList<>();
-		if(!billDat.exists())
-			writeBills();
-		else
-			bills = readBills();
-		billFolder = new File(this.getUserId());
+		billFolder = new File("Database/Bills/TextBill/" + this.getUserId());
 		if(!billFolder.exists())
 			System.out.println(billFolder.mkdir());
-		
 	}	
 
 public void writeBills() {
-	try {
-		FileOutputStream out = new FileOutputStream(billDat);
-		ObjectOutputStream outOb = new ObjectOutputStream(out);
-		outOb.writeObject(bills);
-		outOb.close();
-		out.close();
-	}catch (FileNotFoundException e) {
-		System.err.println("File not Found!!!");
-	} catch (IOException e) {
-		System.err.println(e.getMessage());
-	}
+	writer.writeBills(bills);
 }
 
 public ArrayList<Bill> readBills() {
-	try {
-		FileInputStream in = new FileInputStream(billDat);
-		ObjectInputStream inOb = new ObjectInputStream(in);
-		bills = (ArrayList<Bill>) inOb.readObject();
-		in.close();
-		inOb.close();
-	}catch (FileNotFoundException e) {
-		System.err.println("File not Found!!!");
-	} catch (ClassNotFoundException e) {
-		System.err.println("Class not Found!!!");
-	} catch (IOException e) {
-		System.err.println(e.getMessage());
-	}
-	
+	bills = writer.readBills();
 	return bills;
 }
 
@@ -67,7 +38,7 @@ public ArrayList<Bill> readBills() {
 		for(Bill bill : bills) {
 			cnt++;
 		}
-		
+
 		return cnt;
 	}
 
@@ -151,7 +122,6 @@ public ArrayList<Bill> readBills() {
 		return amount;
 	}
 
-	//To be tested
 	public double createBill(ArrayList<Book> books) throws Exception{
 		
 		bills = readBills();

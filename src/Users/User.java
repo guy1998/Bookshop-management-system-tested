@@ -60,7 +60,7 @@ public abstract class User implements Serializable{
 		this.phone = phone;
 		birthday = new CompDate(day, month, year);
 		this.userId = UUID.randomUUID().toString();
-		writer = new MessageWriter(this.userId + ".msg");
+		writer = new MessageWriter("Database/Messages/" + this.userId + ".msg");
 		
 	}
 

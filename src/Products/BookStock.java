@@ -14,7 +14,7 @@ public class BookStock implements Serializable{
 	private ArrayList<Book> productList;
 	public BookDb proxy;
 	public BookStock(){
-		proxy = new BookProxy();
+		proxy = new BookProxy("Database/products.dat");
 		productList = proxy.readBooks();
 	}
 	public BookStock(BookDb proxy) {

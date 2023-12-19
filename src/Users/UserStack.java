@@ -14,7 +14,7 @@ public class UserStack implements Serializable{
 	private ArrayList<User> users;
 	private final UserDb proxy;
 	public UserStack() {
-		proxy = new UserProxy();
+		proxy = new UserProxy("Database/user.dat");
 		users = new ArrayList<User>();
         users = proxy.readUsers();
 	}
@@ -27,7 +27,7 @@ public class UserStack implements Serializable{
 	
 	public UserStack(User user) {
 
-		proxy = new UserProxy();
+		proxy = new UserProxy("Database/user.dat");
 		users = new ArrayList<>();
 		users.add(user);
 		proxy.writeUsers(users);

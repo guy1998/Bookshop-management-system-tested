@@ -7,8 +7,8 @@ public class UserProxy implements UserDb{
 
     private final File userList;
 
-    public UserProxy(){
-        userList = new File("user.dat");
+    public UserProxy(String filePath){
+        userList = new File(filePath);
         if(!userList.exists())
 			writeUsers(new ArrayList<User>());
     }

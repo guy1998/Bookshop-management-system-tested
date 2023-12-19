@@ -7,8 +7,8 @@ public class BookProxy implements BookDb{
 
     private final File products;
 
-    public BookProxy(){
-        products = new File("ProductList.dat");
+    public BookProxy(String filePath){
+        products = new File(filePath);
         if(!products.exists())
             writeBooks(new ArrayList<Book>());
     }
