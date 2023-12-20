@@ -37,6 +37,6 @@ public class TransactionWriter {
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
-
+        return new ArrayList<>();//idk it wouldnt work w/o it
     }
 }
