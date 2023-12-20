@@ -13,27 +13,13 @@ public class MessageWriter implements Serializable{
     public MessageWriter(String filePath){
         msg = new File(filePath);
         messages = new ArrayList<>();
-        if(!msg.exists())
-            writeMessages();
+        if(!msg.exists()) {
+            messages.add(new Message());
+            writeMessages(messages);
+        }
         else
             readMessages();
     }
-    public void writeMessages() {
-        try {
-            FileOutputStream out = new FileOutputStream(msg);
-            ObjectOutputStream obOut = new ObjectOutputStream(out);
-            if(messages.isEmpty())
-                messages.add(new Message());
-            obOut.writeObject(messages);
-            obOut.close();
-            out.close();
-        }catch (FileNotFoundException e) {
-            System.err.println("File not Found!!!");
-        }catch (IOException e) {
-            System.err.println(e.getMessage());
-        }
-    }
-
     public void writeMessages(ArrayList<Message> moreMsg) {
         try {
             FileOutputStream out = new FileOutputStream(msg);

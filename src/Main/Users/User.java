@@ -172,7 +172,7 @@ public abstract class User implements Serializable{
 	}
 
 	public void writeMessages() {
-		writer.writeMessages();
+		writer.writeMessages(readMessages());
 	}
 
 	public void writeMessages(ArrayList<Message> moreMsg) {
