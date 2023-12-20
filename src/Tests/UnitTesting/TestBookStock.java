@@ -1,12 +1,12 @@
 package Tests.UnitTesting;
 
-import Exceptions.BookExistsException;
-import Exceptions.InvalidBookInfo;
+import Main.Exceptions.BookExistsException;
+import Main.Exceptions.InvalidBookInfo;
 import Mocks.BookProxyMock;
-import Products.Author;
-import Products.Book;
-import Products.BookDb;
-import Products.BookStock;
+import Main.Products.Author;
+import Main.Products.Book;
+import Main.Products.BookDb;
+import Main.Products.BookStock;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

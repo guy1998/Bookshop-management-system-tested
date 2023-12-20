@@ -1,7 +1,7 @@
 package Mocks;
 
-import Users.Status;
-import Users.User;
+import Main.Users.Status;
+import Main.Users.User;
 
 public class UserModelMock extends User {
     public UserModelMock(String name, String surname, String username, String password, String email, String phone, int day, int month, int year) throws Exception {

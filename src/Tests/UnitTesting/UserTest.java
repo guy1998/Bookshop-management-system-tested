@@ -1,11 +1,11 @@
 package Tests.UnitTesting;
 
-import Exceptions.InvalidEmail;
-import Exceptions.InvalidPasswordException;
-import Exceptions.InvalidPhoneNumberException;
-import Exceptions.InvalidUsernameException;
+import Main.Exceptions.InvalidEmail;
+import Main.Exceptions.InvalidPasswordException;
+import Main.Exceptions.InvalidPhoneNumberException;
+import Main.Exceptions.InvalidUsernameException;
 import Mocks.UserModelMock;
-import Users.User;
+import Main.Users.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

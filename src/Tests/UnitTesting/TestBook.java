@@ -1,8 +1,8 @@
 package Tests.UnitTesting;
 
-import Exceptions.InvalidBookInfo;
-import Products.Author;
-import Products.Book;
+import Main.Exceptions.InvalidBookInfo;
+import Main.Products.Author;
+import Main.Products.Book;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

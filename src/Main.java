@@ -4,7 +4,7 @@ import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 
-import GUI.*;
+import Main.GUI.*;
 
 public class Main extends Application{
 	

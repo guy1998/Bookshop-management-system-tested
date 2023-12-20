@@ -1,6 +1,6 @@
 package Tests.UnitTesting;
 
-import Utilis.CompDate;
+import Main.Utilis.CompDate;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 

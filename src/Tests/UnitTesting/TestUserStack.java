@@ -1,15 +1,14 @@
 package Tests.UnitTesting;
 
-import Exceptions.*;
+import Main.Exceptions.*;
 import Mocks.UserProxyMock;
-import Users.*;
+import Main.Users.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import java.security.Permission;
 import java.util.ArrayList;
 
 public class TestUserStack {

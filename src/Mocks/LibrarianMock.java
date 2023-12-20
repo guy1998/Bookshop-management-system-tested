@@ -1,10 +1,10 @@
 package Mocks;
 
-import Products.Bill;
-import Products.Book;
-import Users.Access;
-import Users.Librarian;
-import Utilis.CompDate;
+import Main.Products.Bill;
+import Main.Products.Book;
+import Main.Users.Access;
+import Main.Users.Librarian;
+import Main.Utilis.CompDate;
 
 import java.util.ArrayList;
 import java.util.HashMap;

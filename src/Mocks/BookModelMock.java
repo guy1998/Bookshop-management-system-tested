@@ -1,8 +1,8 @@
 package Mocks;
 
-import Exceptions.InvalidBookInfo;
-import Products.Author;
-import Products.Book;
+import Main.Exceptions.InvalidBookInfo;
+import Main.Products.Author;
+import Main.Products.Book;
 
 public class BookModelMock extends Book {
     public BookModelMock(String title, double sellingPrice) throws InvalidBookInfo {
