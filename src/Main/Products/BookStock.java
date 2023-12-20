@@ -145,34 +145,13 @@ public class BookStock implements Serializable{
 	}
 	//To be tested
 	public boolean categoryExists(String category) {
-		
-		File file = new File("Categories.txt");
-		Scanner input = null;
-		try {
-			input = new Scanner(file);
-		}catch(FileNotFoundException e) {
-			System.out.println("Categories is not a file");
-		}
-		
-		while(input != null && input.hasNext()) {
-			if(input.next().equals(category))
-				return true;
-		}
-		
-		return false;
+		CategoryWriter c_writer = new CategoryWriter("Database/Categories.txt");
+		return c_writer.categoryExists(category);
 	}
 	
 	public void addCategory(String newCategory) {
-		File file = new File("Categories.txt");
-		FileOutputStream out;
-		try {
-			out = new FileOutputStream(file, true);
-			out.write(("\n"+newCategory).getBytes(), 0, ("\n"+newCategory).length());
-			out.close();
-		}catch(Exception e) {
-			System.out.println("Please dont happen");
-		}
-				
+		CategoryWriter c_writer = new CategoryWriter("Database/Categories.txt");
+		c_writer.addCategory(newCategory);
 	}
 			
 }
