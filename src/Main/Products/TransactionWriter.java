@@ -4,18 +4,16 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class TransactionWriter {
-    private final ArrayList<Transaction> transactions;
     private final File tFile;
     public TransactionWriter(String pathName) {
         tFile = new File(pathName);
-        transactions = new ArrayList<>();
         if(!tFile.exists())
-            writeTransactions();
+            writeTransactions(new ArrayList<>());
         else
             readTransactions();
     }
 
-    public void writeTransactions() {
+    public void writeTransactions(ArrayList<Transaction> transactions) {
 
         try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(tFile))) {
             objectOutputStream.writeObject(transactions);
@@ -37,6 +35,6 @@ public class TransactionWriter {
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
-        return new ArrayList<>();//idk it wouldnt work w/o it
+        return new ArrayList<>();
     }
 }

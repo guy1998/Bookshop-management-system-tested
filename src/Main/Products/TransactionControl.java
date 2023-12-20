@@ -13,7 +13,7 @@ public class TransactionControl implements Serializable{
 	}
 	
 	public void writeTransactions() {
-		writer.writeTransactions();
+		writer.writeTransactions(transactions);
 	}
 	
 	public void readTransactions() {
