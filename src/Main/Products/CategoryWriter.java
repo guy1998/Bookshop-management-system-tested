@@ -2,7 +2,7 @@ package Main.Products;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class CategoryWriter {
@@ -21,7 +21,7 @@ public class CategoryWriter {
         }
 
         while(input != null && input.hasNext()) {
-            if(input.next().equals(category))
+            if(input.nextLine().equals(category))
                 return true;
         }
 
@@ -29,10 +29,11 @@ public class CategoryWriter {
     }
 
     public void addCategory(String newCategory) {
-        FileOutputStream out;
+        FileWriter out;
         try {
-            out = new FileOutputStream(file, true);
-            out.write(("\n"+newCategory).getBytes(), 0, ("\n"+newCategory).length());
+            out = new FileWriter(file.getPath(), true);
+            out.append(newCategory);
+            out.append("\n");
             out.close();
         }catch(Exception e) {
             System.out.println("It won't happen");

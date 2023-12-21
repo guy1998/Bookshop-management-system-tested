@@ -42,6 +42,7 @@ public class TestMessageWriter {
         MessageWriter testWriter = new MessageWriter(tempFolder.getPath() + "Obviously non existent path");
         ArrayList<Message> messages = testWriter.readMessages();
         assertEquals(1, messages.size());
+        assertTrue((new File(tempFolder.getPath() + "Obviously non existent path")).exists());
     }
 
     @Test
