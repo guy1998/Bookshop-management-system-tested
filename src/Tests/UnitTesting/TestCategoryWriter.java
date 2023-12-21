@@ -35,7 +35,7 @@ public class TestCategoryWriter {
         File[] files = tempFolder.listFiles();
         if(files!=null) {
             for(File f: files) {
-                f.delete();
+                System.out.println(f.delete());
             }
         }
     }
@@ -69,6 +69,7 @@ public class TestCategoryWriter {
         while(input.hasNext()){
             assertEquals("Fantasy", input.nextLine());
         }
+        input.close();
     }
 
     @Test
@@ -81,5 +82,6 @@ public class TestCategoryWriter {
             System.out.println(temp);
             assertEquals(s, temp);
         }
+        input.close();
     }
 }

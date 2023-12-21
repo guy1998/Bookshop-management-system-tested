@@ -18,13 +18,16 @@ public class CategoryWriter {
             input = new Scanner(file);
         }catch(FileNotFoundException e) {
             System.out.println("Categories is not a file");
+            return false;
         }
 
-        while(input != null && input.hasNext()) {
-            if(input.nextLine().equals(category))
+        while(input.hasNext()) {
+            if(input.nextLine().equals(category)) {
+                input.close();
                 return true;
+            }
         }
-
+        input.close();
         return false;
     }
 
