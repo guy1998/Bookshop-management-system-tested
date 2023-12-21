@@ -1,8 +1,8 @@
 package Tests.IntegrationTesting;
 
+import Main.Exceptions.NonExistantUserException;
 import Main.Exceptions.UserAlreadyExistsException;
 import Main.Users.*;
-import Mocks.UserProxyMock;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -61,6 +61,7 @@ public class UserStackUserProxyIntegrationTest {
         inOb.close();
         return new_users;
     }
+
     @Test
     public void testIntegrationAddUserWriteUsers() throws Exception{
         User existent_user = new Administrator("John", "Doe", "Guy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002);
@@ -69,11 +70,32 @@ public class UserStackUserProxyIntegrationTest {
         assertAll("Integration between addUser and writeUsers", ()->{
             Throwable exception = assertThrows(UserAlreadyExistsException.class, ()->users.addUser(existent_user));
             assertEquals("It seems that this user exists in the system.", exception.getMessage());
+            ArrayList<User> new_users = auxiliaryReader(new File(tempFile.getPath()));
+            assertEquals(new_users.size(), myUsers.size()); //making sure the file did not change
         }, ()->{
             users.addUser(non_existent_user);
             ArrayList<User> new_users = auxiliaryReader(new File(tempFile.getPath()));
             assertEquals(1, new_users.size() - myUsers.size());
             assertEquals(non_existent_user, new_users.get(new_users.size() - 1));
+        });
+    }
+
+    @Test
+    public void testIntegrationDeleteUserWriteUsers() throws Exception{
+        User existent_user = new Administrator("John", "Doe", "Guy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002);
+        User non_existent_user = new Administrator("John", "Doe", "Guy_1999", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002);
+        users = new UserStack(new UserProxy(tempFile.getPath()));
+        assertAll("Integration between deleteUser and writeUsers", ()->{
+            Throwable exception = assertThrows(NonExistantUserException.class, ()->users.deleteUser(non_existent_user.getUsername()));
+            assertEquals("This user does not exist!", exception.getMessage());
+            ArrayList<User> new_users = auxiliaryReader(new File(tempFile.getPath()));
+            assertEquals(new_users.size(), myUsers.size());
+        }, ()->{
+            users.deleteUser(existent_user.getUsername());
+            ArrayList<User> new_users = auxiliaryReader(new File(tempFile.getPath()));
+            assertEquals(-1, new_users.size() - myUsers.size());
+            assertNotEquals(existent_user, new_users.get(0));
+            assertNotEquals(existent_user, new_users.get(1));
         });
     }
 
