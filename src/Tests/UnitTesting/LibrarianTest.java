@@ -13,7 +13,7 @@ class LibrarianTest {
     @BeforeAll
     static void setUp(){
         try {
-            lib = new LibrarianMock();
+            lib = new LibrarianMock("");
         } catch (Exception e) {
             fail();
         }

@@ -3,6 +3,7 @@ package Mocks;
 import Main.Products.Bill;
 import Main.Products.Book;
 import Main.Users.Access;
+import Main.Users.BillWriter;
 import Main.Users.Librarian;
 import Main.Utilis.CompDate;
 
@@ -13,13 +14,19 @@ public class LibrarianMock extends Librarian {
     HashMap<Integer,BookModelMock> groupOfBooks;
     int[][] groupForBills;
     CompDate[] dates;
-    public LibrarianMock() throws Exception {
+    boolean forFile;
+    public LibrarianMock(String pathName, boolean forFile) throws Exception {
         super("Name","Surname","Usertame69.","Password69.","email@gmail.com","+355693074065",15,8,2003, "0000000", 25000, Access.FULL);
+        writer = new BillWriter(pathName);
+        this.forFile = forFile;
         groupOfBooks=new HashMap<>();
         groupOfBooks.put(1,new BookModelMock("Book1",1000));
         groupOfBooks.put(2,new BookModelMock("Book2",2000));
         groupOfBooks.put(3,new BookModelMock("Book3",3000));
         groupOfBooks.put(4,new BookModelMock("Book4",4000));
+    }
+    public LibrarianMock(String pathName) throws Exception {
+        this(pathName,false);
     }
     public void translate(String workStr){
         String[] rows = workStr.split(" ");
@@ -39,6 +46,7 @@ public class LibrarianMock extends Librarian {
 
     @Override
     public ArrayList<Bill> readBills(){
+        if(forFile) return super.readBills();
        ArrayList<Bill> result = new ArrayList<>();
        for(int i=0;i<groupForBills.length;i++){
            ArrayList<Book> list = new ArrayList<>();

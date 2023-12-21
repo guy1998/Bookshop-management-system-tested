@@ -11,8 +11,13 @@ public class BillWriter implements Serializable{
 
     public BillWriter(String filePath){
         billDat = new File( filePath);
-        if(!billDat.exists())
-            writeBills(new ArrayList<>());
+        if(!billDat.exists()){
+            try {
+                billDat.createNewFile();
+            } catch (IOException e) {
+                System.err.println(e.getMessage());
+            }
+            writeBills(new ArrayList<>());}
     }
 
     public void writeBills(ArrayList<Bill> bills) {

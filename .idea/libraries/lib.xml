@@ -2,9 +2,11 @@
   <library name="lib">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../Java/javafx-sdk-21/lib" />
+      <root url="file://$USER_HOME$/Downloads/openjfx-19_windows-x86_bin-sdk/javafx-sdk-19/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Downloads/openjfx-19_windows-x86_bin-sdk/javafx-sdk-19/lib" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/../../Java/javafx-sdk-21/lib" recursive="false" />
   </library>
 </component>

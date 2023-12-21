@@ -4,20 +4,21 @@ import Main.Exceptions.InvalidEmail;
 import Main.Exceptions.InvalidPasswordException;
 import Main.Exceptions.InvalidPhoneNumberException;
 import Main.Exceptions.InvalidUsernameException;
-import Mocks.UserModelMock;
 import Main.Users.User;
+import Mocks.UserModelMock;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import java.util.HashSet;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
     User user;
     @BeforeEach
-    void setUp() throws Exception {
+    void setUp(){
         try {
             user = new UserModelMock("Name","Surname","Usertame69.","Password69.","email@gmail.com","+355693074065",15,8,2003);
         } catch (Exception e) {
@@ -131,5 +132,31 @@ class UserTest {
     void userCreationEmailRegexValidTest(String email){
         user.setEmail(email);
         assertDoesNotThrow(() -> UserModelMock.createUser(user));
+    }
+    @Test
+    void testEqualsValid(){
+        User user1,user2;
+        try {
+            user1 = UserModelMock.createUser(user);
+            user.setName("0k");
+            user2 = UserModelMock.createUser(user);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        assertEquals(user1, user2);
+    }
+    @Test
+    void testEqualsInvalid(){
+        User user1,user2;
+        Object obj = new HashSet<Exception>();
+        try {
+            user1 = UserModelMock.createUser(user);
+            user.setName("0k");
+            user2 = UserModelMock.createUser(user);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        assertNotEquals(user1, user2);
+        assertNotEquals(user1, obj);
     }
 }

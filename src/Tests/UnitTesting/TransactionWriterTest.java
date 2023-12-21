@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TransactionFileControlTest {
+public class TransactionWriterTest {
     @TempDir
     static File tempFolder;
     static TransactionWriter writer;
