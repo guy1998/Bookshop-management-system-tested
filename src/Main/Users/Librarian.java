@@ -11,7 +11,7 @@ public class Librarian extends Employee{
 	
 
 	private final File billFolder;
-	private ArrayList<Bill> bills;
+	protected ArrayList<Bill> bills;
 	protected BillWriter writer;
 	
 public Librarian(String name, String surname, String username, String password, String email, String phone, int day, int month, int year, String SSN, double salary, Access permission) throws Exception{
