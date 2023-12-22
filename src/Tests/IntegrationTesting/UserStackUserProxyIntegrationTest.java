@@ -28,7 +28,7 @@ public class UserStackUserProxyIntegrationTest {
     public void createDataset() {
         try {
             myUsers.add(new Administrator("John", "Doe", "Guy_1989", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002));
-            myUsers.add(new Librarian("Max", "Verstappen", "Ver_123", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002, "123-4356-5673", 2000, Access.FULL));
+            myUsers.add(new Librarian("Max", "Verstappen", "Ver_123", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002, "123-4356-5673", 2100, Access.FULL));
             myUsers.add(new Manager("Lewis", "Hamilton", "Ham_4404", "Very/123", "acifliku6@gmail.com", "+355676105565", 17, 12, 2002, "123-4356-5673", 2000, Access.FULL));
             tempFile = new File(tempFolder, "testUser.dat");
             FileOutputStream out = new FileOutputStream(tempFile);
@@ -162,7 +162,7 @@ public class UserStackUserProxyIntegrationTest {
     @Test
     public void testIntegrationModifyPhoneWriteUsers() throws Exception{
         users = new UserStack(new UserProxy(tempFile.getPath()));
-        Throwable exception = assertThrows(InvalidPhoneNumberException.class, ()->users.modifyPhone(users.findUser("Guy_1989"), "+041356901922"));
+        Throwable exception = assertThrows(NonExistantUserException.class, ()->users.modifyName(users.findUser("Guy_1989"), "+041356901922"));
         assertEquals("Phone number should be of format +3556[7-8-9]xxxxxxx", exception.getMessage());
         users.modifyPhone(users.findUser("Guy_1989"), "+355676105567");
         ArrayList<User> new_users = auxiliaryReader(tempFile);
@@ -172,27 +172,47 @@ public class UserStackUserProxyIntegrationTest {
 
     @Test
     public void testIntegrationModifyNameWriteUsers() throws Exception{
-
+        users = new UserStack(new UserProxy(tempFile.getPath()));
+        users.modifyName(users.findUser("Guy_1989"), "Joe");
+        ArrayList<User> new_users = auxiliaryReader(tempFile);
+        assertEquals("Joe", new_users.get(0).getName());
+        assertNotEquals(myUsers.get(0).getName(), new_users.get(0).getName());
     }
 
     @Test
     public void testIntegrationModifySurnameWriteUsers() throws Exception {
-
+        users = new UserStack(new UserProxy(tempFile.getPath()));
+        users.modifySurname(users.findUser("Guy_1989"), "Doberman");
+        ArrayList<User> new_users = auxiliaryReader(tempFile);
+        assertEquals("Doberman", new_users.get(0).getSurname());
+        assertNotEquals(myUsers.get(0).getSurname(), new_users.get(0).getSurname());
     }
 
     @Test
     public void testIntegrationModifyPermissionWriteUsers() throws Exception{
-
+        users = new UserStack(new UserProxy(tempFile.getPath()));
+        users.modifyPermission(users.findUser("Ver_123"), Access.PARTIAL);
+        ArrayList<User> new_users = auxiliaryReader(tempFile);
+        assertEquals(Access.PARTIAL, ((Employee)new_users.get(1)).getPermission());
+        assertNotEquals(((Employee)myUsers.get(1)).getPermission(), ((Employee)new_users.get(1)).getPermission());
     }
 
     @Test
     public void testIntegrationModifySSNWriteUsers() throws Exception {
-
+        users = new UserStack(new UserProxy(tempFile.getPath()));
+        users.modifySSN(users.findUser("Ver_123"), "123-4356-5674");
+        ArrayList<User> new_users = auxiliaryReader(tempFile);
+        assertEquals("123-4356-5674", ((Employee)new_users.get(1)).getSSN());
+        assertNotEquals(((Employee)myUsers.get(1)).getSSN(), ((Employee)new_users.get(1)).getSSN());
     }
 
     @Test
     public void testIntegrationModifySalaryWriteUsers() throws Exception{
-
+        users = new UserStack(new UserProxy(tempFile.getPath()));
+        users.modifySalary(users.findUser("Ver_123"), 2000.0);
+        ArrayList<User> new_users = auxiliaryReader(tempFile);
+        assertEquals(2000.0, ((Employee)new_users.get(1)).getSalary());
+        assertNotEquals(((Employee)myUsers.get(1)).getSalary(), ((Employee)new_users.get(1)).getSalary());
     }
 
 }
