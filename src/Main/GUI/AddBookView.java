@@ -123,7 +123,7 @@ public class AddBookView {
 		category.setTextFill(Color.WHITE);
 		category.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 11));
 		ArrayList<String> categories = new ArrayList<>();
-		File cFile = new File("Categories.txt");
+		File cFile = new File("Database/Categories.txt");
 		Scanner cIn = null;
 		try {
 			cIn = new Scanner(cFile);

@@ -8,7 +8,7 @@ public class TransactionControl implements Serializable{
 	private final TransactionWriter writer;
 	
 	public TransactionControl() {
-		writer = new TransactionWriter("Transaction.dat");
+		writer = new TransactionWriter("Database/Transaction.dat");
 		transactions = new ArrayList<>();
 	}
 	
