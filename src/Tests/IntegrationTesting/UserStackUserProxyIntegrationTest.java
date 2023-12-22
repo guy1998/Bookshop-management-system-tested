@@ -1,9 +1,6 @@
 package Tests.IntegrationTesting;
 
-import Main.Exceptions.InvalidPasswordException;
-import Main.Exceptions.InvalidUsernameException;
-import Main.Exceptions.NonExistantUserException;
-import Main.Exceptions.UserAlreadyExistsException;
+import Main.Exceptions.*;
 import Main.Users.*;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -149,6 +146,17 @@ public class UserStackUserProxyIntegrationTest {
         users.modifyUsername(users.findUser("Guy_1989"), "Hello/1234");
         ArrayList<User> new_users = auxiliaryReader(tempFile);
         assertNotEquals(new_users.get(0).getUsername(), myUsers.get(0).getUsername());
+    }
+
+    @Test
+    public void testIntegrationModifyEmailWriteUsers() throws Exception{
+        users = new UserStack(new UserProxy(tempFile.getPath()));
+        Throwable exception = assertThrows(InvalidEmail.class, ()->users.modifyEmail(users.findUser("Guy_1989"), "acifliku@kot.com"));
+        assertEquals("Email is invalid", exception.getMessage());
+        users.modifyEmail(users.findUser("Guy_1989"), "acifliku@gmail.com");
+        ArrayList<User> new_users = auxiliaryReader(tempFile);
+        assertEquals("acifliku@gmail.com", new_users.get(0).getEmail());
+        assertNotEquals(myUsers.get(0).getEmail(), new_users.get(0).getEmail());
     }
 
 }
