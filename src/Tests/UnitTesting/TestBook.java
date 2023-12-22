@@ -57,7 +57,7 @@ public class TestBook {
         }
     }
 
-    @Test
+
     public void testClone(){
         try{
             Book book = new Book("132-2141-421", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling"));

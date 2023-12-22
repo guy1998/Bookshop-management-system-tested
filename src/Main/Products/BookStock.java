@@ -114,8 +114,8 @@ public class BookStock implements Serializable{
 		writeProducts();
 	}
 	
-	public void modifyCategory(Book book, String categroy) {
-		this.findBook(book).setCategory(categroy);
+	public void modifyCategory(Book book, String category) {
+		this.findBook(book).setCategory(category);
 		writeProducts();
 	}
 	
