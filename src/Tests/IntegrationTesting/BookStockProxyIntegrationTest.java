@@ -174,4 +174,27 @@ public class BookStockProxyIntegrationTest {
         assertEquals(16.2, newBook.get(0).getSellingPrice());
         assertNotEquals(myBooks.get(0).getSellingPrice(), newBook.get(0).getSellingPrice());
     }
+
+    @Test
+    public void testIntegrationModifyAuthorsWriteBook() throws Exception {
+        Book book = new Book("132-2141-421", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling"));
+        Author author = new Author("Joanne", "Rowling");
+        Author[] authors = {author};
+        books = new BookStock(new BookProxy(tempFile.getPath()));
+        books.modifyAuthors(book, authors);
+        ArrayList<Book> newBook = auxiliaryReader(tempFile);
+        assertEquals(author, newBook.get(0).getAuthors()[0]);
+        assertNotEquals(myBooks.get(0).getAuthors(), newBook.get(0).getAuthors());
+    }
+
+    @Test
+    public void testIntegrationModifyQuantityWriteBook() throws Exception {
+        Book book = new Book("132-2141-421", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling"));
+        books = new BookStock(new BookProxy(tempFile.getPath()));
+        books.modifyQuantity(book, 5);
+        ArrayList<Book> newBook = auxiliaryReader(tempFile);
+        assertEquals(5, newBook.get(0).getNumber());
+        assertNotEquals(myBooks.get(0).getNumber(), newBook.get(0).getNumber());
+    }
+
 }

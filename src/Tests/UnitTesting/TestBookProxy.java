@@ -1,13 +1,9 @@
 package Tests.UnitTesting;
 
 import Main.Exceptions.InvalidBookInfo;
-import Main.Notification.Message;
 import Main.Products.Author;
 import Main.Products.Book;
 import Main.Products.BookProxy;
-import Main.Users.Administrator;
-import Main.Users.MessageWriter;
-import Main.Users.User;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
