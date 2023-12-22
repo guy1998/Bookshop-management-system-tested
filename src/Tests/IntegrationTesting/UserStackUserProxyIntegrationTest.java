@@ -1,6 +1,7 @@
 package Tests.IntegrationTesting;
 
 import Main.Exceptions.InvalidPasswordException;
+import Main.Exceptions.InvalidUsernameException;
 import Main.Exceptions.NonExistantUserException;
 import Main.Exceptions.UserAlreadyExistsException;
 import Main.Users.*;
@@ -126,6 +127,28 @@ public class UserStackUserProxyIntegrationTest {
         users.modifyPassword(users.findUser("Guy_1989"), "Hello/1234");
         ArrayList<User> new_users = auxiliaryReader(tempFile);
         assertNotEquals(new_users.get(0).getPassword(), myUsers.get(0).getPassword());
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "'a', 'Username too short!'",
+            "'John/1234', 'Username cannot contain your name or surname'",
+            "'Hello1234', 'Username must contain at least: a lowercase, an uppercase, a number and one of [/,_,.]!'"
+    })
+    public void testIntegrationModifyUsernameWriteUsersFirstScenario(String newUsername, String message) throws Exception{
+        users = new UserStack(new UserProxy(tempFile.getPath()));
+        Throwable exception = assertThrows(InvalidUsernameException.class, () -> users.modifyUsername(users.findUser("Guy_1989"), newUsername));
+        assertEquals(message, exception.getMessage());
+        ArrayList<User> new_users = auxiliaryReader(tempFile);
+        assertEquals(new_users.get(0).getUsername(), myUsers.get(0).getUsername());
+    }
+
+    @Test
+    public void testIntegrationModifyUsernameWriteUsersSecondScenario() throws Exception {
+        users = new UserStack(new UserProxy(tempFile.getPath()));
+        users.modifyUsername(users.findUser("Guy_1989"), "Hello/1234");
+        ArrayList<User> new_users = auxiliaryReader(tempFile);
+        assertNotEquals(new_users.get(0).getUsername(), myUsers.get(0).getUsername());
     }
 
 }
