@@ -27,7 +27,7 @@ public class TestMessageWriter {
         File[] files = tempFolder.listFiles();
         if(files!=null) { //some JVMs return null for empty dirs
             for(File f: files) {
-                f.delete();
+                System.out.println(f.delete());
             }
         }
     }

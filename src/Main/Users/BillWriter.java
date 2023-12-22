@@ -13,7 +13,7 @@ public class BillWriter implements Serializable{
         billDat = new File( filePath);
         if(!billDat.exists()){
             try {
-                billDat.createNewFile();
+                System.out.println(billDat.createNewFile());
             } catch (IOException e) {
                 System.err.println(e.getMessage());
             }

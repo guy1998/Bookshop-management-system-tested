@@ -46,9 +46,12 @@ public class TestBook {
     public void testEquals() {
         try {
             Book book = new Book("132-2141-421", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling"));
-            assertFalse(book.equals(new Author("Joanne", "K", "Rowling")));
-            assertFalse(book.equals(new Book("111-1111-111", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling"))));
-            assertTrue(book.equals(new Book("132-2141-421", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling"))));
+            boolean equalsBetweenDifferentTypes = book.equals(new Author("Joanne", "K", "Rowling"));
+            assertFalse(equalsBetweenDifferentTypes);
+            boolean nonEquals = book.equals(new Book("111-1111-111", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling")));
+            assertFalse(nonEquals);
+            boolean equals = book.equals(new Book("132-2141-421", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling")));
+            assertTrue(equals);
         } catch (InvalidBookInfo e) {
             System.out.println(e.getMessage());;
         }
@@ -60,8 +63,8 @@ public class TestBook {
             Book book = new Book("132-2141-421", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling"));
             Book clone = (Book)book.clone();
             assertEquals(book, clone);
-            assertFalse(book.getDate() == clone.getDate());
-            assertFalse(book.getAuthors() == clone.getAuthors());
+            assertNotSame(book.getDate(), clone.getDate());
+            assertNotSame(book.getAuthors(), clone.getAuthors());
         }catch (Exception e){
             System.out.println(e.getMessage());
         }

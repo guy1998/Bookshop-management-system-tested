@@ -40,7 +40,7 @@ public class LibrarianFileTest {
     void caseSetup() throws Exception {
         tempFile = new File(tempFolder, "TestBooks.dat");
         lib = new LibrarianMock(tempFile.getPath(),true);
-        tempFile.createNewFile();
+        System.out.println(tempFile.createNewFile());
         try(PrintWriter printWriter = new PrintWriter(new FileWriter(tempFile.getPath(),false),false)){
             printWriter.flush();
         }
@@ -51,7 +51,7 @@ public class LibrarianFileTest {
 
     @AfterEach
     void cleanup() {
-        tempFolder.delete();
+        System.out.println(tempFolder.delete());
     }
 
     @Test

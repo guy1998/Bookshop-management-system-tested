@@ -29,7 +29,7 @@ public class TestUserProxy {
         File[] files = tempFolder.listFiles();
         if(files!=null) {
             for(File f: files) {
-                f.delete();
+                System.out.println(f.delete());
             }
         }
     }
@@ -42,7 +42,7 @@ public class TestUserProxy {
     @Test
     public void testReadUsersNonExistentFile(){
         UserProxy userProxy = new UserProxy(tempFolder.getPath() + "Obviously non existent path");
-        ArrayList<User> users = new ArrayList<>();
+        ArrayList<User> users = userProxy.readUsers();
         Assertions.assertEquals(0, users.size());
     }
 

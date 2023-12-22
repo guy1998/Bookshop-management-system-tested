@@ -45,7 +45,7 @@ public class BillWriterTest {
 
     @AfterEach
     void cleanup() {
-        tempFolder.delete();
+        System.out.println(tempFolder.delete());
     }
 
     @Test

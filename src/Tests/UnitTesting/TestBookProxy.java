@@ -33,7 +33,7 @@ public class TestBookProxy {
         File[] files = tempFolder.listFiles();
         if(files!=null) {
             for(File f: files) {
-                f.delete();
+                System.out.println(f.delete());
             }
         }
     }

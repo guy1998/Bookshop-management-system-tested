@@ -13,7 +13,7 @@ public class CategoryWriter {
     }
     public boolean categoryExists(String category) {
 
-        Scanner input = null;
+        Scanner input;
         try {
             input = new Scanner(file);
         }catch(FileNotFoundException e) {
