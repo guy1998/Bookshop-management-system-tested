@@ -25,7 +25,7 @@ public class LibrarianFileTest {
     static HashMap<Integer, BookModelMock> groupOfBooks;
     static File tempFile;
     @BeforeAll
-    static void setUp() throws Exception {
+    static void setUp() {
         groupOfBooks=new HashMap<>();
         try {
             groupOfBooks.put(1,new BookModelMock("Book1",1));

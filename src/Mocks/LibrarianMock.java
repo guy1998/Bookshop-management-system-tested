@@ -63,4 +63,15 @@ public class LibrarianMock extends Librarian {
         String[] res = date.split("/");
         return new CompDate(Integer.parseInt(res[0]),Integer.parseInt(res[1]),Integer.parseInt(res[2]));
     }
+    @Override
+    public double createBill(ArrayList<Book> books) throws Exception{
+
+        bills = readBills();
+        Bill newBill = new Bill(books);
+        //newBill.printFormat(billFolder + "/[Bill" + this.nrOfBills() + "].txt");
+        bills.add(newBill);
+        writeBills();
+
+        return newBill.getTotalAmount();
+    }
 }
