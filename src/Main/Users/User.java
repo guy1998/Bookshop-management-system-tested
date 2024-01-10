@@ -33,7 +33,7 @@ public abstract class User implements Serializable{
 	protected User(String name, String surname, String username, String password, String email, String phone, int day, int month, int year, Status status) throws Exception{
 		
 		if(username.isEmpty() || name.isEmpty() || surname.isEmpty() || password.isEmpty())
-			throw new InvalidUsernameException("All the fields should be filled: ");
+			throw new InvalidUsernameException("All the fields should be filled!");
 		
 		this.name = name;
 		this.surname = surname;

@@ -229,6 +229,7 @@ public class AdminView {
 		tape.setAlignment(Pos.BOTTOM_CENTER);
 		tape.setMinHeight(100);
 		Label hello = new Label("Hello " + admin.getName()+ "!");
+		hello.setId("hello");
 		hello.setTextFill(Color.WHITE);
 		hello.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 35));
 		HBox icons = new HBox();

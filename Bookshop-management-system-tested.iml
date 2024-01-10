@@ -45,5 +45,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="testfx.core" level="project" />
+    <orderEntry type="library" name="testfx.junit5" level="project" />
   </component>
 </module>

@@ -76,6 +76,7 @@ public class SignUpPage {
 				nameLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 				nameLabel.setTextFill(Color.WHITE);
 				TextField nameField = new TextField();
+				nameField.setId("nameField");
 				nameField.setPrefWidth(200);
 				nameField.setPrefHeight(40);
 				nameField.setPromptText("Your name here..");
@@ -94,6 +95,7 @@ public class SignUpPage {
 				surnameLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 				surnameLabel.setTextFill(Color.WHITE);
 				TextField surnameField = new TextField();
+				surnameField.setId("surnameField");
 				surnameField.setPrefWidth(200);
 				surnameField.setPrefHeight(40);
 				surnameField.setPromptText("Your surname here..");
@@ -112,6 +114,7 @@ public class SignUpPage {
 				emailLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 				emailLabel.setTextFill(Color.WHITE);
 				TextField emailField = new TextField();
+				emailField.setId("emailField");
 				emailField.setPrefWidth(200);
 				emailField.setPrefHeight(40);
 				emailField.setPromptText("random@gmail.com");
@@ -130,6 +133,7 @@ public class SignUpPage {
 				phoneLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 				phoneLabel.setTextFill(Color.WHITE);
 				TextField phoneField = new TextField();
+				phoneField.setId("phoneField");
 				phoneField.setPrefWidth(200);
 				phoneField.setPrefHeight(40);
 				phoneField.setPromptText("+3556xxxxxxx");
@@ -147,6 +151,7 @@ public class SignUpPage {
 				birthdayLabel.setTextFill(Color.WHITE);
 				birthdayLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 				DatePicker birthday = new DatePicker();
+				birthday.setId("birthday");
 				birthday.setStyle("-fx-background-color: white;");
 				birthday.setFocusTraversable(false);
 				birthday.setValue(LocalDate.now());
@@ -179,6 +184,7 @@ public class SignUpPage {
 				userIcon.setFitHeight(20);
 				userIcon.setFitWidth(20);
 				TextField usernameField = new TextField();
+				usernameField.setId("usernameField");
 				usernameField.setPrefWidth(200);
 				usernameField.setPrefHeight(40);
 				usernameField.setPromptText("username");
@@ -202,6 +208,7 @@ public class SignUpPage {
 				passIcon.setFitHeight(20);
 				passIcon.setFitWidth(20);
 				PasswordField passwordField = new PasswordField();
+				passwordField.setId("passwordField");
 				passwordField.setPrefHeight(40);
 				passwordField.setPrefWidth(200);
 				passwordField.setPromptText("password");
@@ -219,6 +226,7 @@ public class SignUpPage {
 				retypeIcon.setFitHeight(20);
 				retypeIcon.setFitWidth(20);
 				PasswordField retype = new PasswordField();
+				retype.setId("retype");
 				retype.setPrefHeight(40);
 				retype.setPrefWidth(200);
 				retype.setPromptText("re-type password");
@@ -252,6 +260,7 @@ public class SignUpPage {
 				keyLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 				keyLabel.setTextFill(Color.WHITE);
 				TextField keyField = new TextField();
+				keyField.setId("keyField");
 				keyField.setPrefWidth(200);
 				keyField.setPrefHeight(40);
 				keyField.setPromptText("XXXXXX");
@@ -271,6 +280,7 @@ public class SignUpPage {
 				// ~~~~~~~~~ //
 				
 				Button signUpButton = new Button("Sign-Up");
+				signUpButton.setId("signUpButton");
 				signUpButton.setStyle("-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-text-fill: purple;");
 				signUpButton.setFont(Font.font("Calibri", FontWeight.BOLD, FontPosture.REGULAR, 20));
 				signUpButton.setAlignment(Pos.CENTER);
@@ -314,7 +324,8 @@ public class SignUpPage {
 						}catch (Exception e1) {
 							Alert alert = new Alert(AlertType.ERROR);
 							alert.setTitle("Error");
-							alert.setHeaderText(e1.getMessage());
+							alert.setHeaderText("Invalid information passed!");
+							alert.setContentText(e1.getMessage());
 							alert.showAndWait();
 						}
 					}else {
