@@ -9,7 +9,7 @@ public class TransactionControl implements Serializable{
 	
 	public TransactionControl() {
 		writer = new TransactionWriter("Database/Transaction.dat");
-		transactions = new ArrayList<>();
+		readTransactions();
 	}
 	
 	public void writeTransactions() {

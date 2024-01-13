@@ -93,6 +93,7 @@ public class FinancialStats {
 			total += v;
 		
 		Label income = new Label("Incomes: " + array[0]);
+		income.setId("income");
 		income.setStyle("-fx-background-color: green; -fx-background-radius: 15px; -fx-border-radius: 15px;");
 		income.setPrefSize(300, 70);
 		income.setTextFill(Color.WHITE);
@@ -101,6 +102,7 @@ public class FinancialStats {
 		income.setPadding(new Insets(10));
 		
 		Label spent = new Label("Expenditure: " + array[1]);
+		spent.setId("spent");
 		spent.setStyle("-fx-background-color: red; -fx-background-radius: 15px; -fx-border-radius: 15px;");
 		spent.setPrefSize(300, 70);
 		spent.setTextFill(Color.WHITE);
@@ -109,6 +111,7 @@ public class FinancialStats {
 		spent.setPadding(new Insets(10));
 		
 		Label salaries = new Label("Salaries: " + array[2]);
+		salaries.setId("salaries");
 		salaries.setStyle("-fx-background-color: red; -fx-background-radius: 15px; -fx-border-radius: 15px;");
 		salaries.setPrefSize(300, 70);
 		salaries.setTextFill(Color.WHITE);
@@ -117,6 +120,7 @@ public class FinancialStats {
 		salaries.setPadding(new Insets(10));
 		
 		Label totalL = new Label("Total: " + total);
+		totalL.setId("total");
 		if(total > 0)
 			totalL.setStyle("-fx-background-color: green; -fx-background-radius: 15px; -fx-border-radius: 15px;");
 		else
@@ -171,7 +175,7 @@ public class FinancialStats {
 		//Mason: so the index 0 is the incomes from books sold
 		// index 1 is the money spent buying books
 		//index 2 is the money spent on salaries
-		
+
 		for(Transaction t : tCtrl.getTransactions()){
 			if(t.getTransactionDate().compareTo(new CompDate(1, LocalDate.now().getMonthValue(), LocalDate.now().getYear())) >= 0 &&
 					t.getTransactionDate().compareTo(new CompDate(LocalDate.now().getDayOfMonth(), LocalDate.now().getMonthValue(), LocalDate.now().getYear())) <= 0) {
