@@ -91,6 +91,7 @@ public class EmployeeView {
 		allUser.addAll(users.filterByStatus(Status.MANAGER));
 		for(User user:allUser) {
 			Button temp = new Button(user.toString());
+			temp.setId(user.getUsername());
 			temp.setMinHeight(60);
 			temp.setPrefWidth(783);
 			temp.setAlignment(Pos.CENTER);

@@ -100,8 +100,11 @@ public class LibrarianStats {
 		MenuBar mb = new MenuBar();
 		mb.setStyle("-fx-background-color: purple;");
 		Menu filter = new Menu("Data filter");
+		filter.setId("filter");
 		RadioMenuItem specific = new RadioMenuItem("Specific date");
+		specific.setId("specific");
 		RadioMenuItem interval = new RadioMenuItem("Interval of days");
+		interval.setId("interval");
 		ToggleGroup group = new ToggleGroup();
 		Menu edit = new Menu("Edit");
 		MenuItem editItem = new MenuItem("Edit");
@@ -119,6 +122,7 @@ public class LibrarianStats {
 		tape.getChildren().addAll(back, profile, menuBox);
 		
 		DatePicker specificDate = new DatePicker(LocalDate.now());
+		specificDate.setId("specificPicker");
 		specificDate.setFocusTraversable(false);
 		HBox dateBox = new HBox();
 		dateBox.setStyle("-fx-background-color: purple;");
@@ -132,8 +136,10 @@ public class LibrarianStats {
 		dateBox.getChildren().addAll(specificLabel, specificDate);
 		
 		DatePicker start = new DatePicker(LocalDate.now());
+		start.setId("startPicker");
 		start.setFocusTraversable(false);
 		DatePicker end = new DatePicker(LocalDate.now());
+		end.setId("endPicker");
 		end.setFocusTraversable(false);
 		HBox dateBox2 = new HBox();
 		dateBox2.setStyle("-fx-background-color: purple;");
@@ -190,6 +196,7 @@ public class LibrarianStats {
 		Circle inner = new Circle(70);
 		inner.setFill(Color.WHITE);
 		Label numberBooks = new Label("" + booksSold.getValue());
+		numberBooks.setId("nrOfBooks");
 		numberBooks.setTextFill(Color.PURPLE);
 		numberBooks.setFont(Font.font("Verdana", FontWeight.BOLD, 60));
 		nrOfBooks.getChildren().add(outer);
@@ -211,6 +218,7 @@ public class LibrarianStats {
 		inner2.setFill(Color.WHITE);
 		StackPane nrOfBills = new StackPane();
 		Label numberBills = new Label("" + billsIssued.getValue());
+		numberBills.setId("numberOfBills");
 		numberBills.setTextFill(Color.PURPLE);
 		numberBills.setFont(Font.font("Verdana", FontWeight.BOLD, 60));
 		nrOfBills.getChildren().add(outer2);
@@ -232,6 +240,7 @@ public class LibrarianStats {
 		inner3.setFill(Color.WHITE);
 		StackPane money = new StackPane();
 		Label moneyNumber = new Label(moneyMade.getValue() + "$");
+		moneyNumber.setId("moneyNumber");
 		moneyNumber.setTextFill(Color.PURPLE);
 		moneyNumber.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
 		money.getChildren().add(outer3);

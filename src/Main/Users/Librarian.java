@@ -16,9 +16,9 @@ public class Librarian extends Employee{
 	
 public Librarian(String name, String surname, String username, String password, String email, String phone, int day, int month, int year, String SSN, double salary, Access permission) throws Exception{
 		super(name, surname, username, password, email, phone, day, month, year, Status.LIBRARIAN, SSN, salary, permission);
-		writer = new BillWriter("../Database/Bills/BinaryBill/" +this.getUserId() + ".dat");
+		writer = new BillWriter("Database/Bills/BinaryBill/" +this.getUserId() + ".dat");
 		bills = new ArrayList<>();
-		billFolder = new File("../../../Database/Bills/TextBill/" + this.getUserId());
+		billFolder = new File("Database/Bills/TextBill/" + this.getUserId());
 		if(!billFolder.exists())
 			System.out.println(billFolder.mkdirs());
 	}	
