@@ -13,7 +13,7 @@ public class InvalidEmployeeInfo extends Exception{
 	}
 	
 	@Override
-	public String toString() {
+	public String getMessage() {
 		return message;
 	}
 	

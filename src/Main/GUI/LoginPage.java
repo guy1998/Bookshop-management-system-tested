@@ -62,6 +62,7 @@ public class LoginPage {
 		usernameField.setFocusTraversable(false);
 		usernameField.setFont(Font.font("Verdana", FontWeight.NORMAL, FontPosture.ITALIC, 12));
 		usernameField.setStyle("-fx-border-radius: 15px; -fx-background-radius: 15px;");
+		usernameField.setId("usernameField");
 		HBox userPane = new HBox();//pane that holds the user field and icon
 		userPane.spacingProperty().bind(userPane.widthProperty().divide(70));
 		userPane.setAlignment(Pos.CENTER);
@@ -85,6 +86,7 @@ public class LoginPage {
 		passwordField.setFocusTraversable(false);
 		passwordField.setFont(Font.font("Verdana", FontWeight.NORMAL, FontPosture.ITALIC, 12));
 		passwordField.setStyle("-fx-border-radius: 15px; -fx-background-radius: 15px;");
+		passwordField.setId("passwordField");
 		HBox passwordPane = new HBox();//pane that holds the password field and icon
 		passwordPane.spacingProperty().bind(passwordPane.widthProperty().divide(70));
 		passwordPane.setAlignment(Pos.CENTER);
@@ -104,6 +106,7 @@ public class LoginPage {
 		loginButton.setPrefHeight(40);
 		loginButton.setPrefWidth(200);
 		loginButton.setFocusTraversable(false);
+		loginButton.setId("loginButton");
 		loginButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent e) {

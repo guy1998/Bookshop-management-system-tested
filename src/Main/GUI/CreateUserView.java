@@ -130,6 +130,7 @@ public class CreateUserView {
 		nameLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 		nameLabel.setTextFill(Color.WHITE);
 		TextField nameField = new TextField();
+		nameField.setId("nameField");
 		nameField.setPrefWidth(200);
 		nameField.setPrefHeight(40);
 		nameField.setPromptText("Employee name here..");
@@ -148,6 +149,7 @@ public class CreateUserView {
 		surnameLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 		surnameLabel.setTextFill(Color.WHITE);
 		TextField surnameField = new TextField();
+		surnameField.setId("surnameField");
 		surnameField.setPrefWidth(200);
 		surnameField.setPrefHeight(40);
 		surnameField.setPromptText("Employee surname here..");
@@ -166,6 +168,7 @@ public class CreateUserView {
 		emailLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 		emailLabel.setTextFill(Color.WHITE);
 		TextField emailField = new TextField();
+		emailField.setId("emailField");
 		emailField.setPrefWidth(200);
 		emailField.setPrefHeight(40);
 		emailField.setPromptText("random@gmail.com");
@@ -184,6 +187,7 @@ public class CreateUserView {
 		phoneLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 		phoneLabel.setTextFill(Color.WHITE);
 		TextField phoneField = new TextField();
+		phoneField.setId("phoneField");
 		phoneField.setPrefWidth(200);
 		phoneField.setPrefHeight(40);
 		phoneField.setPromptText("+3556xxxxxxx");
@@ -201,6 +205,7 @@ public class CreateUserView {
 		birthdayLabel.setTextFill(Color.WHITE);
 		birthdayLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 		DatePicker birthday = new DatePicker();
+		birthday.setId("birthday");
 		birthday.setStyle("-fx-background-color: white;");
 		birthday.setFocusTraversable(false);
 		birthday.setValue(LocalDate.now());
@@ -223,6 +228,7 @@ public class CreateUserView {
 		
 		
 		TextField usernameField = new TextField();
+		usernameField.setId("usernameField");
 		usernameField.setPrefWidth(200);
 		usernameField.setPrefHeight(40);
 		usernameField.setPromptText("username");
@@ -237,6 +243,7 @@ public class CreateUserView {
 		
 		
 		PasswordField passwordField = new PasswordField();
+		passwordField.setId("passwordField");
 		passwordField.setPrefHeight(40);
 		passwordField.setPrefWidth(200);
 		passwordField.setPromptText("password");
@@ -272,6 +279,7 @@ public class CreateUserView {
 		ssnLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 		ssnLabel.setTextFill(Color.WHITE);
 		TextField ssnField = new TextField();
+		ssnField.setId("ssnField");
 		ssnField.setPrefWidth(200);
 		ssnField.setPrefHeight(30);
 		ssnField.setPromptText("XXX-XXXX-XXXX");
@@ -289,6 +297,7 @@ public class CreateUserView {
 		salaryLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
 		salaryLabel.setTextFill(Color.WHITE);
 		TextField salaryField = new TextField();
+		salaryField.setId("salaryField");
 		salaryField.setPrefWidth(200);
 		salaryField.setPrefHeight(30);
 		salaryField.setPromptText("Salary..");
@@ -301,9 +310,11 @@ public class CreateUserView {
 		combo.setSpacing(20);
 		combo.setAlignment(Pos.CENTER);
 		ComboBox statusBox = new ComboBox(FXCollections.observableArrayList("MANAGER", "LIBRARIAN"));
+		statusBox.setId("statusBox");
 		statusBox.setPromptText("Status");
 		statusBox.setStyle("-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15");
 		ComboBox accessBox = new ComboBox(FXCollections.observableArrayList("FULL", "PARTIAL", "NONE"));
+		accessBox.setId("accessBox");
 		accessBox.setPromptText("Access");
 		accessBox.setStyle("-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15");
 		combo.getChildren().addAll(statusBox, accessBox);
@@ -324,6 +335,7 @@ public class CreateUserView {
 		createB.setAlignment(Pos.CENTER);
 		createB.setPrefHeight(40);
 		createB.setPrefWidth(800);
+		createB.setId("createButton");
 		createB.setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent e) {
@@ -340,6 +352,17 @@ public class CreateUserView {
 		createB.setOnAction(e->{
 			
 		    Access aTemp = null;
+			if(statusBox.getValue() == null || accessBox.getValue() == null
+			|| ssnField.getText().isEmpty() || nameField.getText().isEmpty()
+			|| surnameField.getText().isEmpty() || usernameField.getText().isEmpty()
+			|| passwordField.getText().isEmpty() || phoneField.getText().isEmpty()
+			|| emailField.getText().isEmpty() || salaryField.getText().isEmpty()){
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Error");
+				alert.setContentText("Please complete all the fields!");
+				alert.showAndWait();
+				return;
+			}
 		    
 		    if(statusBox.getValue() == null) {
 		    	Alert alert = new Alert(AlertType.WARNING);
@@ -367,7 +390,7 @@ public class CreateUserView {
 		    try {
 		    LocalDate ld = birthday.getValue();
 		    if(!ssnField.getText().matches("\\d{3}-\\d{4}-\\d{3}"))
-					throw new InvalidEmployeeInfo("The SSN should be of the form xxx-xxxx-xxxx where x-es can be any digit but cannot be other characters.");
+					throw new InvalidEmployeeInfo("The SSN should be of the form xxx-xxxx-xxx where x-es can be any digit but cannot be other characters.");
 		    
 			User temp = admin.createUser(nameField.getText(), surnameField.getText(), usernameField.getText(), passwordField.getText(), emailField.getText(), phoneField.getText(),
 					ld.getDayOfMonth(), ld.getMonthValue(), ld.getYear(), ssnField.getText(), Double.parseDouble(salaryField.getText()), 
@@ -377,13 +400,14 @@ public class CreateUserView {
 			Alert alert = new Alert(AlertType.INFORMATION);
 	        alert.setTitle("Succes");
 	        alert.setHeaderText("New user created successfully");
+			alert.setContentText("New user created successfully");
 	        alert.showAndWait();
 	        (new AdminView(admin)).show(primaryStage);
 		    }catch(InvalidUsernameException e1) {
 				Alert alert = new Alert(AlertType.WARNING);
 		        alert.setTitle("Error");
 		        alert.setHeaderText("Invalid username entered");
-		        alert.setContentText(e1.getMessage());
+		        alert.setContentText("Invalid username entered");
 		        alert.showAndWait();
 			}catch(InvalidPasswordException e2) {
 				Alert alert = new Alert(AlertType.WARNING);
@@ -394,12 +418,13 @@ public class CreateUserView {
 			} catch (NumberFormatException e1) {
 				Alert alert = new Alert(AlertType.WARNING);
 		        alert.setTitle("Error");
-		        alert.setHeaderText("Please enter only NUMBERS int the wage field");					        
+		        alert.setHeaderText("Please enter only NUMBERS int the wage field");
+				alert.setContentText("Please enter only NUMBERS int the wage field");
 		        alert.showAndWait();
 			} catch (UserAlreadyExistsException e1) {
 				Alert alert = new Alert(AlertType.WARNING);
 		        alert.setTitle("Error");
-		        alert.setHeaderText(e1.getMessage());					        
+		        alert.setContentText(e1.getMessage());
 		        alert.showAndWait();
 			}catch(InvalidEmployeeInfo e1){
 				Alert alert = new Alert(AlertType.WARNING);
@@ -410,7 +435,7 @@ public class CreateUserView {
 			}catch (Exception e3) {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Error");
-				alert.setHeaderText(e3.getMessage());
+				alert.setContentText(e3.getMessage());
 				alert.showAndWait();
 			}
 		});

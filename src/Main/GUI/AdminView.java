@@ -161,15 +161,19 @@ public class AdminView {
 			btns[i].setStyle("-fx-background-color: purple; -fx-background-radius: 10; -fx-background-radius: 10;");
 			btns[i].setPrefSize(200, 200);
 			btns[i].setAlignment(Pos.CENTER);
-			if(i == 0)
+			if(i == 0) {
 				tooltips[i] = new Tooltip("Manage employees");
-			else if(i == 1)
+				btns[i].setId("manage");
+			}else if(i == 1) {
+				btns[i].setId("addUser");
 				tooltips[i] = new Tooltip("Add user");
-			else if(i == 2)
+			}else if(i == 2) {
+				btns[i].setId("bookInfo");
 				tooltips[i] = new Tooltip("Books info");
-			else
+			}else {
+				btns[i].setId("finance");
 				tooltips[i] = new Tooltip("Financial");
-			
+			}
 			tooltips[i].setStyle("-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: thistle");
 			btns[i].setTooltip(tooltips[i]);
 			
