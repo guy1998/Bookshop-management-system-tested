@@ -98,6 +98,7 @@ public class AdminView {
 		else {
 			for(Message message : messages) {
 				Label messageL = message.createLabel();
+				messageL.setId(""+messages.indexOf(message));
 				messageL.setPrefHeight(60);
 				messageL.setPrefWidth(283);
 				messageL.setOnMouseClicked(e->{

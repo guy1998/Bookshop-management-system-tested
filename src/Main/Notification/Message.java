@@ -15,7 +15,7 @@ public class Message implements Serializable{
 	
 	public Message () {
 		this.read = false;
-		this.header = "Welcome to BookShop Managment System";
+		this.header = "Welcome to BookShop Management System";
 		this.text = "The text about the features";
 		this.timeWritten = new Date();
 	}
@@ -64,7 +64,9 @@ public class Message implements Serializable{
 	
 	@Override
 	public String toString() {
-		return header + "\nFrom: " + user.getName() + " " + user.getSurname() + " " + timeWritten.toString();
+		if(user != null)
+			return header + "\nFrom: " + user.getName() + " " + user.getSurname() + " " + timeWritten.toString();
+		return header + "\nFrom: System" + " " + timeWritten.toString();
 	}
 	
 	public Label createLabel() {

@@ -54,6 +54,7 @@ public class MessageView {
 		messageBody.setMinHeight(500);
 		messageBody.setAlignment(Pos.TOP_LEFT);
 		Label messageText = new Label(message.getText());
+		messageText.setId("messageText");
 		messageText.setTextAlignment(TextAlignment.JUSTIFY);
 		messageText.setWrapText(true);
 		messageText.setFont(Font.font("Verdana", FontWeight.MEDIUM, FontPosture.REGULAR, 17));
@@ -68,6 +69,7 @@ public class MessageView {
 		replyPane.setStyle("-fx-background-color: transparent;");
 		replyPane.setPrefHeight(60);
 		Button reply = new Button("Reply");
+		reply.setId("reply");
 		reply.setStyle("-fx-background-color: lavender; -fx-background-radius: 15px; -fx-border-radius: 15px;");
 		reply.setPrefWidth(800);
 		reply.setPrefHeight(60);
@@ -101,8 +103,8 @@ public class MessageView {
 					input = new FileInputStream("Images/unread.png");
 				Image img = new Image(input);
 				icons[i] = new ImageView(img);
-				icons[i].setFitHeight(30);
-				icons[i].setFitWidth(30);
+				icons[i].setFitHeight(50);
+				icons[i].setFitWidth(50);
 				
 			}
 		}catch(java.io.FileNotFoundException e) {
@@ -114,6 +116,7 @@ public class MessageView {
 		optionsBar.add(icons[0], 0, 0);
 		optionsBar.add(icons[1], 1, 0);
 		optionsBar.add(icons[2], 2, 0);
+		icons[0].setId("back");
 		icons[0].setOnMouseEntered(e->{
 			icons[0].setCursor(Cursor.HAND);
 		});
@@ -125,14 +128,16 @@ public class MessageView {
 			else
 				(new ManagerView((Manager)current, false)).show(primaryStage);
 		});
+		icons[1].setId("delete");
 		icons[1].setOnMouseEntered(e->{
 			icons[1].setCursor(Cursor.HAND);
 		});
 		icons[1].setOnMouseClicked(e->{
-			if(message.getHeader().equals("Welcome to BookShop Managment System")) {
+			if(message.getHeader().equals("Welcome to BookShop Management System")) {
 				Alert alert = new Alert(AlertType.WARNING);
 		        alert.setTitle("This message was sent to you by the system.");
 		        alert.setHeaderText("You cannot delete this message!");
+				alert.setContentText("System messages cannot be deleted!");
 		        alert.showAndWait();
 			}else {
 				Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -159,6 +164,7 @@ public class MessageView {
 			}
 			
 		});
+		icons[2].setId("markunread");
 		icons[2].setOnMouseEntered(e->{
 			icons[2].setCursor(Cursor.HAND);
 		});
@@ -175,6 +181,7 @@ public class MessageView {
 		header.setMinHeight(70);
 		header.setPadding(new Insets(20));
 		Label headerLabel = new Label(message.getHeader());
+		headerLabel.setId("messageHeader");
 		headerLabel.setWrapText(true);
 		headerLabel.setStyle("-fx-background-color: thistle");
 		headerLabel.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));

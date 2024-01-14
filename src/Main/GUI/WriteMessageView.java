@@ -56,6 +56,7 @@ public class WriteMessageView {
 		body.setPrefWidth(780);
 		body.setMinHeight(380);
 		TextField to = new TextField();
+		to.setId("to");
 		to.setFocusTraversable(false);
 		to.setFont(Font.font("Verdana", FontWeight.MEDIUM, FontPosture.REGULAR, 13));
 		to.setPrefWidth(780);
@@ -63,6 +64,7 @@ public class WriteMessageView {
 		to.setPromptText("Send to...");
 		to.setStyle("-fx-background-color: white; -fx-border-color: white;");
 		TextArea messageBody = new TextArea() ;
+		messageBody.setId("messageBody");
 		messageBody.setFocusTraversable(false);
 		messageBody.setWrapText(true);
 		messageBody.setPrefWidth(780);
@@ -79,6 +81,7 @@ public class WriteMessageView {
 		footer.setPrefWidth(550);
 		footer.setPrefHeight(40);
 		Button send = new Button("Send");
+		send.setId("send");
 		send.setPrefSize(400, 40);
 		send.setStyle("-fx-background-color: purple; -fx-border-color: white;");
 		send.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
@@ -100,7 +103,7 @@ public class WriteMessageView {
 				tempUser.writeMessages(messages);
 				Alert alert = new Alert(AlertType.INFORMATION);
 		        alert.setTitle("Success");
-		        alert.setHeaderText("Message sent successfully to " + tempUser.getName() + " " + tempUser.getSurname());
+		        alert.setContentText("Message sent successfully to " + tempUser.getName() + " " + tempUser.getSurname());
 		        alert.showAndWait();
 		        if(current.getStatus() == Status.ADMINISTRATOR)
 					(new AdminView((Administrator)current)).show(primaryStage);
