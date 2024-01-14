@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mutations partial="true">
-<mutation detected='false' status='NO_COVERAGE' numberOfTestsRun='0'><sourceFile>TestCompDate.java</sourceFile><mutatedClass>Tests.UnitTesting.TestCompDate</mutatedClass><mutatedMethod>test_compareTo</mutatedMethod><methodDescription>(IIIIIII)V</methodDescription><lineNumber>22</lineNumber><mutator>org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator</mutator><indexes><index>17</index></indexes><blocks><block>3</block></blocks><killingTest/><description>removed call to org/junit/jupiter/api/Assertions::assertEquals</description></mutation>
-</mutations>
