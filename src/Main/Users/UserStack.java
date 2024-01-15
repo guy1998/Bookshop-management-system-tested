@@ -62,6 +62,7 @@ public class UserStack implements Serializable{
 
 		users.add(user);
 		proxy.writeUsers(users);
+		users = proxy.readUsers();
 	}
 
 	public void deleteUser(String username) throws NonExistantUserException{
