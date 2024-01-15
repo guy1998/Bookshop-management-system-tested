@@ -308,6 +308,7 @@ public class SignUpPage {
 									emailField.getText(), phoneField.getText(), temp.getDayOfMonth(), temp.getMonthValue(), temp.getYear());
 							UserStack users = new UserStack();
 							users.addUser(newAdmin);
+							newAdmin = (Administrator) users.findUser(newAdmin.getUsername());
 							(new AdminView(newAdmin)).show(primaryStage);
 						}catch(InvalidUsernameException e1) {
 							Alert alert = new Alert(AlertType.WARNING);
