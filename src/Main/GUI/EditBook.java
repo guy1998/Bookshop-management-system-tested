@@ -1,25 +1,16 @@
 package Main.GUI;
 
-import java.io.FileInputStream;
-
 import Main.Exceptions.InvalidBookInfo;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
 import Main.Products.Book;
 import Main.Products.BookStock;
 import Main.Users.User;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -33,6 +24,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
 
 public class EditBook {
 
@@ -78,6 +71,7 @@ public class EditBook {
 		backIcon.setFitHeight(50);
 		backIcon.setFitWidth(50);
 		Button back = new Button();
+		back.setId("back");
 		back.setGraphic(backIcon);
 		back.setPrefSize(70, 100);
 		back.setStyle("-fx-background-color: purple;");
@@ -190,6 +184,7 @@ public class EditBook {
 			}
 			
 			btns[i] = temp;
+			btns[i].setId(""+i);
 		}
 		
 		for(int i=0; i<6; i++)

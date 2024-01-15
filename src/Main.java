@@ -1,13 +1,12 @@
+import Main.GUI.LoginPage;
 import javafx.application.Application;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 
-import Main.GUI.*;
-
 public class Main extends Application{
-	
+
 	
 	public static void main(String [] args) {
 		Application.launch(args);

@@ -1,8 +1,5 @@
 package Main.GUI;
 
-import java.io.FileInputStream;
-import java.util.ArrayList;
-
 import Main.Products.Book;
 import Main.Products.BookStock;
 import Main.Users.Administrator;
@@ -14,15 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.RadioMenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -33,6 +22,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
+import java.util.ArrayList;
 
 public class BookShop {
 
@@ -100,6 +92,7 @@ public class BookShop {
 		ArrayList<MenuItem> items= new ArrayList<>();
 		for(Book book: stock.getProductList1()) {
 			MenuItem temp = new MenuItem(book.getTitle());
+			temp.setId(""+stock.getProductList1().indexOf(book));
 			temp.setOnAction(e->{
 				System.out.println(temp.getText());
 				(new EditBook(stock.findBook(temp.getText()), user)).show(primaryStage);
@@ -116,6 +109,7 @@ public class BookShop {
 		
 		//simple table
 		TableView<Book> table = new TableView<>();
+		table.setId("books");
 		table.setEditable(true);
 		ObservableList<Book> books = FXCollections.observableArrayList(stock.getProductList1());
 		System.out.println(books);
@@ -133,6 +127,7 @@ public class BookShop {
 		
 		//detailed table
 		TableView<Book> detailedTable = new TableView<>();
+		detailedTable.setId("books");
 		detailedTable.setItems(books);
 		TableColumn titleDet = new TableColumn("Title");
 		titleDet.setMinWidth(300);
