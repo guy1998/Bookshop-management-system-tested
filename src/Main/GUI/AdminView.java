@@ -254,6 +254,7 @@ public class AdminView {
 		Image img2 = new Image(inputStream2);
 		ImageView profile = new ImageView(img1);
 		ImageView out = new ImageView(img2);
+		profile.setId("profile");
 		profile.setFitHeight(25);
 		profile.setFitWidth(25);
 		out.setFitHeight(25);
