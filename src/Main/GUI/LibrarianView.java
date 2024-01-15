@@ -49,6 +49,7 @@ public class LibrarianView {
 		tape.setSpacing(100);
 		tape.setMinHeight(100);
 		Label hello = new Label("Hello " + lib.getName() + "!");
+		hello.setId("hello");
 		hello.setTextFill(Color.WHITE);
 		hello.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 35));
 		ImageView [] icons = new ImageView[4];
@@ -114,6 +115,7 @@ public class LibrarianView {
 	        if(alert.getResult() == ButtonType.OK)
 	        	(new LoginPage()).show(primaryStage);
 		});
+		icons[0].setId("profile");
 		icons[0].setOnMouseEntered(e->{
 			if(!lib.getPermission().equals(Access.NONE))
 				icons[0].setCursor(Cursor.HAND);
