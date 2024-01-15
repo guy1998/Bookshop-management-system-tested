@@ -99,7 +99,6 @@ public class ProfileView {
 		profile.setStyle("-fx-background-color: purple;");
 		profile.setTextFill(Color.WHITE);
 		profile.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 35));
-		
 		VBox total = new VBox();
 		total.setStyle("-fx-background-color: purple;");
 		total.setAlignment(Pos.CENTER);
@@ -115,11 +114,11 @@ public class ProfileView {
 				"Phone Number: " + user.getPhone(),
 				"Birthday: " + user.getBirthday()
 		};
-		
+		String [] ids = {"name", "surname", "username", "email", "phone", "birthday"};
 		Button [] btns = new Button[6];
 		for(int i=0; i<6; i++) {
-			
 			labels[i] = new Label(s[i]);
+			labels[i].setId(ids[i]);
 			labels[i].setStyle("-fx-background-color: purple;");
 			labels[i].setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
 			labels[i].setTextFill(Color.WHITE);
@@ -127,10 +126,13 @@ public class ProfileView {
 			GridPane.setMargin(labels[i], new Insets(10));
 			
 			
-				if(i == 5)
+				if(i == 5) {
 					btns[i] = new Button("Change password");
-				else
+					btns[i].setId("passwordButton");
+				}else {
 					btns[i] = new Button("Edit");
+					btns[i].setId(ids[i] + "Button");
+				}
 				btns[i].setStyle("-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius:10px;");
 				if(i == 5)
 					btns[i].setPrefSize(200, 40);
@@ -141,7 +143,6 @@ public class ProfileView {
 				btns[i].setAlignment(Pos.CENTER);
 				btns[i].setTextFill(Color.PURPLE);
 				btns[i].setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
-				
 			
 			if(i <= 4) {
 				data.add(labels[i], 0, i);
@@ -167,6 +168,10 @@ public class ProfileView {
 		Button [] confirm = new Button[6];
 		for(int i=0; i<6; i++) {
 			confirm[i] = new Button("Confirm");
+			if(i < 5)
+				confirm[i].setId(ids[i] + "Confirm");
+			else
+				confirm[i].setId("passwordConfirm");
 			confirm[i].setStyle("-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius:10px;");
 			confirm[i].setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
 			confirm[i].setPrefSize(230, 40);
@@ -181,7 +186,7 @@ public class ProfileView {
 				c.setStyle("-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius:10px;");
 			});
 		}
-		
+
 		VBox editName = new VBox();
 		editName.setAlignment(Pos.CENTER);
 		editName.setStyle("-fx-background-color: purple;");
@@ -191,6 +196,7 @@ public class ProfileView {
 		name.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
 		name.setTextFill(Color.WHITE);
 		TextField nameField = new TextField();
+		nameField.setId("nameField");
 		nameField.setStyle("-fx-background-radius: 10px; -fx-border-radius: 10px;");
 		nameField.setPromptText("Name...");
 		nameField.setPrefSize(230, 40);
@@ -204,6 +210,7 @@ public class ProfileView {
 		surname.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
 		surname.setTextFill(Color.WHITE);
 		TextField surnameField = new TextField();
+		surnameField.setId("surnameField");
 		surnameField.setStyle("-fx-background-radius: 10px; -fx-border-radius: 10px;");
 		surnameField.setPromptText("Surname...");
 		surnameField.setPrefSize(230, 40);
@@ -217,6 +224,7 @@ public class ProfileView {
 		username.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
 		username.setTextFill(Color.WHITE);
 		TextField usernameField = new TextField();
+		usernameField.setId("usernameField");
 		usernameField.setStyle("-fx-background-radius: 10px; -fx-border-radius: 10px;");
 		usernameField.setPromptText("username...");
 		usernameField.setPrefSize(230, 40);
@@ -230,6 +238,7 @@ public class ProfileView {
 		email.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
 		email.setTextFill(Color.WHITE);
 		TextField emailField = new TextField();
+		emailField.setId("emailField");
 		emailField.setStyle("-fx-background-radius: 10px; -fx-border-radius: 10px;");
 		emailField.setPromptText("email...");
 		emailField.setPrefSize(230, 40);
@@ -243,6 +252,7 @@ public class ProfileView {
 		phone.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
 		phone.setTextFill(Color.WHITE);
 		TextField phoneField = new TextField();
+		phoneField.setId("phoneField");
 		phoneField.setStyle("-fx-background-radius: 10px; -fx-border-radius: 10px;");
 		phoneField.setPromptText("phone...");
 		phoneField.setPrefSize(230, 40);
@@ -256,10 +266,12 @@ public class ProfileView {
 		password.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
 		password.setTextFill(Color.WHITE);
 		PasswordField passwordField = new PasswordField();
+		passwordField.setId("passwordField");
 		passwordField.setStyle("-fx-background-radius: 10px; -fx-border-radius: 10px;");
 		passwordField.setPromptText("old password...");
 		passwordField.setPrefSize(230, 40);
 		PasswordField npField = new PasswordField();
+		npField.setId("npField");
 		npField.setStyle("-fx-background-radius: 10px; -fx-border-radius: 10px;");
 		npField.setPromptText("new password...");
 		npField.setPrefSize(230, 40);
@@ -366,7 +378,8 @@ public class ProfileView {
 			}catch(InvalidEmail e1) {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Error");
-				alert.setHeaderText(e1.getMessage());
+				alert.setHeaderText("Error with email");
+				alert.setContentText(e1.getMessage());
 				alert.showAndWait();
 			}
 		});
@@ -384,7 +397,9 @@ public class ProfileView {
 			}catch(InvalidPhoneNumberException e1) {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Error");
-				alert.setHeaderText(e1.getMessage());
+				alert.setHeaderText("Error with the phone number");
+				alert.setContentText(e1.getMessage()
+				);
 				alert.showAndWait();
 			}
 		});
@@ -398,6 +413,7 @@ public class ProfileView {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 	        alert.setTitle("Success");
 	        alert.setHeaderText("Password changed successfully");
+			alert.setContentText("Password changed successfully");
 	        alert.showAndWait();
 			editPrompt.getChildren().clear();
 			editPrompt.getChildren().add(nth);
