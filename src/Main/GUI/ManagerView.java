@@ -86,6 +86,7 @@ public class ManagerView {
 	        if(alert.getResult() == ButtonType.OK)
 	        	(new LoginPage()).show(primaryStage);
 		});
+		profile.setId("profile");
 		profile.setOnMouseEntered(e->{
 			profile.setCursor(Cursor.HAND);
 		});
