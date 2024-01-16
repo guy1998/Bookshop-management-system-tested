@@ -162,7 +162,7 @@ public class UserStackUserProxyIntegrationTest {
     @Test
     public void testIntegrationModifyPhoneWriteUsers() throws Exception{
         users = new UserStack(new UserProxy(tempFile.getPath()));
-        Throwable exception = assertThrows(NonExistantUserException.class, ()->users.modifyName(users.findUser("Guy_1989"), "+041356901922"));
+        Throwable exception = assertThrows(InvalidPhoneNumberException.class, ()->users.modifyPhone(users.findUser("Guy_1989"), "+041356901922"));
         assertEquals("Phone number should be of format +3556[7-8-9]xxxxxxx", exception.getMessage());
         users.modifyPhone(users.findUser("Guy_1989"), "+355676105567");
         ArrayList<User> new_users = auxiliaryReader(tempFile);
