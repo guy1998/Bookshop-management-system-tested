@@ -1,11 +1,13 @@
 package Tests.SystemTesting;
 
 import Main.GUI.SignUpPage;
-import Main.Users.UserStack;
+import Main.Backend.Users.UserStack;
+import Tests.Utils.CacheOperations;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationTest;
@@ -24,6 +26,11 @@ public class TestSignUpThread extends ApplicationTest {
     //helper method
     public void newUserDeletion(String username) throws Exception{
         (new UserStack()).deleteUser(username);
+    }
+
+    @BeforeAll
+    public static void clearCache(){
+        CacheOperations.clearCache();
     }
 
     @Test

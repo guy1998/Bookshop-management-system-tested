@@ -1,9 +1,9 @@
 package Main.GUI;
 
-import Main.Products.Book;
-import Main.Products.BookStock;
-import Main.Products.Transaction;
-import Main.Products.TransactionControl;
+import Main.Backend.Products.Book;
+import Main.Backend.Products.BookStock;
+import Main.Backend.Products.Transaction;
+import Main.Backend.Products.TransactionControl;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;

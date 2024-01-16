@@ -3,9 +3,9 @@ package Main.GUI;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 
-import Main.Users.*;
+import Main.Backend.Users.*;
 
-import Main.Notification.Message;
+import Main.Backend.Notification.Message;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;

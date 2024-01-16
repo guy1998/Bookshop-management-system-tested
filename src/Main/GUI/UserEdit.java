@@ -1,6 +1,6 @@
 package Main.GUI;
 
-import Main.Users.*;
+import Main.Backend.Users.*;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;

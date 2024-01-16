@@ -3,14 +3,14 @@ package Main.GUI;
 import java.io.FileInputStream;
 import java.time.LocalDate;
 
-import Main.Exceptions.InvalidEmployeeInfo;
-import Main.Exceptions.InvalidPasswordException;
-import Main.Exceptions.InvalidUsernameException;
-import Main.Exceptions.UserAlreadyExistsException;
-import Main.Users.Access;
-import Main.Users.Administrator;
-import Main.Users.User;
-import Main.Users.UserStack;
+import Main.Backend.Exceptions.InvalidEmployeeInfo;
+import Main.Backend.Exceptions.InvalidPasswordException;
+import Main.Backend.Exceptions.InvalidUsernameException;
+import Main.Backend.Exceptions.UserAlreadyExistsException;
+import Main.Backend.Users.Access;
+import Main.Backend.Users.Administrator;
+import Main.Backend.Users.User;
+import Main.Backend.Users.UserStack;
 import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -396,9 +396,10 @@ public class CreateUserView {
 					ld.getDayOfMonth(), ld.getMonthValue(), ld.getYear(), ssnField.getText(), Double.parseDouble(salaryField.getText()), 
 					aTemp, statusBox.getValue().toString());
 			UserStack users = new UserStack();
+			System.out.println(temp);
 			users.addUser(temp);
 			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle("Succes");
+	        alert.setTitle("Success");
 	        alert.setHeaderText("New user created successfully");
 			alert.setContentText("New user created successfully");
 	        alert.showAndWait();

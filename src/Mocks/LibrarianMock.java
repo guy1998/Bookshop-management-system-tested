@@ -1,11 +1,11 @@
 package Mocks;
 
-import Main.Products.Bill;
-import Main.Products.Book;
-import Main.Users.Access;
-import Main.Users.BillWriter;
-import Main.Users.Librarian;
-import Main.Utilis.CompDate;
+import Main.Backend.Products.Bill;
+import Main.Backend.Products.Book;
+import Main.Backend.Users.Access;
+import Main.Backend.Users.BillWriter;
+import Main.Backend.Users.Librarian;
+import Main.Backend.Utilis.CompDate;
 
 import java.util.ArrayList;
 import java.util.HashMap;

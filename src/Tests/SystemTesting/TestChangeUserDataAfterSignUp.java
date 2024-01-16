@@ -1,10 +1,9 @@
 package Tests.SystemTesting;
 
-import Main.GUI.LoginPage;
 import Main.GUI.SignUpPage;
-import Main.Users.Administrator;
-import Main.Users.User;
-import Main.Users.UserStack;
+import Main.Backend.Users.User;
+import Main.Backend.Users.UserStack;
+import Tests.Utils.CacheOperations;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
@@ -28,6 +27,11 @@ public class TestChangeUserDataAfterSignUp extends ApplicationTest {
     @Override
     public void start(Stage primaryStage){
         (new SignUpPage()).show(primaryStage);
+    }
+
+    @BeforeAll
+    public static void clearCache(){
+        CacheOperations.clearCache();
     }
 
     @AfterAll

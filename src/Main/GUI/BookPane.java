@@ -1,6 +1,6 @@
 package Main.GUI;
 
-import Main.Products.Book;
+import Main.Backend.Products.Book;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;

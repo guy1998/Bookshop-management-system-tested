@@ -1,0 +1,2500 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Librarian.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package Main.Backend.Users;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import Main.Backend.Products.Bill;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import Main.Backend.Products.Book;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import Main.Backend.Utilis.CompDate;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.*;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Librarian extends Employee{</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private final File billFolder;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;protected ArrayList&#60;Bill&#62; bills;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;protected BillWriter writer;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public Librarian(String name, String surname, String username, String password, String email, String phone, int day, int month, int year, String SSN, double salary, Access permission) throws Exception{</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;super(name, surname, username, password, email, phone, day, month, year, Status.LIBRARIAN, SSN, salary, permission);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;writer = new BillWriter(&#34;Database/Bills/BinaryBill/&#34; +this.getUserId() + &#34;.dat&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;bills = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;billFolder = new File(&#34;Database/Bills/TextBill/&#34; + this.getUserId());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_22'/>
+22
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_22'>1</a>
+<span>
+
+1. &#60;init&#62; : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;if(!billFolder.exists())</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_23'/>
+23
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_23'>1</a>
+<span>
+
+1. &#60;init&#62; : removed call to java/io/PrintStream::println &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;&#9;System.out.println(billFolder.mkdirs());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public void writeBills() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_27'/>
+27
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_27'>1</a>
+<span>
+
+1. writeBills : removed call to Main/Backend/Users/BillWriter::writeBills &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;writer.writeBills(bills);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public ArrayList&#60;Bill&#62; readBills() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;bills = writer.readBills();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_32'/>
+32
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_32'>1</a>
+<span>
+
+1. readBills : replaced return value with null for Main/Backend/Users/Librarian::readBills &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;return bills;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public int nrOfBills() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;int cnt = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;bills = readBills();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;for(Bill bill : bills) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_39'/>
+39
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_39'>1</a>
+<span>
+
+1. nrOfBills : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;cnt++;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_42'/>
+42
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_42'>1</a>
+<span>
+
+1. nrOfBills : replaced int return with 0 for Main/Backend/Users/Librarian::nrOfBills &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return cnt;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public int nrOfBills(CompDate specificDate) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;int cnt = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;bills = readBills();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;for(Bill bill : bills) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_50'/>
+50
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_50'>1</a>
+<span>
+
+1. nrOfBills : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;if(bill.getDateIssued().compareTo(specificDate) == 0)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_51'/>
+51
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_51'>1</a>
+<span>
+
+1. nrOfBills : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;&#9;cnt++;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_54'/>
+54
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_54'>1</a>
+<span>
+
+1. nrOfBills : replaced int return with 0 for Main/Backend/Users/Librarian::nrOfBills &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return cnt;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public int nrOfBills(CompDate start, CompDate end) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;int cnt = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;bills = readBills();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;for(Bill bill : bills) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_62'/>
+62
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_62'>4</a>
+<span>
+
+1. nrOfBills : changed conditional boundary &rarr; SURVIVED<br/>
+
+2. nrOfBills : changed conditional boundary &rarr; SURVIVED<br/>
+
+3. nrOfBills : negated conditional &rarr; KILLED<br/>
+
+4. nrOfBills : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;&#9;if(bill.getDateIssued().compareTo(start) &#62;= 0 &#38;&#38; bill.getDateIssued().compareTo(end) &#60;= 0)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_63'/>
+63
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_63'>1</a>
+<span>
+
+1. nrOfBills : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;&#9;cnt++;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_66'/>
+66
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_66'>1</a>
+<span>
+
+1. nrOfBills : replaced int return with 0 for Main/Backend/Users/Librarian::nrOfBills &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return cnt;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public int nrOfBooks(CompDate specificDate) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;int cnt = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;bills = readBills();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;for(Bill bill : bills) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_73'/>
+73
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_73'>1</a>
+<span>
+
+1. nrOfBooks : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;if(bill.getDateIssued().compareTo(specificDate) == 0)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;&#9;for(Book x:bill.getBooksSold()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_75'/>
+75
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_75'>1</a>
+<span>
+
+1. nrOfBooks : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;&#9;&#9;cnt += x.getNumber();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_80'/>
+80
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_80'>1</a>
+<span>
+
+1. nrOfBooks : replaced int return with 0 for Main/Backend/Users/Librarian::nrOfBooks &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return cnt;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public int nrOfBooks(CompDate start, CompDate end) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;int cnt = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;bills = readBills();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;for(Bill bill : bills) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_88'/>
+88
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_88'>4</a>
+<span>
+
+1. nrOfBooks : changed conditional boundary &rarr; SURVIVED<br/>
+
+2. nrOfBooks : changed conditional boundary &rarr; SURVIVED<br/>
+
+3. nrOfBooks : negated conditional &rarr; KILLED<br/>
+
+4. nrOfBooks : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;&#9;if(bill.getDateIssued().compareTo(start) &#62;= 0 &#38;&#38; bill.getDateIssued().compareTo(end) &#60;= 0)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;&#9;for(Book x:bill.getBooksSold())</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_90'/>
+90
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_90'>1</a>
+<span>
+
+1. nrOfBooks : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;&#9;&#9;cnt += x.getNumber();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_93'/>
+93
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_93'>1</a>
+<span>
+
+1. nrOfBooks : replaced int return with 0 for Main/Backend/Users/Librarian::nrOfBooks &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return cnt;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public double moneyMade(CompDate specificDate) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;double amount = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;bills = readBills();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;for(Bill bill : bills) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_101'/>
+101
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_101'>1</a>
+<span>
+
+1. moneyMade : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;if(bill.getDateIssued().compareTo(specificDate) == 0)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;&#9;for(Book x:bill.getBooksSold()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_103'/>
+103
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_103'>2</a>
+<span>
+
+1. moneyMade : Replaced double multiplication with division &rarr; KILLED<br/>
+
+2. moneyMade : Replaced double addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;&#9;&#9;amount += x.getNumber() * x.getSellingPrice();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_104'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_108'/>
+108
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_108'>1</a>
+<span>
+
+1. moneyMade : replaced double return with 0.0d for Main/Backend/Users/Librarian::moneyMade &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return amount;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_110'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public double moneyMade(CompDate start, CompDate end) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;double amount = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_115'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;bills = readBills();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_116'/>
+116
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_116'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;for(Bill bill : bills) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_117'/>
+117
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_117'>4</a>
+<span>
+
+1. moneyMade : changed conditional boundary &rarr; SURVIVED<br/>
+
+2. moneyMade : changed conditional boundary &rarr; SURVIVED<br/>
+
+3. moneyMade : negated conditional &rarr; KILLED<br/>
+
+4. moneyMade : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;&#9;if(bill.getDateIssued().compareTo(start) &#62;= 0 &#38;&#38; bill.getDateIssued().compareTo(end) &#60;= 0)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;&#9;for (Book x : bill.getBooksSold())</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_119'/>
+119
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_119'>2</a>
+<span>
+
+1. moneyMade : Replaced double addition with subtraction &rarr; KILLED<br/>
+
+2. moneyMade : Replaced double multiplication with division &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;&#9;&#9;amount += x.getNumber() * x.getSellingPrice();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_121'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_122'/>
+122
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_122'>1</a>
+<span>
+
+1. moneyMade : replaced double return with 0.0d for Main/Backend/Users/Librarian::moneyMade &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return amount;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_125'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public double createBill(ArrayList&#60;Book&#62; books) throws Exception{</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_126'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_127'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;bills = readBills();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;Bill newBill = new Bill(books);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_129'/>
+129
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_129'>1</a>
+<span>
+
+1. createBill : removed call to Main/Backend/Products/Bill::printFormat &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;newBill.printFormat(billFolder + &#34;/[Bill&#34; + this.nrOfBills() + &#34;].txt&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_130'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;bills.add(newBill);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_131'/>
+131
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_131'>1</a>
+<span>
+
+1. createBill : removed call to Main/Backend/Users/Librarian::writeBills &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;writeBills();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_133'/>
+133
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_133'>1</a>
+<span>
+
+1. createBill : replaced double return with 0.0d for Main/Backend/Users/Librarian::createBill &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return newBill.getTotalAmount();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_134'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4bc33720_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_22'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_23'>23</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_23'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_27'>27</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_27'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>writeBills<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianFileTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianFileTest]/[method:testCreate1Bill()]</span></span> removed call to Main/Backend/Users/BillWriter::writeBills &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_32'>32</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_32'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readBills<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianFileTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianFileTest]/[method:testCreate1Bill()]</span></span> replaced return value with null for Main/Backend/Users/Librarian::readBills &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_39'>39</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_39'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBills<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, int)]/[test-template-invocation:#2]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_42'>42</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_42'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBills<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, int)]/[test-template-invocation:#2]</span></span> replaced int return with 0 for Main/Backend/Users/Librarian::nrOfBills &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_50'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBills<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, int)]/[test-template-invocation:#2]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_51'>51</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_51'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBills<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_54'>54</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_54'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBills<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1]</span></span> replaced int return with 0 for Main/Backend/Users/Librarian::nrOfBills &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_62'>62</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_62'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBills<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#2]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>nrOfBills<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>nrOfBills<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#1]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>nrOfBills<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_63'>63</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_63'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBills<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_66'>66</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_66'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBills<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3]</span></span> replaced int return with 0 for Main/Backend/Users/Librarian::nrOfBills &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_73'>73</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_73'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBooks<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, int)]/[test-template-invocation:#2]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_75'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBooks<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_80'>80</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_80'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBooks<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1]</span></span> replaced int return with 0 for Main/Backend/Users/Librarian::nrOfBooks &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_88'>88</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_88'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBooks<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>nrOfBooks<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>nrOfBooks<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>nrOfBooks<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#2]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_90'>90</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_90'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBooks<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_93'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nrOfBooks<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3]</span></span> replaced int return with 0 for Main/Backend/Users/Librarian::nrOfBooks &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_101'>101</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_101'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>moneyMade<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, int)]/[test-template-invocation:#2]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_103'>103</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_103'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>moneyMade<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1]</span></span> Replaced double multiplication with division &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>moneyMade<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1]</span></span> Replaced double addition with subtraction &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_108'>108</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_108'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>moneyMade<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1]</span></span> replaced double return with 0.0d for Main/Backend/Users/Librarian::moneyMade &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_117'>117</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_117'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>moneyMade<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>moneyMade<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>moneyMade<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>moneyMade<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#2]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_119'>119</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_119'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>moneyMade<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3]</span></span> Replaced double addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>moneyMade<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3]</span></span> Replaced double multiplication with division &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_122'>122</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_122'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>moneyMade<br/><b>Killed by : </b>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3]</span></span> replaced double return with 0.0d for Main/Backend/Users/Librarian::moneyMade &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_129'>129</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_129'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBill<br/><b>Killed by : </b>none</span></span> removed call to Main/Backend/Products/Bill::printFormat &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_131'>131</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_131'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBill<br/><b>Killed by : </b>none</span></span> removed call to Main/Backend/Users/Librarian::writeBills &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4bc33720_133'>133</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4bc33720_133'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBill<br/><b>Killed by : </b>none</span></span> replaced double return with 0.0d for Main/Backend/Users/Librarian::createBill &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+
+<li class='mutator'>EMPTY_RETURNS</li>
+
+<li class='mutator'>FALSE_RETURNS</li>
+
+<li class='mutator'>INCREMENTS</li>
+
+<li class='mutator'>INVERT_NEGS</li>
+
+<li class='mutator'>MATH</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+
+<li class='mutator'>NULL_RETURNS</li>
+
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+
+<li class='mutator'>TRUE_RETURNS</li>
+
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1] (6 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest]/[method:readBillsMoneyMade1ArgTest()] (11 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#2] (0 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3] (0 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#1] (1 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest]/[method:readBillsNrOfBooks2ArgTest()] (18 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1] (0 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest]/[method:readBillsNrOfBills1ArgTest()] (12 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#2] (0 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3] (0 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#1] (1 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest]/[method:readBillsNrOfBills2ArgTest()] (13 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#2] (0 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#3] (0 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, java.lang.String, int)]/[test-template-invocation:#1] (5 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest]/[method:readBillsMoneyMade2ArgTest()] (20 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, java.lang.String, int)]/[test-template-invocation:#2] (0 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1] (0 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest]/[method:readBillsNrOfBooks1ArgTest()] (12 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyUsername(java.lang.String, java.lang.String)]/[test-template-invocation:#4] (6 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyUsername(java.lang.String, java.lang.String)]/[test-template-invocation:#2] (7 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyPassword(java.lang.String, java.lang.String)]/[test-template-invocation:#2] (7 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyPassword(java.lang.String, java.lang.String)]/[test-template-invocation:#4] (6 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyPassword(java.lang.String, java.lang.String)]/[test-template-invocation:#6] (6 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyUsername(java.lang.String, java.lang.String)]/[test-template-invocation:#3] (6 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testModifyEmailCorrectFlow()] (6 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyPassword(java.lang.String, java.lang.String)]/[test-template-invocation:#1] (7 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyPassword(java.lang.String, java.lang.String)]/[test-template-invocation:#3] (7 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testAddUserErrorHandling()] (7 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyPassword(java.lang.String, java.lang.String)]/[test-template-invocation:#5] (6 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyPassword(java.lang.String, java.lang.String)]/[test-template-invocation:#7] (6 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyUsername(java.lang.String, java.lang.String)]/[test-template-invocation:#1] (7 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testFilterByStatusAllDifferentNoResult()] (6 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[test-template:testModifyUsername(java.lang.String, java.lang.String)]/[test-template-invocation:#5] (8 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testModifyPhone()] (8 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testModifyEmail()] (9 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testModifyPhoneCorrectFlow()] (8 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testModifyUsernameCorrectFlow()] (7 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testModifyPasswordCorrectFlow()] (6 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testAddUserCorrectScenario()] (10 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianFileTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianFileTest]/[method:testCreate1Bill()] (8 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianFileTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianFileTest]/[method:testCreate0Bill()] (9 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testFilterByStatusAllSameNoResult()] (8 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testFilterByStatusAllDifferent()] (10 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testFindUserByUsername()] (10 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testFullCoverage()] (6 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testFindUserByReference()] (11 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianFileTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianFileTest]/[method:testCreate2Bill()] (13 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.TestUserStack.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.TestUserStack]/[method:testFilterByStatusAllTheSame()] (15 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest]/[method:readBillsNrOfBills0ArgTest()] (17 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[test-template:testIntegrationModifyUsernameWriteUsersFirstScenario(java.lang.String, java.lang.String)]/[test-template-invocation:#1] (18 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[test-template:testIntegrationModifyUsernameWriteUsersFirstScenario(java.lang.String, java.lang.String)]/[test-template-invocation:#2] (18 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[test-template:testIntegrationModifyPasswordWriteUsersFirstScenario(java.lang.String, java.lang.String)]/[test-template-invocation:#4] (18 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[test-template:testIntegrationModifyPasswordWriteUsersFirstScenario(java.lang.String, java.lang.String)]/[test-template-invocation:#1] (19 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[test-template:testIntegrationModifyPasswordWriteUsersFirstScenario(java.lang.String, java.lang.String)]/[test-template-invocation:#2] (19 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[test-template:testIntegrationModifyUsernameWriteUsersFirstScenario(java.lang.String, java.lang.String)]/[test-template-invocation:#3] (19 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[test-template:testIntegrationModifyPasswordWriteUsersFirstScenario(java.lang.String, java.lang.String)]/[test-template-invocation:#3] (19 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[test-template:testIntegrationModifyPasswordWriteUsersFirstScenario(java.lang.String, java.lang.String)]/[test-template-invocation:#5] (20 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[method:testIntegrationModifyUsernameWriteUsersSecondScenario()] (23 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[method:testIntegrationModifyPermissionWriteUsers()] (24 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[method:testIntegrationModifySurnameWriteUsers()] (25 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[method:testIntegrationModifySalaryWriteUsers()] (26 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[method:testIntegrationModifySSNWriteUsers()] (27 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[method:testIntegrationModifyEmailWriteUsers()] (26 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[method:testIntegrationModifyNameWriteUsers()] (29 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[method:testIntegrationModifyPhoneWriteUsers()] (29 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[method:testIntegrationDeleteUserWriteUsers()] (33 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[method:testIntegrationModifyPasswordWriteUsersSecondScenario()] (35 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.LibrarianBillWriterIntegrationTest]/[method:billWriterCreateBillTest()] (44 ms)</li><li>Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.IntegrationTesting.UserStackUserProxyIntegrationTest]/[method:testIntegrationAddUserWriteUsers()] (51 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBooks(java.lang.String, java.lang.String, int)]/[test-template-invocation:#2] (0 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, int)]/[test-template-invocation:#2] (0 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testNrOfBills(java.lang.String, int)]/[test-template-invocation:#1] (3 ms)</li><li>Tests.UnitAndIntegration.UnitTesting.LibrarianTest.[engine:junit-jupiter]/[class:Tests.UnitAndIntegration.UnitTesting.LibrarianTest]/[test-template:testMoneyMade(java.lang.String, java.lang.String, int)]/[test-template-invocation:#2] (0 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.15.2
+
+</body>
+</html>

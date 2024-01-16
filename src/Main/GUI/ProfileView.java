@@ -2,11 +2,11 @@ package Main.GUI;
 
 import java.io.FileInputStream;
 
-import Main.Exceptions.InvalidEmail;
-import Main.Exceptions.InvalidPasswordException;
-import Main.Exceptions.InvalidPhoneNumberException;
-import Main.Exceptions.InvalidUsernameException;
-import Main.Users.*;
+import Main.Backend.Exceptions.InvalidEmail;
+import Main.Backend.Exceptions.InvalidPasswordException;
+import Main.Backend.Exceptions.InvalidPhoneNumberException;
+import Main.Backend.Exceptions.InvalidUsernameException;
+import Main.Backend.Users.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

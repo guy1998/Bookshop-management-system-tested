@@ -1,11 +1,11 @@
 package Main.GUI;
 
-import Main.Products.Book;
-import Main.Products.BookStock;
-import Main.Users.Administrator;
-import Main.Users.Manager;
-import Main.Users.Status;
-import Main.Users.User;
+import Main.Backend.Products.Book;
+import Main.Backend.Products.BookStock;
+import Main.Backend.Users.Administrator;
+import Main.Backend.Users.Manager;
+import Main.Backend.Users.Status;
+import Main.Backend.Users.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;

@@ -1,7 +1,7 @@
 package Mocks;
 
-import Main.Products.Book;
-import Main.Products.BookDb;
+import Main.Backend.Products.Book;
+import Main.Backend.Products.BookDb;
 
 import java.util.ArrayList;
 

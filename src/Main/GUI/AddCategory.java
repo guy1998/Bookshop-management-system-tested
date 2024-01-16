@@ -2,8 +2,8 @@ package Main.GUI;
 
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import Main.Products.BookStock;
-import Main.Users.User;
+import Main.Backend.Products.BookStock;
+import Main.Backend.Users.User;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;

@@ -2,17 +2,16 @@ package Tests.SystemTesting;
 
 
 import Main.GUI.LoginPage;
-import Main.Users.Administrator;
-import Main.Users.UserStack;
+import Main.Backend.Users.Administrator;
+import Main.Backend.Users.UserStack;
+import Tests.Utils.CacheOperations;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationTest;
-import org.testfx.matcher.control.LabeledMatchers;
 
 import java.util.HashMap;
 
@@ -30,14 +29,15 @@ public class TestAddUserThread extends ApplicationTest{
 
     @BeforeAll
     public static void createUserInDb() throws Exception{
+        CacheOperations.clearCache();
         Administrator admin = new Administrator("Aldrin", "Cifliku", "Guy_1989", "Juve/123", "acifliku@gmail.com", "+355676105565", 17, 12, 2002);
         users.addUser(admin);
     }
 
     @AfterAll
     public static void cleanDatabase() throws Exception{
-        users.deleteUser("Guy_1989");
         users = new UserStack();
+        users.deleteUser("Guy_1989");
         if(userAdded)
             users.deleteUser("New_1234");
     }
@@ -150,6 +150,7 @@ public class TestAddUserThread extends ApplicationTest{
         FxRobot robot = new FxRobot();
         Text text = robot.lookup(".dialog-pane .content .text").query();
         verifyThat(text, hasText("New user created successfully"));
+        clickOn("OK");
         userAdded = true;
     }
 

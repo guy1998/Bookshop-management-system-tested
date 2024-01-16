@@ -1,11 +1,10 @@
 package Tests.SystemTesting;
+import Tests.Utils.CacheOperations;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
 import Main.GUI.LoginPage;
-import Main.GUI.ManagerView;
-import Main.Users.*;
-import javafx.application.Application;
+import Main.Backend.Users.*;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
@@ -34,6 +33,7 @@ public class ChangeUserDataThreadManager extends ApplicationTest {
 
     @BeforeAll
     public static void addUser() throws Exception{
+        CacheOperations.clearCache();
         Manager manager = new Manager("Aldrin", "Cifliku", "Guy_1989", "Juve/123", "acifliku@gmail.com", "+355676105565", 17, 12, 2002, "123-1234-918", 1500.0, Access.FULL);
         users.addUser(manager);
     }

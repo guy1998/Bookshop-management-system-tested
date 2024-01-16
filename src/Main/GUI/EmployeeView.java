@@ -1,6 +1,6 @@
 package Main.GUI;
 
-import Main.Users.*;
+import Main.Backend.Users.*;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;

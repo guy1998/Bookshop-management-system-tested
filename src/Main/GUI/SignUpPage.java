@@ -4,10 +4,10 @@ import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.time.LocalDate;
 
-import Main.Exceptions.InvalidPasswordException;
-import Main.Exceptions.InvalidUsernameException;
-import Main.Users.Administrator;
-import Main.Users.UserStack;
+import Main.Backend.Exceptions.InvalidPasswordException;
+import Main.Backend.Exceptions.InvalidUsernameException;
+import Main.Backend.Users.Administrator;
+import Main.Backend.Users.UserStack;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
@@ -302,31 +302,39 @@ public class SignUpPage {
 				signUpButton.setOnAction(e -> {
 					
 					if(keyField.getText().equals("123456")) {
-						try {
-							LocalDate temp = birthday.getValue();
-							Administrator newAdmin = new Administrator(nameField.getText(), surnameField.getText(), usernameField.getText(), passwordField.getText(),
-									emailField.getText(), phoneField.getText(), temp.getDayOfMonth(), temp.getMonthValue(), temp.getYear());
-							UserStack users = new UserStack();
-							users.addUser(newAdmin);
-							newAdmin = (Administrator) users.findUser(newAdmin.getUsername());
-							(new AdminView(newAdmin)).show(primaryStage);
-						}catch(InvalidUsernameException e1) {
+						if(retype.getText().equals(passwordField.getText())) {
+							try {
+								LocalDate temp = birthday.getValue();
+								Administrator newAdmin = new Administrator(nameField.getText(), surnameField.getText(), usernameField.getText(), passwordField.getText(),
+										emailField.getText(), phoneField.getText(), temp.getDayOfMonth(), temp.getMonthValue(), temp.getYear());
+								UserStack users = new UserStack();
+								users.addUser(newAdmin);
+								newAdmin = (Administrator) users.findUser(newAdmin.getUsername());
+								(new AdminView(newAdmin)).show(primaryStage);
+							} catch (InvalidUsernameException e1) {
+								Alert alert = new Alert(AlertType.WARNING);
+								alert.setTitle("Error");
+								alert.setHeaderText("Invalid username entered");
+								alert.setContentText(e1.getMessage());
+								alert.showAndWait();
+							} catch (InvalidPasswordException e2) {
+								Alert alert = new Alert(AlertType.WARNING);
+								alert.setTitle("Error");
+								alert.setHeaderText("Invalid password entered");
+								alert.setContentText(e2.getMessage());
+								alert.showAndWait();
+							} catch (Exception e1) {
+								Alert alert = new Alert(AlertType.ERROR);
+								alert.setTitle("Error");
+								alert.setHeaderText("Invalid information passed!");
+								alert.setContentText(e1.getMessage());
+								alert.showAndWait();
+							}
+						}else{
 							Alert alert = new Alert(AlertType.WARNING);
-					        alert.setTitle("Error");
-					        alert.setHeaderText("Invalid username entered");
-					        alert.setContentText(e1.getMessage());
-					        alert.showAndWait();
-						}catch(InvalidPasswordException e2) {
-							Alert alert = new Alert(AlertType.WARNING);
-					        alert.setTitle("Error");
-					        alert.setHeaderText("Invalid password entered");
-					        alert.setContentText(e2.getMessage());
-					        alert.showAndWait();
-						}catch (Exception e1) {
-							Alert alert = new Alert(AlertType.ERROR);
-							alert.setTitle("Error");
-							alert.setHeaderText("Invalid information passed!");
-							alert.setContentText(e1.getMessage());
+							alert.setTitle("Invalid operation");
+							alert.setHeaderText("Invalid password!");
+							alert.setContentText("Re-Type the password correctly!");
 							alert.showAndWait();
 						}
 					}else {

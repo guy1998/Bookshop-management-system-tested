@@ -4,9 +4,9 @@ import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 
-import Main.Notification.Message;
-import Main.Users.Access;
-import Main.Users.Librarian;
+import Main.Backend.Notification.Message;
+import Main.Backend.Users.Access;
+import Main.Backend.Users.Librarian;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;

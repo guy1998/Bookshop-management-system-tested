@@ -8,14 +8,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import Main.Users.Administrator;
-import Main.Users.Status;
+import Main.Backend.Users.Administrator;
+import Main.Backend.Users.Status;
 
 import java.util.ArrayList;
 
-import Main.Exceptions.NonExistantUserException;
-import Main.Notification.Message;
-import Main.Users.*;
+import Main.Backend.Exceptions.NonExistantUserException;
+import Main.Backend.Notification.Message;
+import Main.Backend.Users.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.BorderPane;

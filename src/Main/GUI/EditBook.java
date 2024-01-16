@@ -1,9 +1,9 @@
 package Main.GUI;
 
-import Main.Exceptions.InvalidBookInfo;
-import Main.Products.Book;
-import Main.Products.BookStock;
-import Main.Users.User;
+import Main.Backend.Exceptions.InvalidBookInfo;
+import Main.Backend.Products.Book;
+import Main.Backend.Products.BookStock;
+import Main.Backend.Users.User;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;

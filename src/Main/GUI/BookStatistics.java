@@ -6,11 +6,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Main.Products.Book;
-import Main.Products.Transaction;
-import Main.Products.TransactionControl;
-import Main.Users.Manager;
-import Main.Utilis.CompDate;
+import Main.Backend.Products.Book;
+import Main.Backend.Products.Transaction;
+import Main.Backend.Products.TransactionControl;
+import Main.Backend.Users.Manager;
+import Main.Backend.Utilis.CompDate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;

@@ -1,12 +1,13 @@
 package Tests.SystemTesting;
 
 import Main.GUI.LoginPage;
-import Main.Products.Author;
-import Main.Products.Book;
-import Main.Users.Access;
-import Main.Users.Administrator;
-import Main.Users.Librarian;
-import Main.Users.UserStack;
+import Main.Backend.Products.Author;
+import Main.Backend.Products.Book;
+import Main.Backend.Users.Access;
+import Main.Backend.Users.Administrator;
+import Main.Backend.Users.Librarian;
+import Main.Backend.Users.UserStack;
+import Tests.Utils.CacheOperations;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
@@ -47,6 +48,7 @@ public class TestLibrarianStatisticsThread extends ApplicationTest {
 
     @BeforeAll
     public static void addStatistics() throws Exception{
+        CacheOperations.clearCache();
         Administrator admin = new Administrator("Aldrin", "Cifliku", "Guy_1989", "Juve/123", "acifliku@gmail.com", "+355676105565", 17, 12, 2002);
         users.addUser(admin);
         Librarian max = new Librarian("Max", "Verstappen", "Super/123", "Red/1234", "max@gmail.com", "+355676105565", 1, 1, 1999, "123-1019-231", 1500.0, Access.FULL);

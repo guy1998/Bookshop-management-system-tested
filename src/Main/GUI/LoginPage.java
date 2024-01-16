@@ -4,7 +4,7 @@ import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 
-import Main.Exceptions.*;
+import Main.Backend.Exceptions.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -29,7 +29,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 
-import Main.Users.*;
+import Main.Backend.Users.*;
 
 public class LoginPage {
 	

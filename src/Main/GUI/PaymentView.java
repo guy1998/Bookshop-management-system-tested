@@ -6,10 +6,10 @@ import javafx.scene.control.Alert.AlertType;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-import Main.Products.Book;
-import Main.Products.Transaction;
-import Main.Products.TransactionControl;
-import Main.Users.Librarian;
+import Main.Backend.Products.Book;
+import Main.Backend.Products.Transaction;
+import Main.Backend.Products.TransactionControl;
+import Main.Backend.Users.Librarian;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;

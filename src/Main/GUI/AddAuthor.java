@@ -2,9 +2,9 @@ package Main.GUI;
 
 import java.util.ArrayList;
 
-import Main.Products.Author;
-import Main.Products.Book;
-import Main.Products.BookStock;
+import Main.Backend.Products.Author;
+import Main.Backend.Products.Book;
+import Main.Backend.Products.BookStock;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;

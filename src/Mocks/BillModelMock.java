@@ -1,8 +1,8 @@
 package Mocks;
 
-import Main.Products.Bill;
-import Main.Products.Book;
-import Main.Utilis.CompDate;
+import Main.Backend.Products.Bill;
+import Main.Backend.Products.Book;
+import Main.Backend.Utilis.CompDate;
 
 import java.util.ArrayList;
 

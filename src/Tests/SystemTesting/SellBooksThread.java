@@ -1,14 +1,14 @@
 package Tests.SystemTesting;
 
-import Main.Exceptions.InvalidBookInfo;
 import Main.GUI.LoginPage;
-import Main.Products.Author;
-import Main.Products.Book;
-import Main.Products.BookStock;
-import Main.Products.TransactionControl;
-import Main.Users.Access;
-import Main.Users.Librarian;
-import Main.Users.UserStack;
+import Main.Backend.Products.Author;
+import Main.Backend.Products.Book;
+import Main.Backend.Products.BookStock;
+import Main.Backend.Products.TransactionControl;
+import Main.Backend.Users.Access;
+import Main.Backend.Users.Librarian;
+import Main.Backend.Users.UserStack;
+import Tests.Utils.CacheOperations;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -58,6 +58,7 @@ public class SellBooksThread extends ApplicationTest {
 
     @BeforeAll
     public static void addUser() throws Exception{
+        CacheOperations.clearCache();
         Librarian librarian = new Librarian("Aldrin", "Cifliku", "Guy_1989", "Juve/123", "acifliku@gmail.com", "+355676105565", 17, 12, 2002, "123-1234-918", 1500.0, Access.FULL);
         users.addUser(librarian);
         createBooks();

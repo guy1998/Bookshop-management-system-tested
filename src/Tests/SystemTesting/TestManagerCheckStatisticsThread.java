@@ -1,11 +1,12 @@
 package Tests.SystemTesting;
 
-import Main.Exceptions.InvalidBookInfo;
+import Main.Backend.Exceptions.InvalidBookInfo;
 import Main.GUI.LoginPage;
-import Main.Products.Author;
-import Main.Products.Book;
-import Main.Products.BookStock;
-import Main.Users.*;
+import Main.Backend.Products.Author;
+import Main.Backend.Products.Book;
+import Main.Backend.Products.BookStock;
+import Main.Backend.Users.*;
+import Tests.Utils.CacheOperations;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.AfterAll;
@@ -59,6 +60,7 @@ public class TestManagerCheckStatisticsThread extends ApplicationTest {
 
     @BeforeAll
     public static void createUsersAndBooks() throws Exception {
+        CacheOperations.clearCache();
         Administrator admin = new Administrator("Aldrin", "Cifliku", "Guy_1989", "Juve/123", "acifliku@gmail.com", "+355676105565", 17, 12, 2002);
         users.addUser(admin);
         Manager max = new Manager("Max", "Verstappen", "Super/123", "Red/1234", "max@gmail.com", "+355676105565", 1, 1, 1999, "123-1019-231", 1500.0, Access.FULL);

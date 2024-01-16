@@ -1,8 +1,8 @@
 package Main.GUI;
 
-import Main.Products.Book;
-import Main.Products.BookStock;
-import Main.Users.Librarian;
+import Main.Backend.Products.Book;
+import Main.Backend.Products.BookStock;
+import Main.Backend.Users.Librarian;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;

@@ -1,7 +1,7 @@
 package Mocks;
 
-import Main.Users.User;
-import Main.Users.UserDb;
+import Main.Backend.Users.User;
+import Main.Backend.Users.UserDb;
 
 import java.util.ArrayList;
 

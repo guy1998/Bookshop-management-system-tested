@@ -1,13 +1,13 @@
 package Main.GUI;
-import Main.Users.*;
+import Main.Backend.Users.*;
 
 import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
 
-import Main.Notification.Message;
-import Main.Products.BookStock;
+import Main.Backend.Notification.Message;
+import Main.Backend.Products.BookStock;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
