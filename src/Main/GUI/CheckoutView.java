@@ -100,6 +100,7 @@ public class CheckoutView {
 		else {
 			for(Book book : billBooks) {
 				Label bookL = book.createLabel();
+				bookL.setId(book.getISBN());
 				bookL.setText(bookL.getText() + ", Total amount: " + book.getSellingPrice() * book.getNumber() + "$");
 				bookL.setMinHeight(60);
 				bookL.setPrefWidth(663);
@@ -148,6 +149,7 @@ public class CheckoutView {
 					remove.setStyle("-fx-background-color: purple;");
 				});
 				Button add = new Button();
+				add.setId("plus"+book.getISBN());
 				try {
 					input = new FileInputStream("Images/plus.png");
 				}catch(java.io.FileNotFoundException e) {
@@ -219,6 +221,7 @@ public class CheckoutView {
 		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
 		
 		Button check = new Button("Go to payment");
+		check.setId("pay");
 		check.setPrefSize(800, 60);
 		check.setStyle("-fx-background-color: purple;");
 		check.setTextFill(Color.WHITE);
