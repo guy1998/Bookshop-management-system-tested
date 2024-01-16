@@ -1,15 +1,6 @@
 package Main.GUI;
 
-import java.io.File;
-import java.io.FileInputStream;
-
-import Main.Users.Access;
-import Main.Users.Administrator;
-import Main.Users.Employee;
-import Main.Users.Librarian;
-import Main.Users.Status;
-import Main.Users.User;
-import Main.Users.UserStack;
+import Main.Users.*;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -17,12 +8,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -35,6 +21,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.FileInputStream;
 
 public class UserEdit {
 	
@@ -144,6 +133,7 @@ public class UserEdit {
 			temp.setTextFill(Color.PURPLE);
 			temp.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 17));
 			btns[i] = temp;
+			btns[i].setId(""+i);
 		}
 		Access [] access = new Access[3];
 		access[0] = Access.FULL;

@@ -1,14 +1,6 @@
 package Main.GUI;
 
-import java.io.FileInputStream;
-import java.util.ArrayList;
-
-import Main.Users.Administrator;
-import Main.Users.Librarian;
-import Main.Users.Manager;
-import Main.Users.Status;
-import Main.Users.User;
-import Main.Users.UserStack;
+import Main.Users.*;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
@@ -26,6 +18,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
+import java.util.ArrayList;
 
 public class EmployeeView {
 
@@ -83,6 +78,7 @@ public class EmployeeView {
 		sp.setFocusTraversable(false);
 		sp.setPrefWidth(800);
 		VBox background = new VBox();
+		background.setId("bg");
 		background.setStyle("-fx-background-color: lightgrey;");
 		background.setPrefWidth(783);
 		background.setMinHeight(480);

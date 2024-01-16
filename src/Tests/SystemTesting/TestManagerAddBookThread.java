@@ -9,6 +9,7 @@ import Main.Users.Access;
 import Main.Users.Administrator;
 import Main.Users.Manager;
 import Main.Users.UserStack;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -24,7 +25,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class TestManagerEditBookThread extends ApplicationTest {
+public class TestManagerAddBookThread extends ApplicationTest {
 
     private static final UserStack users = new UserStack();
     private static final BookStock stock = new BookStock();
@@ -51,7 +52,7 @@ public class TestManagerEditBookThread extends ApplicationTest {
         try {
             book1 = new Book("132-2141-421", "Harry Potter", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Joanne", "K", "Rowling"));
             book2 = new Book("132-2141-420", "Book with 2 authors", "Fantasy", 12.5, 11.5, 13.5, 3, 12, 1991, new Author("Author", "1"), new Author("Author", "2"));
-             } catch (InvalidBookInfo e) {
+        } catch (InvalidBookInfo e) {
             throw new RuntimeException(e);
         }
         book1.setNumber(q1-1);
@@ -81,7 +82,7 @@ public class TestManagerEditBookThread extends ApplicationTest {
         users.deleteUser("Super/123");
     }
     @Test
-    public void editTitle() {
+    public void addBookSuccessful() {
         clickOn("#usernameField").write("Super/123");
         clickOn("#passwordField").write("Red/1234");
         clickOn("#loginButton");
@@ -93,18 +94,67 @@ public class TestManagerEditBookThread extends ApplicationTest {
                      "\"Book with 2 authors\" by Author 1, Author 2, Genre: Fantasy", text.getText());
         clickOn("OK");
         clickOn("Book Stock");
-        clickOn("Update");
-        clickOn("#0");
-        clickOn("Title: Harry Potter");
-        clickOn("title...").write("Lord of the Rings");
-        clickOn("Confirm");
-        clickOn("#back");
+        clickOn("Add Book");
+        clickOn("book title...").write("Lord of the Rings");
+        clickOn("ISBN...").write("111-1111-111");
+        clickOn("selling price...").write("20.5");
+        clickOn("purchase price...").write("15.0");
+        clickOn("original price...").write("10.99");
+        clickOn("author's name...").write("James");
+        clickOn("author's middle name...").write("R.R");
+        clickOn("author's surname...").write("Tolkien");
+        clickOn("Category");
+        clickOn("Fantasy");
+        clickOn("Add");
+        DialogPane pane = robot.lookup(".dialog-pane").query();
+        assertEquals("New book was created successfully", pane.getHeaderText());
+        clickOn("OK");
+        clickOn("Cancel");
         TableView<Book> txt = robot.lookup("#books").query();
-        assertEquals("Lord of the Rings", txt.getColumns().get(0).getCellObservableValue(0).getValue());
+        assertEquals("Lord of the Rings", txt.getColumns().get(0).getCellObservableValue(txt.getItems().size()-1).getValue());
+        assertEquals("James R.R Tolkien", txt.getColumns().get(1).getCellObservableValue(txt.getItems().size()-1).getValue());
+        assertEquals("Fantasy", txt.getColumns().get(2).getCellObservableValue(txt.getItems().size()-1).getValue());
+        clickOn("Information");
+        clickOn("Detailed");
+        txt = robot.lookup("#books").query();
+        assertEquals("111-1111-111", txt.getColumns().get(1).getCellObservableValue(txt.getItems().size()-1).getValue());
+        assertEquals(10.99, txt.getColumns().get(3).getCellObservableValue(txt.getItems().size()-1).getValue());
+        assertEquals(15.0, txt.getColumns().get(2).getCellObservableValue(txt.getItems().size()-1).getValue());
+        assertEquals(20.5, txt.getColumns().get(4).getCellObservableValue(txt.getItems().size()-1).getValue());
+}
+
+    @Test
+    public void addBookWrongISBN() {
+        clickOn("#usernameField").write("Super/123");
+        clickOn("#passwordField").write("Red/1234");
+        clickOn("#loginButton");
+        FxRobot robot = new FxRobot();
+        Text text = robot.lookup(".dialog-pane .content .text").query();
+        assertEquals("These books are running low!!!\n" +
+                     "\n" +
+                     "These books are missing in stock!!!\n" +
+                     "\"Book with 2 authors\" by Author 1, Author 2, Genre: Fantasy", text.getText());
+        clickOn("OK");
+        clickOn("Book Stock");
+        clickOn("Add Book");
+        clickOn("book title...").write("Lord of the Rings");
+        clickOn("ISBN...").write("132-2141-421");
+        clickOn("selling price...").write("20.5");
+        clickOn("purchase price...").write("15.0");
+        clickOn("original price...").write("10.99");
+        clickOn("author's name...").write("James");
+        clickOn("author's middle name...").write("R.R");
+        clickOn("author's surname...").write("Tolkien");
+        clickOn("Category");
+        clickOn("Fantasy");
+        clickOn("Add");
+        text = robot.lookup(".dialog-pane .content .text").query();
+        assertEquals("There exists a book with this ISBN", text.getText());
+        clickOn("OK");
     }
 
     @Test
-    public void editAuthor() {
+    public void addBookWrongPrice() {
         clickOn("#usernameField").write("Super/123");
         clickOn("#passwordField").write("Red/1234");
         clickOn("#loginButton");
@@ -116,22 +166,24 @@ public class TestManagerEditBookThread extends ApplicationTest {
                      "\"Book with 2 authors\" by Author 1, Author 2, Genre: Fantasy", text.getText());
         clickOn("OK");
         clickOn("Book Stock");
-        clickOn("Update");
-        clickOn("#0");
-        clickOn("More");
-        clickOn("Edit Author");
-        write("James");
-        clickOn("middlename...").write("R.R");
-        clickOn("surname...").write("Tolkien");
-        clickOn("Add author");
-        clickOn("Save");
-        sleep(30);
-        clickOn("#back");
-        TableView<Book> txt = robot.lookup("#books").query();
-        assertEquals("James R.R Tolkien", txt.getColumns().get(1).getCellObservableValue(0).getValue());
+        clickOn("Add Book");
+        clickOn("book title...").write("Lord of the Rings");
+        clickOn("ISBN...").write("132-2141-421");
+        clickOn("selling price...").write("aaa");
+        clickOn("purchase price...").write("15.0");
+        clickOn("original price...").write("10.99");
+        clickOn("author's name...").write("James");
+        clickOn("author's middle name...").write("R.R");
+        clickOn("author's surname...").write("Tolkien");
+        clickOn("Category");
+        clickOn("Fantasy");
+        clickOn("Add");
+        text = robot.lookup(".dialog-pane .content .text").query();
+        assertEquals("Please enter only decimal numbers in price fields!!", text.getText());
+        clickOn("OK");
     }
     @Test
-    public void editCategory() {
+    public void addBookWNoAuthor() {
         clickOn("#usernameField").write("Super/123");
         clickOn("#passwordField").write("Red/1234");
         clickOn("#loginButton");
@@ -143,17 +195,21 @@ public class TestManagerEditBookThread extends ApplicationTest {
                      "\"Book with 2 authors\" by Author 1, Author 2, Genre: Fantasy", text.getText());
         clickOn("OK");
         clickOn("Book Stock");
-        clickOn("Update");
-        clickOn("#0");
-        clickOn("#2");
-        clickOn("category...").write("The coolest book ever");
-        clickOn("Confirm");
-        clickOn("#back");
-        TableView<Book> txt = robot.lookup("#books").query();
-        assertEquals("The coolest book ever", txt.getColumns().get(2).getCellObservableValue(0).getValue());
+        clickOn("Add Book");
+        clickOn("book title...").write("Lord of the Rings");
+        clickOn("ISBN...").write("132-2141-421");
+        clickOn("selling price...").write("20.5");
+        clickOn("purchase price...").write("15.0");
+        clickOn("original price...").write("10.99");
+        clickOn("Category");
+        clickOn("Fantasy");
+        clickOn("Add");
+        text = robot.lookup(".dialog-pane .content .text").query();
+        assertEquals("You must enter a name and surname", text.getText());
+        clickOn("OK");
     }
     @Test
-    public void editISBN() {
+    public void addBookNoTitle() {
         clickOn("#usernameField").write("Super/123");
         clickOn("#passwordField").write("Red/1234");
         clickOn("#loginButton");
@@ -165,30 +221,19 @@ public class TestManagerEditBookThread extends ApplicationTest {
                      "\"Book with 2 authors\" by Author 1, Author 2, Genre: Fantasy", text.getText());
         clickOn("OK");
         clickOn("Book Stock");
-        clickOn("Update");
-        clickOn("#0");
-        clickOn("#1");
+        clickOn("Add Book");
         clickOn("ISBN...").write("111-1111-111");
-        clickOn("Confirm");
-        clickOn("#back");
-        clickOn("Information");
-        clickOn("Detailed");
-        TableView<Book> txt = robot.lookup("#books").query();
-        assertEquals("111-1111-111", txt.getColumns().get(1).getCellObservableValue(0).getValue());
-    }
-    //@Test
-    public void testSleep(){
-        clickOn("#usernameField").write("Super/123");
-        clickOn("#passwordField").write("Red/1234");
-        clickOn("#loginButton");
-        FxRobot robot = new FxRobot();
-        Text text = robot.lookup(".dialog-pane .content .text").query();
-        assertEquals("These books are running low!!!\n" +
-                     "\n" +
-                     "These books are missing in stock!!!\n" +
-                     "\"Book with 2 authors\" by Author 1, Author 2, Genre: Fantasy", text.getText());
+        clickOn("selling price...").write("20.5");
+        clickOn("purchase price...").write("15.0");
+        clickOn("original price...").write("10.99");
+        clickOn("author's name...").write("James");
+        clickOn("author's middle name...").write("R.R");
+        clickOn("author's surname...").write("Tolkien");
+        clickOn("Category");
+        clickOn("Fantasy");
+        clickOn("Add");
+        text = robot.lookup(".dialog-pane .content .text").query();
+        assertEquals("All fields must be complete in this section.", text.getText());
         clickOn("OK");
-        clickOn("Book Stock");
-        sleep(60);
     }
 }

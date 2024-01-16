@@ -1,5 +1,4 @@
 package Main.GUI;
-import java.io.FileInputStream;
 
 import Main.Users.*;
 import javafx.geometry.Pos;
@@ -19,6 +18,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
 
 public class UsersView {
 
@@ -86,6 +87,7 @@ public class UsersView {
 		background.setMinHeight(480);
 		for(User librarian:users.filterByStatus(Status.LIBRARIAN)) {
 			Button temp = new Button(librarian.toString());
+			temp.setId(librarian.getUsername());
 			temp.setMinHeight(60);
 			temp.setPrefWidth(783);
 			temp.setAlignment(Pos.CENTER);
