@@ -135,6 +135,7 @@ public class PaymentView {
 		mainField.getChildren().addAll(writings, vLine, change);
 		
 		Button save = new Button("Save transaction");
+		save.setId("saveTransaction");
 		save.setPrefSize(800, 60);
 		save.setStyle("-fx-background-color: purple;");
 		save.setTextFill(Color.WHITE);
