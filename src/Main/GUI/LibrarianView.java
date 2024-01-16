@@ -90,6 +90,7 @@ public class LibrarianView {
 				icons[i].setFitHeight(100);
 				icons[i].setFitWidth(100);
 				buttons[1] = new Button();
+				buttons[1].setId("cart");
 				buttons[1].setAlignment(Pos.CENTER);
 				buttons[1].setGraphic(icons[i]);
 				if(lib.getPermission().equals(Access.FULL))
