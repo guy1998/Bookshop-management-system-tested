@@ -179,18 +179,18 @@ public class TestManagerEditBookThread extends ApplicationTest {
         assertEquals("111-1111-111", txt.getColumns().get(1).getCellObservableValue(0).getValue());
     }
     //@Test
-    public void testSleep(){
-        clickOn("#usernameField").write("Super/123");
-        clickOn("#passwordField").write("Red/1234");
-        clickOn("#loginButton");
-        FxRobot robot = new FxRobot();
-        Text text = robot.lookup(".dialog-pane .content .text").query();
-        assertEquals("These books are running low!!!\n" +
-                     "\n" +
-                     "These books are missing in stock!!!\n" +
-                     "\"Book with 2 authors\" by Author 1, Author 2, Genre: Fantasy", text.getText());
-        clickOn("OK");
-        clickOn("Book Stock");
-        sleep(60);
-    }
+//    public void testIdle(){
+//        clickOn("#usernameField").write("Super/123");
+//        clickOn("#passwordField").write("Red/1234");
+//        clickOn("#loginButton");
+//        FxRobot robot = new FxRobot();
+//        Text text = robot.lookup(".dialog-pane .content .text").query();
+//        assertEquals("These books are running low!!!\n" +
+//                     "\n" +
+//                     "These books are missing in stock!!!\n" +
+//                     "\"Book with 2 authors\" by Author 1, Author 2, Genre: Fantasy", text.getText());
+//        clickOn("OK");
+//        clickOn("Book Stock");
+//        sleep(60);
+//    }
 }
