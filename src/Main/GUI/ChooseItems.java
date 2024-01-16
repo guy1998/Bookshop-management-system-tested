@@ -97,6 +97,7 @@ public class ChooseItems {
 		else {
 			for(Book book : books) {
 				Label bookL = book.createLabel();
+				bookL.setId(book.getISBN());
 				bookL.setMinHeight(60);
 				bookL.setPrefWidth(783);
 				if(book.getNumber() == 0)
@@ -147,6 +148,7 @@ public class ChooseItems {
 		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
 		
 		Button check = new Button("Go to checkout");
+		check.setId("check");
 		check.setPrefSize(800, 60);
 		check.setStyle("-fx-background-color: purple;");
 		check.setTextFill(Color.WHITE);
