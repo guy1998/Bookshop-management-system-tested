@@ -44,7 +44,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="testfx.core" level="project" />
     <orderEntry type="library" name="testfx.junit5" level="project" />
     <orderEntry type="module-library">
@@ -57,5 +56,6 @@
         <jarDirectory url="file://C:/Program Files/Java/javafx-sdk-21.0.1/lib" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

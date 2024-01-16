@@ -1,5 +1,7 @@
 package Tests.SystemTesting;
-
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import Main.GUI.LoginPage;
 import Main.GUI.ManagerView;
 import Main.Users.*;
@@ -21,6 +23,7 @@ import static org.junit.Assert.assertEquals;
 import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.matcher.control.TextMatchers.hasText;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ChangeUserDataThreadManager extends ApplicationTest {
     private static UserStack users = new UserStack();
 
@@ -43,6 +46,7 @@ public class ChangeUserDataThreadManager extends ApplicationTest {
 
     //This two tests simply test the outcome of logging in with wrong info
     @Test
+    @Order(0)
     public void testFailedLoginUserNotExist(){
         clickOn("#usernameField").write("WrongUser");
         clickOn("#passwordField").write("Juve/123");
@@ -53,6 +57,7 @@ public class ChangeUserDataThreadManager extends ApplicationTest {
     }
 
     @Test
+    @Order(1)
     public void testFailedPasswordNoMatch(){
         clickOn("#usernameField").write("Guy_1989");
         clickOn("#passwordField").write("Juve/124");
@@ -64,6 +69,7 @@ public class ChangeUserDataThreadManager extends ApplicationTest {
 
     //This test checks all scenarios where the editing should be refused due to wrong info entered.
     @Test
+    @Order(2)
     public void testWrongEditInfo() throws Exception{
         //successful login here
         clickOn("#usernameField").write("Guy_1989");
@@ -101,6 +107,7 @@ public class ChangeUserDataThreadManager extends ApplicationTest {
     }
 
     @Test
+    @Order(4)
     public void testChangePassword() throws Exception{
         clickOn("#usernameField").write("Guy_1989");
         clickOn("#passwordField").write("Juve/123");
@@ -144,6 +151,7 @@ public class ChangeUserDataThreadManager extends ApplicationTest {
 
     //This is supposed to test if the text in the view is changed as well as the db
     @Test
+    @Order(3)
     public void changeInfoAndView() throws Exception{
         clickOn("#usernameField").write("Guy_1989");
         clickOn("#passwordField").write("Juve/123");

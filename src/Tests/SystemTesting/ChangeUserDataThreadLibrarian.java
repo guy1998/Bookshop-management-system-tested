@@ -1,5 +1,7 @@
 package Tests.SystemTesting;
-
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import Main.GUI.LoginPage;
 import Main.Users.*;
 import javafx.scene.control.Label;
@@ -19,6 +21,7 @@ import static org.junit.Assert.assertEquals;
 import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.matcher.control.TextMatchers.hasText;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ChangeUserDataThreadLibrarian extends ApplicationTest {
     private static UserStack users = new UserStack();
 
@@ -41,6 +44,7 @@ public class ChangeUserDataThreadLibrarian extends ApplicationTest {
 
     //This two tests simply test the outcome of logging in with wrong info
     @Test
+    @Order(0)
     public void testFailedLoginUserNotExist(){
         clickOn("#usernameField").write("WrongUser");
         clickOn("#passwordField").write("Juve/123");
@@ -51,6 +55,7 @@ public class ChangeUserDataThreadLibrarian extends ApplicationTest {
     }
 
     @Test
+    @Order(1)
     public void testFailedPasswordNoMatch(){
         clickOn("#usernameField").write("Guy_1989");
         clickOn("#passwordField").write("Juve/124");
@@ -62,6 +67,7 @@ public class ChangeUserDataThreadLibrarian extends ApplicationTest {
 
     //This test checks all scenarios where the editing should be refused due to wrong info entered.
     @Test
+    @Order(2)
     public void testWrongEditInfo() throws Exception{
         //successful login here
         clickOn("#usernameField").write("Guy_1989");
@@ -98,7 +104,9 @@ public class ChangeUserDataThreadLibrarian extends ApplicationTest {
     }
 
     @Test
+    @Order(5)
     public void testChangePassword() throws Exception{
+        users.modifyPermission(users.findUser("Guy_1989"), Access.FULL);
         clickOn("#usernameField").write("Guy_1989");
         clickOn("#passwordField").write("Juve/123");
         clickOn("#loginButton");
@@ -140,6 +148,7 @@ public class ChangeUserDataThreadLibrarian extends ApplicationTest {
 
     //This is supposed to test if the text in the view is changed as well as the db
     @Test
+    @Order(3)
     public void changeInfoAndView() throws Exception{
         clickOn("#usernameField").write("Guy_1989");
         clickOn("#passwordField").write("Juve/123");
@@ -157,6 +166,7 @@ public class ChangeUserDataThreadLibrarian extends ApplicationTest {
     }
 
     @Test
+    @Order(4)
     public void accessingProfileViewWhenNoPermission() throws Exception{
         users.modifyPermission(users.findUser("Guy_1989"), Access.NONE);
         clickOn("#usernameField").write("Guy_1989");
@@ -165,7 +175,7 @@ public class ChangeUserDataThreadLibrarian extends ApplicationTest {
         clickOn("#profile");
         FxRobot robot = new FxRobot();
         Label hello = robot.lookup("#hello").query();
-        verifyThat(hello, LabeledMatchers.hasText("Hello Aldrin!"));//if the hello label is still showing it means we
+        verifyThat(hello, LabeledMatchers.hasText("Hello Aldrin12!"));//if the hello label is still showing it means we
         //did not navigate to the other menu as we wanted
     }
 }
