@@ -1,0 +1,12 @@
+			Federal Ministry of Finance			
+
+
+	----------------------------------------------------	
+"Harry Potter" by Joanne K Rowling, Genre: Fantasy		Price: +13.5$ X 2
+
+"Book with 2 authors" by Author 1, Author 2, Genre: Fantasy		Price: +13.5$ X 3
+
+Taxes: 									x10%
+Total: 									67.50$
+
+Bill issue time: Tue Jan 16 22:40:18 CET 2024
