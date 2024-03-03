@@ -14,11 +14,18 @@ The system is implemented in java using javafx as the frontend framework. The in
 ## App's preview
 Below you can find a preview of the application illustrated by some images.
 <p align="center" class="d-inline-flex">
-<img width="596" style="margin: auto" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/a5deeefe-d57a-497c-96f2-c6a054a32a12">
+<img width="596" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/a5deeefe-d57a-497c-96f2-c6a054a32a12">
   <br>
 <img width="597" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/08f9002c-5963-4063-bdd7-158d3e3db3d8"><br>
 <img width="598" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/5259f569-d550-4cad-a6d7-0a415d781864"><br>
 <img width="598" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/db5325b0-a126-4ef7-ae03-f82f40014cb4"><br>
 <img width="598" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/aa83c230-1a3e-4f15-83a6-073032d2c56b"><br>
+<img width="596" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/ad0dec46-03d8-471b-bb77-534c5cc29dcb">
+<img width="599" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/f35e34a0-8bc7-44c6-b85e-8eb5a0fbf036">
+<img width="597" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/c7a8b9dd-2d9c-4577-8ba2-1e92cc9d2dc6">
+<img width="595" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/f27103e2-41cb-40e0-b4ad-c6dec7385224">
+<img width="599" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/29eddd0e-c9ce-4172-868c-440379b2492e">
+<img width="599" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/37f096de-a33b-497a-b347-e7770cae5311">
+
 </p>
 
