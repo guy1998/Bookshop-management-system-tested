@@ -13,7 +13,7 @@ The system is implemented in java using javafx as the frontend framework. The in
 
 ## App's preview
 Below you can find a preview of the application illustrated by some images.
-<p align="center">
+<p align="center" display="flex">
 <img width="596" style="margin: auto" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/a5deeefe-d57a-497c-96f2-c6a054a32a12">
 <img width="597" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/08f9002c-5963-4063-bdd7-158d3e3db3d8">
 <img width="598" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/5259f569-d550-4cad-a6d7-0a415d781864">
