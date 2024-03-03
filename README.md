@@ -15,9 +15,10 @@ The system is implemented in java using javafx as the frontend framework. The in
 Below you can find a preview of the application illustrated by some images.
 <p align="center" class="d-inline-flex">
 <img width="596" style="margin: auto" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/a5deeefe-d57a-497c-96f2-c6a054a32a12">
-<img width="597" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/08f9002c-5963-4063-bdd7-158d3e3db3d8">
-<img width="598" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/5259f569-d550-4cad-a6d7-0a415d781864">
-<img width="598" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/db5325b0-a126-4ef7-ae03-f82f40014cb4">
-<img width="598" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/aa83c230-1a3e-4f15-83a6-073032d2c56b">
+  <br>
+<img width="597" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/08f9002c-5963-4063-bdd7-158d3e3db3d8"><br>
+<img width="598" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/5259f569-d550-4cad-a6d7-0a415d781864"><br>
+<img width="598" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/db5325b0-a126-4ef7-ae03-f82f40014cb4"><br>
+<img width="598" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/aa83c230-1a3e-4f15-83a6-073032d2c56b"><br>
 </p>
 
