@@ -26,6 +26,8 @@ Below you can find a preview of the application illustrated by some images.
 <img width="595" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/f27103e2-41cb-40e0-b4ad-c6dec7385224">
 <img width="599" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/29eddd0e-c9ce-4172-868c-440379b2492e">
 <img width="599" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/37f096de-a33b-497a-b347-e7770cae5311">
+<img width="598" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/4c34a1ef-d859-4d38-8957-9b9037cea7eb">
+<img width="597" alt="image" src="https://github.com/guy1998/Bookshop-management-system-tested/assets/104024859/c57b2652-a427-489c-a2cd-dc3097ea1a65">
 
 </p>
 
